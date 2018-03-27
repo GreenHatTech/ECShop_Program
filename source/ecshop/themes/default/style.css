@@ -189,13 +189,13 @@ visibility:hidden;
   /*顶部管理型导航*/
 .clear0{ clear:both; padding:0px; margin:0px;}
 .clear10{clear:both; padding:0px; margin:0px; padding-top:10px;}
-.top-bar{height: 40px; background: #363636;}
+.top-bar{height: 40px; background: #90c4d1;}
 .fd_top, .wrap{ width:1200px; margin:auto} 
-.bar-left{ float:left; height:40px; color: #aaa; }
+.bar-left{ float:left; height:40px; color: #385d66; }
 .bar-cart{float: right;}
 .bar-cart .cart{float: left;}
 .top_menu1{  height:40px;line-height:40px; padding-left:15px;}
-.top_menu1 a{ color:#aaa}
+.top_menu1 a{ color:#385d66}
 
 .topad{ float:right;}
 
@@ -254,8 +254,8 @@ position:absolute; top:0px; right:0px;}
      模块
 ==================== */
    /*购物车*/
-#ECS_CARTINFO{ float:right; height:40px; line-height: 40px; width:105px; display:inline-block; background: url(images/cart.png) no-repeat 5px center #444;}
-#ECS_CARTINFO a{ display:block; width:105px; line-height:40px; text-indent:30px; color:#aeaeaa}
+#ECS_CARTINFO{ float:right; height:40px; line-height: 40px; width:105px; display:inline-block; background: url(images/cart.png) no-repeat 5px center #90c4d1;}
+#ECS_CARTINFO a{ display:block; width:105px; line-height:40px; text-indent:30px; color:#385d66}
 #ECS_CARTINFO a b{ color:#198500; padding-left:0px; padding-right:2px;}
 
 /*首页*/
@@ -877,7 +877,7 @@ a, abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, c
 }
 /*新增样式*/
 .cart-yh{float: left; height: 40px; line-height: 40px;}
-.cart-yh a{color: #aaa; padding: 0 10px;}
+.cart-yh a{color: #385d66; padding: 0 10px;}
 .nav-menu{height: 100px;}
 .nav-menu .logo{float: left; width: 230px;}
 .nav-menu .maxmenu{float: left; width: 600px; padding-left: 105px; height: 100px; overflow: hidden; background: none;}
@@ -1450,7 +1450,7 @@ a, abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, c
         padding-left: 0px;
     border: 0;
     outline: 0;
-    font-size: 100%;
+    font-size: 97%;
     vertical-align: baseline;
     background: transparent;
 }
