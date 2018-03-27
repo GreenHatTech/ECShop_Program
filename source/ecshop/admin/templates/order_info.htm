@@ -330,6 +330,15 @@
   </tr>
   {/foreach}
 </table>
+<!-- 快递100部分开始 -->
+<h5><span>物流跟踪(如果未填单号，下方将显示“正在查询物流信息，请稍后...”）</span></h5>
+<div class="blank"></div>
+<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+  <tr>
+    <td bgcolor="#ffffff"><div id="retData"></div></td>
+  </tr>
+</table>
+<!-- 快递100部分结束 -->
 </div>
 </form>
 {literal}
@@ -362,6 +371,20 @@
     return true;
   }
 </script>
+
+<!-- 快递100接口调用的参数 -->
+<div style="display: none">
+  <span id="shipping_name">{$order.shipping_name}</span>
+  <span id="invoice_no">{$order.invoice_no}</span>
+</div>
+<!-- 快递100接口调用的js -->
+<script language="javascript">
+  document.getElementById("retData").innerHTML="<center>正在查询物流信息，请稍后...</center>";
+  var expressid = document.getElementById("shipping_name").innerHTML;
+  var expressno = document.getElementById("invoice_no").innerHTML;
+  Ajax.call('../plugins/kuaidi100/kuaidi100_post.php?com='+ expressid+'&nu=' + expressno,'showtest=showtest', function(data){document.getElementById("retData").innerHTML=data;}, 'GET', 'TEXT');
+</script>
+
 {/literal}
 
 {include file="pagefooter.htm"}

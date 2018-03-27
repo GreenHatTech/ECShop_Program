@@ -11,7 +11,7 @@
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
 {* 包含脚本文件 *}
-{insert_scripts files='common.js,user.js'}
+{insert_scripts files='common.js,user.js,transport.js'}
 </head>
 <body>
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
@@ -329,7 +329,21 @@
           <td align="right" bgcolor="#ffffff">{$lang.consignment}：</td>
           <td align="left" bgcolor="#ffffff"><a href="user.php?act=delivery_info&order_sn={$order.order_sn}" target="_blank">{$order.invoice_no}</a></td>
         </tr>
+        
+        <!-- 快递100部分开始 -->
+        </table>
+        <br/>
+        <h5><span>物流跟踪</span></h5>
+        <div class="blank"></div>
+        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+        <tr>
+            <td bgcolor="#ffffff"><div id="retData"></div></td>
+        </tr>
+        </table>
+        <!-- 快递100部分结束 -->
+
         <!--{/if}-->
+
         <!--{if $order.to_buyer}-->
         <tr>
           <td align="right" bgcolor="#ffffff">{$lang.detail_to_buyer}：</td>
@@ -1120,6 +1134,20 @@
 </div>
 <div class="blank"></div>
 <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+
+<!-- 快递100接口调用的参数 -->
+<div style="display: none">
+  <span id="shipping_name">{$order.shipping_name}</span>
+  <span id="invoice_no">{$order.invoice_no}</span>
+</div>
+<!-- 快递100接口调用js -->
+<script language="javascript">
+  document.getElementById("retData").innerHTML="<center>正在查询物流信息，请稍后...</center>";
+  var expressid = document.getElementById("shipping_name").innerHTML;
+  var expressno = document.getElementById("invoice_no").innerHTML;
+  Ajax.call('plugins/kuaidi100/kuaidi100_post.php?com='+ expressid+'&nu=' + expressno,'showtest=showtest', function(data){document.getElementById("retData").innerHTML=data;}, 'GET', 'TEXT');
+</script>
+
 </body>
 <script type="text/javascript">
 {foreach from=$lang.clips_js item=item key=key}

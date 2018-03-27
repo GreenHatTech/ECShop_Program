@@ -529,10 +529,10 @@ position:absolute; top:0px; right:0px;}
    .bNavList img{_position:relative; top:8px;}
    .links img{width:88px; height:30px; margin:5px;}
    /*版权*/
-   #footer{background:url(images/logo1.gif) no-repeat 5% 50%; padding-left:200px; width:760px; margin:10px auto;}
+   /*#footer{background:url(images/logo1.gif) no-repeat 5% 50%; padding-left:200px; width:760px; margin:10px auto;}
    #footer .text{background:url(images/footerLine.gif) no-repeat left center; padding-left:50px; *padding-bottom:20px;}
    #footer .text a{color:#404040; text-decoration:none;}
-
+*/
 
 /* ======商品比较浮动块 ====== */
 #compareBox {
@@ -679,8 +679,202 @@ position:absolute; top:0px; right:0px;}
 .Foot_Help .cat1first{ background:none;}
 .footer_info{ width:950px; margin:auto; text-align:center; color:#666666}
 .footer_info a{ }
+.footer {
 
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
 
+}
+.social-bar {
+    padding: 15px 0;
+    border: 1px solid #999;
+        border-right-width: 1px;
+        border-left-width: 1px;
+        border-right-style: solid;
+        border-left-style: solid;
+        border-right-color: rgb(153, 153, 153);
+        border-left-color: rgb(153, 153, 153);
+    border-left: 0;
+    border-right: 0;
+    background-color: #ebebeb;
+}
+.footer-row {
+    overflow: hidden;
+}
+.panel-links li a:hover {
+
+    background-color: #d2d2d2;
+
+}
+.panel-links li a {
+
+    font-family: Lato-Light,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+    -webkit-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    display: block;
+    padding: 19px 0 15px;
+    font-weight: 700;
+    text-decoration: none;
+
+}
+.footer-links {
+    padding: 30px 0 10px;
+    border-top: 1px solid #999;
+    background: #ebebeb;
+}
+.footer-bottom {
+    background-color: #2e3337;
+    padding-top: 30px;
+    color: #ebebeb;
+}
+.footerSocialLinks {
+
+    margin: 8px 20px 0 0;
+    float: left;
+}
+.footer-row {
+
+    overflow: hidden;
+
+}
+.footer-row {
+
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1180px;
+
+}
+.panel-links {
+
+    background-color: #ebebeb;
+
+}
+.signUp {
+
+    background: transparent;
+    padding: 0;
+    margin: 0 auto;
+    border-top: 0;
+    text-align: right;
+    float: right;
+    width: 70%;
+
+}
+.signUp_form {
+
+    margin: 0;
+    width: 100%;
+    float: none;
+
+}
+.footer-links .links-column {
+
+    float: left;
+    width: 295px;
+}
+.signUp_container {
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    margin-bottom: 0;
+
+}
+.signUp_button:hover {
+    background-color: #28bdb7;
+}
+.signUp_button {
+    font-family: Lato-Light,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+    line-height: 18px;
+    background-color: #333;
+    border-style: none;
+    padding: 10px;
+    color: #fff;
+    border-radius: 0;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    float: none;
+    white-space: nowrap;
+    min-width: 0;
+}
+.signUp_label {
+
+    padding-right: 10px;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+.panel-links li {
+
+    text-align: center;
+
+}
+
+.body {
+
+    font-family: Lato-Light,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+
+}
+.html {
+
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+
+}
+a, abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+.footer{
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+        background-color: transparent;
+
+}
 /*新增样式*/
 .cart-yh{float: left; height: 40px; line-height: 40px;}
 .cart-yh a{color: #aaa; padding: 0 10px;}
@@ -1162,3 +1356,125 @@ position:absolute; top:0px; right:0px;}
     font-style: normal;
   }
   .list-pop .txt{ padding-left: 20px; }
+
+.panel-links li {
+
+    float: left;
+    width: 25%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-right: 1px solid #999;
+    text-align: center;
+
+}
+
+.primaryBanner_imageLarge {
+    width: 1180px;
+}
+.primaryBanner_imageLarge {
+    width: 1180px;
+    max-width: none;
+}
+.primaryBanner_imageLarge {
+    width: 100%;
+    height: auto;
+}
+a {
+    color: #28bdb7;
+    font-weight: 700;
+}
+.primaryBanner_imageLarge {
+    width: 1180px;
+}
+.primaryBanner_imageLarge {
+    width: 1180px;
+    max-width: none;
+}
+.primaryBanner_imageLarge {
+    width: 100%;
+    height: auto;
+}
+img {
+    vertical-align: bottom;
+}
+img {
+    -ms-interpolation-mode: bicubic;
+    vertical-align: middle;
+    font-style: italic;
+}
+.primaryBanner_container {
+    text-align: center;
+}
+
+.brandLogos {
+    max-width: 1180px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.brandLogos {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    text-align: center;
+    min-width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.brandLogos_image:hover {
+    opacity: 1;
+}
+.brandLogos_image {
+    opacity: .8;
+}
+.brandLogos_image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+.brandLogos {
+    text-align: center;
+}
+a, abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+        padding-right: 0px;
+        padding-left: 0px;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+body {
+    font-family: Lato-Light,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+}
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+.brandLogos_link {
+    -webkit-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
