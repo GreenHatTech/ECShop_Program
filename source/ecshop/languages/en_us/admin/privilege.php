@@ -90,6 +90,7 @@ $_LANG['confirm_notic'] = 'Re-enter administrator\'s password, your password ent
 /* Login memu */
 $_LANG['label_username'] = 'Username:';
 $_LANG['label_password'] = 'Password:';
+$_LANG['label_forget_passwd'] = 'Forget your password?';
 $_LANG['label_captcha'] = 'Verification Code:';
 $_LANG['click_for_another'] = 'Invisibility? Replace an image.';
 $_LANG['signin_now'] = 'Enter';

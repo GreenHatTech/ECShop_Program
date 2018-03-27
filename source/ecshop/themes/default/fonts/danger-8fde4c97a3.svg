@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 -3 20 23">
+    <g fill="none">
+        <circle cx="10" cy="10" r="10" fill="#a82a30"/>
+        <g fill="#ffffff" transform="rotate(180 6 7.5)">
+            <path d="M1.048 4.048h1.905v5.238h-1.905z"/>
+            <ellipse cx="2" cy="1.429" rx="1.19" ry="1.19"/>
+        </g>
+    </g>
+</svg>

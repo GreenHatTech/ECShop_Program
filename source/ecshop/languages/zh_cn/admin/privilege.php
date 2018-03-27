@@ -91,6 +91,10 @@ $_LANG['confirm_notic'] = '输入管理员的确认密码,两次输入必须一�
 /* 登录表单 */
 $_LANG['label_username'] = '请填写您注册的邮箱或手机';
 $_LANG['label_password'] = '请输入密码';
+$_LANG['label_forget_passwd'] = '找回密码?';
+$_LANG['label_passwd_email'] = '邮箱';
+$_LANG['label_passwd_question'] = '密码问题';
+$_LANG['label_passwd_sms'] = '短信验证';
 $_LANG['label_captcha'] = '输入验证码';
 $_LANG['click_for_another'] = '看不清？点击更换另一个验证码。';
 $_LANG['signin_now'] = '登 录';
