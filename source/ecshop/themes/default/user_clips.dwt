@@ -13,6 +13,7 @@
 
 <link href="{$ecs_themes_path}/css/account-1a49356ad1.css" rel="stylesheet" type="text/css" />
 <link href="{$ecs_themes_path}/css/screen-1c23e8a1ad.css" rel="stylesheet" type="text/css" />
+<link href="{$ecs_themes_path}/css/user_info.css" rel="stylesheet" type="text/css" />
 
 
 {* 包含脚本文件 *}

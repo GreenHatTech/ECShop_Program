@@ -140,6 +140,8 @@ $_LANG['compare'] = 'Compare';
 $_LANG['volume_price'] = 'Following the purchase of goods to reach the number that they can enjoy a range of preferential prices';
 $_LANG['number_to'] = 'number';
 $_LANG['article_list'] = 'Article list';
+/* ning add 20180401 */
+$_LANG['your_account'] = 'Your Account';
 
 /* 商品比较JS语言项 */
 $_LANG['compare_js']['button_compare'] = 'Compare chosen products';
