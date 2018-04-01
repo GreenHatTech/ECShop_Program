@@ -29,11 +29,7 @@
       <div class="myAccountWrapper">
         <div class="myAccount js-myAccount-wrapper">
           <!-- 当前位置 start -->
-          <div class="myAccountSection_breadcrumbs breadcrumbs"> 
-           <ul class="breadcrumbs_container"> 
-            <li class="breadcrumbs_item">{$ur_here} </li>
-           </ul> 
-          </div>
+          <div id="ur_here"> <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --> </div>
           <!-- 当前位置 end -->
  
           <!--用户欢迎语部分 start -->

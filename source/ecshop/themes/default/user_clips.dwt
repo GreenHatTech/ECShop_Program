@@ -13,6 +13,7 @@
 
 <link href="{$ecs_themes_path}/css/account-1a49356ad1.css" rel="stylesheet" type="text/css" />
 <link href="{$ecs_themes_path}/css/screen-1c23e8a1ad.css" rel="stylesheet" type="text/css" />
+<link href="{$ecs_themes_path}/css/user_info.css" rel="stylesheet" type="text/css" />
 
 
 {* 包含脚本文件 *}
@@ -29,12 +30,9 @@
       <div class="myAccountWrapper">
         <div class="myAccount js-myAccount-wrapper">
           <!-- 当前位置 start -->
-          <div class="myAccountSection_breadcrumbs breadcrumbs"> 
-           <ul class="breadcrumbs_container"> 
-            <li class="breadcrumbs_item">{$ur_here} </li>
-           </ul> 
-          </div>
+          <div id="ur_here"> <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --> </div>
           <!-- 当前位置 end -->
+          
           <!-- *用户中心默认显示页面 start-->
           <!-- {if $action eq 'default'} -->
           <!--用户欢迎语部分 start -->

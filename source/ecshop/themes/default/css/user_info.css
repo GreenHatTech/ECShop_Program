@@ -1,3 +1,32 @@
+/* 用户菜单补充样式 */
+.settingsCard_img {
+    display:block;
+    margin:20px auto;
+    width: 20px;
+    height: 20px;
+}
+.settingsCard_menu {
+    width: 16.666% !important;
+    clear: none !important;
+}
+.settingsCard_menu .settingsCard {
+    min-height: auto !important;
+}
+.settingsCard_menu .curs .settingsCard_title {
+    color: #79a9b4;
+    font-weight: bold;
+}
+
+.myAccountSection_header_extra_text {
+    text-align: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    border-right: 0;
+    width: 50%;
+    margin-bottom: 5px;
+}
+
 .accountSettingsCard_formFieldset .date_select {
 	padding-left: 0px;
 	padding-right: 0px;
