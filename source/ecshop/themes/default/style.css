@@ -635,7 +635,7 @@ position:absolute; top:0px; right:0px;}
 	
        /*单个商品*/
        .goodsItem{width:150px; float:left; position:relative; overflow:hidden;  padding:15px 16px 15px 16px;text-align:center; }
-       .goodsItem .goodsimg{max-width:150px; max-height:150px; border:1px solid #e8e8e8} 
+       .goodsItem .goodsimg{max-width:320px; max-height:320px; border:1px solid #e8e8e8}
        .goodsItem p{text-align:center; color:#3f3f3f; line-height:18px; white-space:normal; padding-top:3px;}
  
 	   .goodsItem font.f1{font-family:Tahoma;color:#A51F1C; font-size:12px;}
@@ -643,7 +643,7 @@ position:absolute; top:0px; right:0px;}
 	   .market_s,.market{text-decoration:line-through; color:#999999; font-size:12px;}
        .shop_s{color:#A51F1C; font-size:12px}
 	   .shop_s b{ font-size:12px;}
-	   .prices{ line-height:25px; color:#999999}
+	   .prices{ line-height:25px; color:#999999;}
 	   
 	   .indexpage .goodsItem{width:185px; text-align:center; padding:0px 10px 10px 10px;}
 /*	   .indexpage .goodsItem{width:115px;  padding:0px 22px 15px 22px;background:URL(images/itemsWrap.png) left no-repeat}
@@ -914,23 +914,23 @@ a, abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, c
 .ad-lb .swiper-button-next{background: url(images/next.jpg) no-repeat left top; width: 54px;height:206px; top: 0; right: 0; margin: 0;}
 .ad-lb .swiper-button-prev{background: url(images/pre.jpg) no-repeat left top; width: 54px;height:206px; top: 0; left: 0; margin: 0;}
 /*首页商品*/
-.index-body{background: #F5F5F5; margin-top: 40px;}
+.index-body{background: #FFFFFF; margin-top: 40px;}
 .index-body .body-goods .goods-title{font-size: 24px; line-height: 30px; padding: 30px 0 15px; color: #363636;}
-.goods-wrap{height: 555px;}
+.goods-wrap{}
 .goods-wrap .goods-leftad{width: 230px; height: 555px; float: left;}
-.goods-wrap .goods-right{width: 970px; height: 555px;float: left;}
+.goods-wrap .goods-right{width: 970px; float: left;}
 .goods-wrap .all_ms{border:none;}
-.indexpage .goods-wrap .goodsItem{width: 230px;height: 270px; padding: 0; background: #fff; margin: 0 0 12px 12px; display: block;}
-.indexpage .goods-wrap .goodsItem .img-box{width:230px; height: 180px;display: -webkit-box;     display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;}
-.indexpage .goods-wrap .goodsItem .img-box img{max-width: 230px; max-height: 180px; border:none;}
-.indexpage .goods-wrap .goodsItem .goods-brief{font-size: 14px; color: #363636;line-height: 180%;}
-.indexpage .goods-wrap .goodsItem .gos-title{font-size: 12px; color: #989898;}
-.indexpage .goods-wrap .goodsItem  .shop_s b{color: #ce0000; font-size: 14px;}
+.indexpage .goods-wrap .goodsItem{width: 200px;height: 380px;  background: #fff; margin: 0 0 12px 12px; display: block;}
+.indexpage .goods-wrap .goodsItem .img-box{width:200px; height: 200px;display:inline}
+.indexpage .goods-wrap .goodsItem .img-box img{max-width: 200px; max-height: 200px; border:none;width:200px;height:200px;display:inline}
+.indexpage .goods-wrap .goodsItem .goods-brief{font-size: 14px; color: #363636;width:200px;height:320px;display:inline}
+.indexpage .goods-wrap .goodsItem .gos-title{font-family: Muli,Helvetica,Arial,sans-serif;font-size: 14px; color: #989898;width:200px;}
+.indexpage .goods-wrap .goodsItem  .shop_s b{font-family: Muli,Helvetica,Arial,sans-serif;color: #2c2d2d; font-size: 14px;width:200px;}
 .indexpage .goods-wrap.hot-goods{width: 1200px; height: 370px; }
 .indexpage .goods-wrap.hot-goods .goodsItem{margin: 0 12px 0 0;}
 .indexpage .goods-wrap.hot-goods .goodsItem:nth-child(5n){margin: 0;}
 /*底部*/
-.foot-body{padding: 0; background: #f5f5f5;}
+.foot-body{padding: 0; background: #ffffff;}
 .foot-body .bads{background: #fff;}
 .foot-body .foot-help{width: 1200px; margin: 0 auto; padding-top:30px;}
 .foot-body .foot-help dl{float: left; width: 160px; float: left; padding-right: 70px; padding-bottom: 50px;}
