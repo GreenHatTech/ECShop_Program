@@ -27,7 +27,7 @@ $_LANG['regist_success'] = "Congratulations! %s register successfully!";
 $_LANG['login_success'] = 'Congratulations! Login successfully!';
 
 /* 购物车 */
-$_LANG['update_cart'] = 'Update the cart';
+$_LANG['update_cart'] = 'Update';
 $_LANG['back_to_cart'] = 'Back to the cart';
 $_LANG['update_cart_notice'] = 'Update successfully, please choose the gift again.';
 $_LANG['direct_shopping'] = 'I don\'t plan to login, directly purchase.';
@@ -62,8 +62,8 @@ $_LANG['your_discount'] = 'Your discount is %s';
 $_LANG['no'] = 'No';
 $_LANG['not_support_virtual_goods'] = 'There is(are) virtual product(s), it is not support purchase without login, please login validly.';
 $_LANG['not_support_insure'] = 'No support insure.';
-$_LANG['clear_cart'] = 'Clear the cart.';
-$_LANG['drop_to_collect'] = 'Drop to collect.';
+$_LANG['clear_cart'] = 'Clear';
+$_LANG['drop_to_collect'] = 'Drop to collect';
 $_LANG['password_js']['show_div_text'] = 'Please Update Cart';
 $_LANG['password_js']['show_div_exit'] = 'Close';
 $_LANG['goods_fittings'] = 'Goods Fittings';

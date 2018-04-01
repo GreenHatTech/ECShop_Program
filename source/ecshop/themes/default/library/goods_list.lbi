@@ -1,13 +1,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <div class="prclist">
-  <div class="displaylist">
+  <div class="listTitle">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td class="tdl"><span>{$cat.name|escape:html}</span>相关商品<b>{$pager.record_count}</b>个 </td>
-        <td><a name='goods_list'></a></td>
-        <td class="tdr"><table border="0" cellspacing="0" cellpadding="0">
+        <td class="listTitle_text"><span>{$cat.name|escape:html}</span>Goods<b class="goods_counter">{$pager.record_count}  results</b></td></tr>
+        <tr>
+        <td class="listTitle_results"><table border="0" cellspacing="0" cellpadding="0" class="table_right">
             <tr>
-            <td>排序：</td>
               <td><form method="GET" class="sort list-paixu" name="listform">
                     <a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=goods_id&order=<!-- {if $pager.sort == 'goods_id' && $pager.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list"><img src="images/goods_id_<!-- {if $pager.sort == 'goods_id'} -->{$pager.order}<!-- {else} -->default<!-- {/if} -->.gif" alt="{$lang.sort.goods_id}"></a> <a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=shop_price&order=<!-- {if $pager.sort == 'shop_price' && $pager.order == 'ASC'} -->DESC<!-- {else} -->ASC<!-- {/if} -->#goods_list"><img src="images/shop_price_<!-- {if $pager.sort == 'shop_price'} -->{$pager.order}<!-- {else} -->default<!-- {/if} -->.gif" alt="{$lang.sort.shop_price}"></a> <a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=last_update&order=<!-- {if $pager.sort == 'last_update' && $pager.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list"><img src="images/last_update_<!-- {if $pager.sort == 'last_update'} -->{$pager.order}<!-- {else} -->default<!-- {/if} -->.gif" alt="{$lang.sort.last_update}"></a>
                   <input type="hidden" name="category" value="{$category}" />
@@ -70,19 +69,19 @@
       <!--{/foreach}-->
     </div>
     <!-- {elseif $pager.display == 'grid'} -->
-    <div class="centerPadd">
-      <div class="clearfix goodsBox" style="border:none;">
+    <div id="divSearchResults" class="item-detail-list">
+      <div class="item item-health-beauty unit grid thg-track  js-product-simple " style="border:none;">
         <!--{foreach from=$goods_list item=goods}-->
         <!-- {if $goods.goods_id} -->
-        <div class="goodsItem"> <a href="{$goods.url}" class="img-box"><img src="{$goods.goods_thumb}" alt="{$goods.goods_name}" class="goodsimg" /></a>
-        <div class="goods-info">
-            <div class="goods-title"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.goods_name}</a></div>
-            <div class="goods-ms">
+        <div class="item__inner"> <a href="{$goods.url}" class="img-box"><img src="{$goods.goods_thumb}" alt="{$goods.goods_name}" class="product-image unit size1of1 last-unit quickview-hover quickview-touch-device" /></a>
+        <div class="line">
+            <p class="product-name" style="margin-bottom:52px"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.goods_name}{$goods.name|escape:html}</a></p>
+            <div class="product-name" style="margin-bottom:52px">
               {$goods.goods_brief}
             </div>
             <div class="clearfix price-box">
-              <div class="shop_s">{$goods.shop_price}</div>
-              <a class="price-btn" href="{$goods.url}">立即购买</a>
+              <div class="price item_price">{$goods.shop_price}</div>
+              <a class="productListProduct_button productbuy" href="{$goods.url}">ADD TO CART</a>
             </div>
             
         </div>
