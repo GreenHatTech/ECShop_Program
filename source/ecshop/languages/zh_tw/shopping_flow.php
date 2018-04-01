@@ -25,7 +25,7 @@ $_LANG['regist_success'] = "恭喜您，%s 賬號註冊成功!";
 $_LANG['login_success'] = '恭喜！您已經成功登陸本站！';
 
 /* 購物車 */
-$_LANG['update_cart'] = '更新購物車';
+$_LANG['update_cart'] = '更新';
 $_LANG['back_to_cart'] = '返回購物車';
 $_LANG['update_cart_notice'] = '購物車更新成功，請您重新選擇您需要的贈品。';
 $_LANG['direct_shopping'] = '不打算登錄，直接購買';
@@ -54,13 +54,13 @@ $_LANG['storage_short'] = '庫存不足';
 $_LANG['subtotal'] = '小計';
 $_LANG['accessories'] = '配件';
 $_LANG['largess'] = '贈品';
-$_LANG['shopping_money'] = '購物金額小計 %s';
+$_LANG['shopping_money'] = '合計金額 %s';
 $_LANG['than_market_price'] = '比市場價 %s 節省了 %s (%s)';
 $_LANG['your_discount'] = '根據優惠活動<a href="activity.php"><font color=red>%s</font></a>，您可以享受折扣 %s';
 $_LANG['no'] = '無';
 $_LANG['not_support_virtual_goods'] = '購物車中存在非實體商品,不支持匿名購買,請登陸後在購買';
 $_LANG['not_support_insure'] = '不支持保價';
-$_LANG['clear_cart'] = '清空購物車';
+$_LANG['clear_cart'] = '清空';
 $_LANG['drop_to_collect'] = '放入收藏夾';
 $_LANG['password_js']['show_div_text'] = '請點擊更新購物車按鈕';
 $_LANG['password_js']['show_div_exit'] = '關閉';
