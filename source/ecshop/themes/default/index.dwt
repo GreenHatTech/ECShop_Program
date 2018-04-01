@@ -62,6 +62,7 @@ us/27/180x72-be-logo-caudalie-040341-101945-033527.png" alt="Caudalíe" class="b
 us/19/Dermalogica_logo-042219.jpg" alt="Dermalogica" class="brandLogos_image">
   </a>
 </div>
+
 <h2 style="    display: block;
 
                    font-family: Muli,Helvetica,Arial,sans-serif;
@@ -77,13 +78,18 @@ us/19/Dermalogica_logo-042219.jpg" alt="Dermalogica" class="brandLogos_image">
                    margin-top: 0;
                    margin-bottom: 12px;
                    text-align: center;">TRENDING NOW:<h2>
+
+
+
 <div class="index-body">
   <div class="indexpage" >
     <div class="body-goods">
 
       <div class="clearfix goods-wrap">
 
+
         <div class="goods-right" style="width:1180px">
+
             <!-- TemplateBeginEditable name="1层产品" -->
 <!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
 
@@ -91,8 +97,11 @@ us/19/Dermalogica_logo-042219.jpg" alt="Dermalogica" class="brandLogos_image">
   <!--{foreach from=$cat_goods item=goods}-->
   <a class="goodsItem" href="{$goods.url}" > <div  class="img-box"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></div>
 
+
   <div class="goods-brief" >{$goods.brief|truncate:20}</div>
     <div class="gos-title">{$goods.short_name|escape:html}</div>
+
+
 	<div class="prices">
 	    <!-- {if $goods.promote_price neq ""} -->
     <font class="shop_s">{$lang.promote_price}<b>{$goods.promote_price}</b></font>
@@ -111,6 +120,7 @@ us/19/Dermalogica_logo-042219.jpg" alt="Dermalogica" class="brandLogos_image">
 <!-- TemplateEndEditable -->
         </div>
       </div>
+
 
       <div class="goods-title" style="text-align:center;font-family: Muli,Helvetica,Arial,sans-serif;">
 Hot commodities:</div>

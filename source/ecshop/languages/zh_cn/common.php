@@ -77,7 +77,7 @@ $_LANG['category'] = '分类';
 $_LANG['brand'] = '品牌';
 $_LANG['price_min'] = '最小价格';
 $_LANG['price_max'] = '最大价格';
-$_LANG['goods_name'] = '商品名称';
+$_LANG['goods_name'] = '商品';
 $_LANG['goods_attr'] = '商品属性';
 $_LANG['goods_price_ladder'] = '价格阶梯';
 $_LANG['ladder_price'] = '批发价格';
@@ -728,4 +728,13 @@ $_LANG['label_collection'] = '我的收藏';
 $_LANG['article_list'] = '文章列表';
 $_LANG['preferences_price'] = '优惠价格';
 $_LANG['divided_into'] = '分成规则';
+/*新增
+--shoppingbag_label  2018.3.28 ---Autda
+*/
+$_LANG['shoppingbag_label'] = '购物车';
+/*新增
+--shoppingbag_label checkout 2018.3.31 ---Autda
+*/
+$_LANG['shopping_continue'] = '继续购物';
+$_LANG['checkout'] = '結算';
 ?>

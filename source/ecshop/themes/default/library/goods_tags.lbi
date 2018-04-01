@@ -1,18 +1,29 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
      <div class="box">
-     <div class="box_1">
-      <h3><span class="text">{$lang.goods_tag}</span></h3>
-      <div class="boxCenterList clearfix ie6">
-       <form name="tagForm" action="javascript:;" onSubmit="return submitTag(this)" id="tagForm">
-        <p id="ECS_TAGS" style="margin-bottom:5px;">
+     <div class="box_1" style="border: none;">
+      <h2 class="good_desc" style="border-bottom: 1px solid #e6e6e6;">{$lang.goods_tag}</h2>
+      <div class="boxCenterList clearfix ie6" style="padding-top:15px;padding-left:0;padding-bottom:0;">
+       <form name="tagForm" action="javascript:;" onSubmit="return submitTag(this)" id="tagForm" style="margin-left:15px">
+        <p id="ECS_TAGS" style="margin-bottom:10px;margin-top:10px">
           <!-- 标记{foreach from=$tags item=tag}-->
-          <a href="search.php?keywords={$tag.tag_words|escape:url}" style="color:#006ace; text-decoration:none; margin-right:5px;">{$tag.tag_words|escape:html}[{$tag.tag_count}]</a>
+          <a href="search.php?keywords={$tag.tag_words|escape:url}" style="color:#477580; text-decoration:none; font-size: 16px;
+          font-weight: 550;margin-right:15px;">{$tag.tag_words|escape:html}[{$tag.tag_count}]</a>
           <!-- 结束标记{/foreach} -->
         </p>
         <p>
-          <input type="text" name="tag" id="tag" class="inputBg" size="35" />
-          <input type="submit" value="添 加" class="bnt_blue" style="border:none;" />
+          <input type="text" name="tag" id="tag" class="inputBg" size="40" style="height:35px;font-size: 16px;"/>
+          <button type="submit" style="
+          font-family: Muli, Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          font-weight: 300;
+          height: auto;
+          padding:9px;
+          vertical-align: baseline;
+          margin-bottom: 24px;
+          color: rgb(238, 238, 238);
+          text-align: center;
+          border: 1px solid #477580;
+          background: #477580;">添   加</button>
           <input type="hidden" name="goods_id" value="{$goods.goods_id}"  />
         </p>
                 <script type="text/javascript">
@@ -55,7 +66,7 @@
 
                       for (i = 0; i < tags.length; i++)
                       {
-                        div.innerHTML += '<a href="search.php?keywords='+tags[i].word+'" style="color:#006ace; text-decoration:none; margin-right:5px;">' +tags[i].word + '[' + tags[i].count + ']<\/a>&nbsp;&nbsp; ';
+                        div.innerHTML += '<a href="search.php?keywords='+tags[i].word+'" style="color:#477580; text-decoration:none; font-size:16px;font-weight:550;margin-right:15px;">' +tags[i].word + '[' + tags[i].count + ']<\/a>&nbsp;&nbsp; ';
                       }
                     }
                     catch (e) { alert(e); }

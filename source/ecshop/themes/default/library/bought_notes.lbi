@@ -1,25 +1,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--购买记录 START-->
      <div class="box">
-     <div class="box_1">
-      <h3><span class="text">{$lang.bought_notes}</span>({$lang.later_bought_amounts}<font class="f1">{$pager.record_count}</font>)</h3>
-      <div class="boxCenterList">
+     <div class="box_1" style="border: none;">
+      <h2 class="good_desc" style="border-bottom: 1px solid #e6e6e6;">{$lang.bought_notes}<span style="font-size:14px;margin-left:10px">( { $lang.later_bought_amounts}
+      <font class="f1">{$pager.record_count}</font>  )</span></h2>
+      <div class="boxCenterList" style="padding:15px;padding-left:0;">
        <!-- {if $notes} -->
-       <table width="100%" cellpadding="4">
-       <tr style="background:url(images/lineBg.gif) repeat-x left bottom;text-align:center; color:#006bd0; font-weight:bold;"><td width="25%" align="left" style="padding-left:20px">{$lang.username}</td><td width="10%">{$lang.number}</td><td width="45%">{$lang.bought_time}</td><td width="20%">{$lang.order_status}</td></tr>
-       <!-- {foreach from=$notes item=note} -->
-       <tr align="center"><td align="left" style="padding-left:20px"><!-- {if $note.user_name} -->{$note.user_name|escape:html}<!-- {else} -->{$lang.anonymous}<!-- {/if} --></td><td>{$note.goods_number}</td><td>{$note.add_time}</td><td><!--{if $note.order_status}-->{$lang.turnover}<!--{else}-->{$lang.is_cancel}<!--{/if}--></td></tr>
-       <!-- {/foreach} -->
+       <table class="table_goods" width="90%" cellpadding="4" style="margin-left:10px;margin-top:15px">
+         <tr align="center" style="color:rgb(71, 117, 128);">
+          <td width="25%" align="left" style="padding-left:20px;">{$lang.username}</td><td width="10%">{$lang.number}</td><td width="45%">{$lang.bought_time}</td><td width="20%">{$lang.order_status}</td>
+         </tr>
+         <!-- {foreach from=$notes item=note} -->
+         <tr align="center"><td align="left" style="padding-left:20px;margin:10px">
+         <!-- {if $note.user_name} -->{$note.user_name|escape:html}<!-- {else} -->{$lang.anonymous}
+         <!-- {/if} --></td><td>{$note.goods_number}</td><td>{$note.add_time}</td><td>
+            <!--{if $note.order_status}-->{$lang.turnover}<!--{else}-->{$lang.is_cancel}
+         <!--{/if}--></td></tr>
+         <!-- {/foreach} -->
        </table>
         <!--{else}-->
-        {$lang.no_notes}
+        <div style="padding-left:10px;border-bottom:1px dashed #d9d9d9;margin-top:15px">{$lang.no_notes}</div>
         <!--{/if}-->
        <!--翻页 start-->
        <div id="buy_pagebar" class="f_r" style="margin-top:10px">
         <form name="selectPageForm" action="{$smarty.server.PHP_SELF}" method="get">
         <!-- {if $pager.styleid eq 0 } -->
         <div id="buy_pager">
-          {$lang.pager_1}{$pager.record_count}{$lang.pager_2}{$lang.pager_3}{$pager.page_count}{$lang.pager_4} <span> <a href="{$pager.page_first}">{$lang.page_first}</a> <a href="{$pager.page_prev}">{$lang.page_prev}</a> <a href="{$pager.page_next}">{$lang.page_next}</a> <a href="{$pager.page_last}">{$lang.page_last}</a> </span>
+          {$lang.pager_1}{$pager.record_count}{$lang.pager_2}{$lang.pager_3}{$pager.page_count}{$lang.pager_4} 
+          <span> 
+          <a href="{$pager.page_first}" style="color:rgb(71, 117, 128);">{$lang.page_first}</a> 
+          <a href="{$pager.page_prev}" style="color:rgb(71, 117, 128);">{$lang.page_prev}</a> 
+          <a href="{$pager.page_next}" style="color:rgb(71, 117, 128);">{$lang.page_next}</a> 
+          <a href="{$pager.page_last}" style="color:rgb(71, 117, 128);">{$lang.page_last}</a> 
+          </span>
             <!--{foreach from=$pager.search key=key item=item}-->
             <input type="hidden" name="{$key}" value="{$item}" />
             <!--{/foreach}-->

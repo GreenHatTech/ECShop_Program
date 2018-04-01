@@ -201,7 +201,7 @@ function assign_ur_here($cat = 0, $str = '')
                 {
                     $page_title = htmlspecialchars($val['cat_name']) . '_' . $page_title;
                     $args       = array($key => $val['cat_id']);
-                    $ur_here   .= ' <code>&gt;</code> <a href="' . build_uri($type, $args, $val['cat_name']) . '">' .
+                    $ur_here   .= ' <code> / </code> <a href="' . build_uri($type, $args, $val['cat_name']) . '">' .
                                     htmlspecialchars($val['cat_name']) . '</a>';
                 }
             }

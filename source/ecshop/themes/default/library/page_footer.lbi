@@ -91,7 +91,7 @@
       </ul>
     </div>
     <div class="foot-weixin">
-          <div class="weixin-txt">关注demo微信</div>
+          <div class="weixin-txt">WECHAT</div>
           <div class="weixin-pic">
             <img src="images/weixin.jpg">
           </div>
@@ -101,7 +101,7 @@
 <div class="footer-bottom">
   <div class="footer-row">
     <div class="copyright">
-      <p>© 2018 Mama Mio US Inc.</p>
+      <p>© 2018 FANGFEI BEAUTY US Inc.</p>
       <p class="icon copyright-logo"></p>
     </div>
     <div class="footer-utils">
@@ -119,6 +119,9 @@
   <!--底部导航 end-->
   <div class="blank"></div>
 
-
+<style>
+.to_top{width:20px;height:59px;right:60px;position:fixed;bottom:50px;_position:absolute;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-134))}
+</style>
+<a href="#" class="to_top" title="Scroll back to top"><img src="images/back_to_top.png" width="50" height="50" /></a>
  
 
