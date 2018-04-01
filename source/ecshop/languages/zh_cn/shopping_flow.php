@@ -25,7 +25,7 @@ $_LANG['regist_success'] = "恭喜您，%s 账号注册成功!";
 $_LANG['login_success'] = '恭喜！您已经成功登陆本站！';
 
 /* 购物车 */
-$_LANG['update_cart'] = '更新购物车';
+$_LANG['update_cart'] = '更新';
 $_LANG['back_to_cart'] = '返回购物车';
 $_LANG['update_cart_notice'] = '购物车更新成功，请您重新选择您需要的赠品。';
 $_LANG['direct_shopping'] = '不打算登录，直接购买';
@@ -54,13 +54,14 @@ $_LANG['storage_short'] = '库存不足';
 $_LANG['subtotal'] = '小计';
 $_LANG['accessories'] = '配件';
 $_LANG['largess'] = '赠品';
-$_LANG['shopping_money'] = '购物金额小计 %s';
+$_LANG['shopping_money'] = '合计金额 %s';
 $_LANG['than_market_price'] = '比市场价 %s 节省了 %s (%s)';
-$_LANG['your_discount'] = '根据优惠活动<a href="activity.php"><font color=red>%s</font></a>，您可以享受折扣 %s';
+$_LANG['
+'] = '根据优惠活动<a href="activity.php"><font color=red>%s</font></a>，您可以享受折扣 %s';
 $_LANG['no'] = '无';
 $_LANG['not_support_virtual_goods'] = '购物车中存在非实体商品,不支持匿名购买,请登陆后在购买';
 $_LANG['not_support_insure'] = '不支持保价';
-$_LANG['clear_cart'] = '清空购物车';
+$_LANG['clear_cart'] = '清空';
 $_LANG['drop_to_collect'] = '放入收藏夹';
 $_LANG['password_js']['show_div_text'] = '请点击更新购物车按钮';
 $_LANG['password_js']['show_div_exit'] = '关闭';

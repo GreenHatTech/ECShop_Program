@@ -77,7 +77,7 @@ $_LANG['category'] = 'Category';
 $_LANG['brand'] = 'Brand';
 $_LANG['price_min'] = 'Min price';
 $_LANG['price_max'] = 'Max price';
-$_LANG['goods_name'] = 'Name';
+$_LANG['goods_name'] = 'Items';
 $_LANG['goods_attr'] = 'Attribute';
 $_LANG['goods_price_ladder'] = 'Price Ladder';
 $_LANG['ladder_price'] = 'Ladder price';
@@ -729,4 +729,13 @@ $_LANG['label_collection'] = 'my collection';
 $_LANG['article_list'] = 'article list';
 $_LANG['Preferences_price'] = 'Preferences price';
 $_LANG['divided_into'] = 'Into rules';
+/*新增
+--shoppingbag_label  2018.3.28 ---Autda
+*/
+$_LANG['shoppingbag_label'] = 'Shopping Bag';
+/*新增
+--shopping_continue checkout  2018.3.31 ---Autda
+*/
+$_LANG['shopping_continue'] = 'CONTINUE SHOPPING';
+$_LANG['checkout'] = 'CHECKOUT';
 ?>
