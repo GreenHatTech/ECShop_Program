@@ -122,41 +122,77 @@ us/19/Dermalogica_logo-042219.jpg" alt="Dermalogica" class="brandLogos_image">
       </div>
 
 
-      <div class="goods-title" style="text-align:center;font-family: Muli,Helvetica,Arial,sans-serif;">
+
+
+<div class="goods-title" style="text-align:center;font-family: Muli,Helvetica,Arial,sans-serif;">
 Hot commodities:</div>
-      <div class="clearfix goods-wrap hot-goods">
-            <!-- TemplateBeginEditable name="热门商品推荐" -->
-<!-- #BeginLibraryItem "/library/recommend_hot.lbi" -->
+    <!-- {if $hot_goods} -->
+        <!-- {if $cat_rec_sign neq 1} -->
+    <div style="width:1200px;height:700px">
 
- 
-<!-- {if $hot_goods} -->
-<!-- {if $cat_rec_sign neq 1} -->
-<div id="show_hot_area" class="clearfix goodsBox all_mid all_ms">
-  <!-- {/if} -->
-  <!--{foreach from=$hot_goods item=goods}-->
- <a class="goodsItem" href="{$goods.url}"> <div  class="img-box"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></div>
-  <div class="goods-brief">{$goods.brief|truncate:20}</div>
-    <div class="gos-title">{$goods.short_name|escape:html}</div> 
-  <div class="prices">
-      <!-- {if $goods.promote_price neq ""} -->
-    <font class="shop_s">{$lang.promote_price}<b>{$goods.promote_price}</b></font>
-    <!-- {else}-->
-    <font class="shop_s"><b>{$goods.shop_price}</b></font>
-    <!--{/if}-->
-  </div>
-   
 
-  </a>
-  <!--{/foreach}-->
-  <!-- {if $cat_rec_sign neq 1} -->
-  <div class="clear0"></div>
-</div> <div class="clear10"></div>
-<!-- {/if} -->
-<!-- {/if} -->
+        <!-- {/if} -->
+          <!--{foreach from=$hot_goods item=goods}-->
+        <div style="width:580px;display:inline;float:left;margin-left:9px;margin-right:9px;margin-top:20px;border:1px solid #ececec" >
+            <div style=" width:580px;height:384px;">
+                <img style=" width:580px;height:384px;" src="{$goods.thumb}" alt="{$goods.name|escape:html}">
+             </div>
+            <div style="height:270px;box-sizing: border-box;display: block; -webkit-flex-basis: 100%;
+                             -ms-flex-preferred-size: 100%;
+                             flex-basis: 100%;
+                             padding: 48px;">
+                    <h2 style="font-family: Muli,Helvetica,Arial,sans-serif;
+                                   font-size: 24px;
+                                   line-height: 36px;
+                                   color: #2c2d2d;
+                                   font-weight: 300;
+                                   text-transform: uppercase;
+                                   display: block;
+                                   margin: 12px;
+                                       text-align: center;"
+                                  >{$goods.short_name|escape:html}</h2>
+                                  <p style=" font-family: Muli,Helvetica,Arial,sans-serif;
+                                                font-size: 16px;
+                                                line-height: 20px;
+                                                color: #2c2d2d;
+                                                font-weight: 300;
+                                                max-width: 460px;
+                                                display: block;
+                                                margin: 12px auto;
+                                                text-align: center;">Discover the Water Drench collection from Peter Thomas Roth and infuse your skin with a surge of moisture!</p>
+                    <a href="{$goods.url}" style="font-family: Muli,Helvetica,Arial,sans-serif;
+                                      font-size: 14px;
+                                      color: #2c2d2d;
+                                      font-weight: 300;
+                                      text-transform: uppercase;
+                                      background-color: #477580;
+                                      border: 1px solid #477580;
+                                      padding: 9px;
+                                      color: #fff;
+                                      line-height: 20px;
+                                      border-radius: 0;
+                                      display: inline-block;
+                                      cursor: pointer;
+                                      text-align: center;
+                                      -webkit-box-sizing: border-box;
+                                      box-sizing: border-box;
+                                      display: block;
+                                      margin-top: 40px;
+                                      margin-left: 150px;
 
- <!-- #EndLibraryItem -->
-<!-- TemplateEndEditable -->
-      </div>
+                                      margin-right: 150px;">SHOP NOW</a>
+            </div>
+        </div>
+        <!--{/foreach}-->
+          <!-- {if $cat_rec_sign neq 1} -->
+         <div class="clear0"></div>
+         </div> <div class="clear10"></div>
+         <!-- {/if} -->
+         <!-- {/if} -->
+    </div>
+
+
+
 
     </div>
   </div>

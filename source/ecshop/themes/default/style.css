@@ -641,7 +641,7 @@ position:absolute; top:0px; right:0px;}
 	   .goodsItem font.f1{font-family:Tahoma;color:#A51F1C; font-size:12px;}
 	   .goodsItem_f{ background:none}
 	   .market_s,.market{text-decoration:line-through; color:#999999; font-size:12px;}
-       .shop_s{color:#A51F1C; font-size:12px}
+       .shop_s{color:#A51F1C; font-size:18px}
 	   .shop_s b{ font-size:12px;}
 	   .prices{ line-height:25px; color:#999999;}
 	   
@@ -916,12 +916,12 @@ a, abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, c
 .goods-wrap .goods-leftad{width: 230px; height: 555px; float: left;}
 .goods-wrap .goods-right{width: 970px; float: left;}
 .goods-wrap .all_ms{border:none;}
-.indexpage .goods-wrap .goodsItem{width: 200px;height: 380px;  background: #fff; margin: 0 0 12px 12px; display: block;}
+.indexpage .goods-wrap .goodsItem{width: 260px;height: 420px;  background: #fff; margin: 0 0 12px 12px; display: block;}
 .indexpage .goods-wrap .goodsItem .img-box{width:200px; height: 200px;display:inline}
 .indexpage .goods-wrap .goodsItem .img-box img{max-width: 200px; max-height: 200px; border:none;width:200px;height:200px;display:inline}
-.indexpage .goods-wrap .goodsItem .goods-brief{font-size: 14px; color: #363636;width:200px;height:320px;display:inline}
-.indexpage .goods-wrap .goodsItem .gos-title{font-family: Muli,Helvetica,Arial,sans-serif;font-size: 14px; color: #989898;width:200px;}
-.indexpage .goods-wrap .goodsItem  .shop_s b{font-family: Muli,Helvetica,Arial,sans-serif;color: #2c2d2d; font-size: 14px;width:200px;}
+.indexpage .goods-wrap .goodsItem .goods-brief{font-size: 14px; color: #363636;width:250px;height:320px;display:inline}
+.indexpage .goods-wrap .goodsItem .gos-title{font-family: Muli,Helvetica,Arial,sans-serif;font-size: 14px; color: #989898;width:250px;}
+.indexpage .goods-wrap .goodsItem  .shop_s b{font-family: Muli,Helvetica,Arial,sans-serif;color: #2c2d2d; font-size: 14px;width:250px;}
 .indexpage .goods-wrap.hot-goods{width: 1200px; height: 370px; }
 .indexpage .goods-wrap.hot-goods .goodsItem{margin: 0 12px 0 0;}
 .indexpage .goods-wrap.hot-goods .goodsItem:nth-child(5n){margin: 0;}
