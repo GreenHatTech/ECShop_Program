@@ -1,0 +1,67 @@
+.accountSettingsCard_formFieldset .date_select {
+	padding-left: 0px;
+	padding-right: 0px;
+	border: none;
+	background-color: transparent;
+}
+
+.accountSettingsCard_formFieldset .date_select select {
+	webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 12px;
+    padding-right: 12px;
+    float: left;
+    width: 20%;
+    margin-bottom: 24px;
+    height: 48px;
+    border: 1px solid #e6e6e6;
+    margin-right: 10px;
+}
+
+.accountSettingsCard_formFieldset .input_radio {
+	padding-left: 0px;
+	padding-right: 0px;
+	border: none;
+	background-color: transparent;
+	font-size: 15px;
+	height: auto;
+
+}
+
+.accountSettingsCard_formFieldset .input_radio input {
+    margin: 0 0px 0 0;
+    display: inline-block;
+    cursor: pointer;
+    height: auto;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.accountSettingsCard_formFieldset .input_radio span {
+	vertical-align: middle;
+    margin-right: 10px;
+}
+
+.bouns_sn_input {
+	line-height: 20px;
+    color: #2c2d2d;
+    font-weight: 300;
+    font-size: 16px;
+    border: 1px solid #e6e6e6;
+    border-radius: 0;
+    padding: 11px;
+    background-color: #fff;
+    outline: none;
+    border-top-right-radius: 0!important;
+    border-bottom-right-radius: 0!important;
+    margin-right: 0;
+    margin-bottom: 12px;
+    height: 40px;
+    width: auto;
+}
+
+.pagebar .page_now {
+    color: #FFFFFF;
+    background: #477580;
+}

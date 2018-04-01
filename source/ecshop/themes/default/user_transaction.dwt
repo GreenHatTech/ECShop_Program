@@ -10,175 +10,217 @@
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+
+<link href="{$ecs_themes_path}/css/account-1a49356ad1.css" rel="stylesheet" type="text/css" />
+<link href="{$ecs_themes_path}/css/screen-1c23e8a1ad.css" rel="stylesheet" type="text/css" />
+<link href="{$ecs_themes_path}/css/user_info.css" rel="stylesheet" type="text/css" />
+
 {* 包含脚本文件 *}
 {insert_scripts files='common.js,user.js,transport.js'}
 </head>
 <body>
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
-<!--当前位置 start-->
-<div class="block box">
- <div id="ur_here">
-  <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
- </div>
-</div>
-<!--当前位置 end-->
-<div class="blank"></div>
-<div class="block clearfix userpage">
-  <!--left start-->
-  <div class="AreaL">
-    <div class="box">
-     <div class="box_1">
-      <div class="userCenterBox">
-        <!-- #BeginLibraryItem "/library/user_menu.lbi" --><!-- #EndLibraryItem -->
-      </div>
-     </div>
-    </div>
-  </div>
-  <!--left end-->
-  <!--right start-->
-  <div class="AreaR">
-    <div class="box">
-     <div class="box_1">
-      <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
-         <!-- 用户信息界面 start-->
-         <!--{if $action eq 'profile'}-->
-         {insert_scripts files='utils.js'}
-        <script type="text/javascript">
+
+<div class="blank" style="height: 15px;"></div>
+
+<section class="page-container">
+  <div class="primary-wrap column-row">
+    <section class="middle-rail column-span24">
+      <div class="myAccountWrapper">
+        <div class="myAccount js-myAccount-wrapper">
+          <!-- 当前位置 start -->
+          <div class="myAccountSection_breadcrumbs breadcrumbs"> 
+           <ul class="breadcrumbs_container"> 
+            <li class="breadcrumbs_item">{$ur_here} </li>
+           </ul> 
+          </div>
+          <!-- 当前位置 end -->
+ 
+          <!--用户欢迎语部分 start -->
+          <div class="myAccountSection_header">
+            <div class="myAccountSection_header_pageTitle">
+              <!--{if $action eq 'profile'}-->
+              <p class="myAccountSection_header_title">{$lang.label_profile}</p>
+              <!-- {elseif $action eq 'bonus'} -->
+              <p class="myAccountSection_header_title">{$lang.label_bonus}</p>
+              <!-- {elseif $action eq 'order_list'} -->
+              <p class="myAccountSection_header_title">{$lang.label_order}</p>
+              <!-- {elseif $action eq 'track_packages'} -->
+              <p class="myAccountSection_header_title">{$lang.label_track_packages}</p>
+              <!-- {elseif $action eq 'order_detail'} -->
+              <p class="myAccountSection_header_title">{$lang.order_detail}</p>
+              <!--{/if}-->
+            </div>
+            <div class="myAccountSection_header_buttons">
+              <a title="{$lang.user_logout}" href="user.php?act=logout" data-e2e="logoutButton" class="myAccount_logOutButton js-tag-sign-out" rel="nofollow">{$lang.user_logout}</a>
+            </div>
+          </div>
+          <!--用户欢迎语部分 end -->
+
+
+          <!-- 用户信息界面 start-->
+          <!--{if $action eq 'profile'}-->
+          {insert_scripts files='utils.js'}
+          <script type="text/javascript">
           {foreach from=$lang.profile_js item=item key=key}
             var {$key} = "{$item}";
           {/foreach}
-        </script>
-      <h5><span>{$lang.profile}</span></h5>
-      <div class="blank"></div>
-     <form name="formEdit" action="user.php" method="post" onSubmit="return userEdit()">
-      <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
-                <tr>
-                  <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.birthday}： </td>
-                  <td width="72%" align="left" bgcolor="#FFFFFF"> {html_select_date field_order=YMD prefix=birthday start_year=-60 end_year=+1 display_days=true month_format=%m day_value_format=%02d time=$profile.birthday} </td>
-                </tr>
-                <tr>
-                  <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.sex}： </td>
-                  <td width="72%" align="left" bgcolor="#FFFFFF"><input type="radio" name="sex" value="0" {if $profile.sex==0}checked="checked"{/if} />
-                    {$lang.secrecy}&nbsp;&nbsp;
+          </script>
+
+          <div class="myAccountSection_accountSettings"> 
+           <div class="accountSettingsCard_row"> 
+            <div class="accountSettingsCard_wrapper"> 
+             <div class="accountSettingsCard"> 
+              <form id="accountSettingsForm" class="accountSettingsCard_form" name="formEdit" action="user.php" method="post" onSubmit="return userEdit()"> 
+               <fieldset class="accountSettingsCard_formFieldset"> 
+                <div class="accountSettingsCard_formRow"> 
+                 <label for="" class="accountSettingsCard_formLabel">{$lang.birthday}:</label> 
+                 <div class="sessioncamexclude accountSettingsCard_formField date_select">
+                   {html_select_date field_order=YMD prefix=birthday start_year=-60 end_year=+1 display_days=true month_format=%m day_value_format=%02d time=$profile.birthday}
+                 </div>
+                </div> 
+                <div class="accountSettingsCard_formRow"> 
+                 <label for="sex" class="accountSettingsCard_formLabel">{$lang.sex}:</label> 
+                 <div class="sessioncamexclude accountSettingsCard_formField input_radio">
+                  <input class="" type="radio" name="sex" value="0" {if $profile.sex==0}checked="checked"{/if} />
+                    <span>{$lang.secrecy}&nbsp;&nbsp;</span>
                     <input type="radio" name="sex" value="1" {if $profile.sex==1}checked="checked"{/if} />
-                    {$lang.male}&nbsp;&nbsp;
+                    <span>{$lang.male}&nbsp;&nbsp;</span>
                     <input type="radio" name="sex" value="2" {if $profile.sex==2}checked="checked"{/if} />
-                  {$lang.female}&nbsp;&nbsp; </td>
-                </tr>
-                <tr>
-                  <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.email}： </td>
-                  <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" value="{$profile.email}" size="25" class="inputBg" /><span style="color:#FF0000"> *</span></td>
-                </tr>
-		{foreach from=$extend_info_list item=field}
-		<!-- {if $field.id eq 6} -->
-		<tr>
-		  <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.passwd_question}：</td>
-		  <td width="72%" align="left" bgcolor="#FFFFFF">
-		  <select name='sel_question'>
-		  <option value='0'>{$lang.sel_question}</option>
-		  {html_options options=$passwd_questions selected=$profile.passwd_question}
-		  </select>
-		  </td>
-		</tr>
-		<tr>
-		  <td width="28%" align="right" bgcolor="#FFFFFF" <!-- {if $field.is_need} -->id="passwd_quesetion"<!--{/if}-->>{$lang.passwd_answer}：</td>
-		  <td width="72%" align="left" bgcolor="#FFFFFF">
-		  <input name="passwd_answer" type="text" size="25" class="inputBg" maxlengt='20' value="{$profile.passwd_answer}"/><!-- {if $field.is_need} --><span style="color:#FF0000"> *</span><!-- {/if} -->
-		  </td>
-		</tr>
-		<!-- {else} -->
-		<tr>
-			<td width="28%" align="right" bgcolor="#FFFFFF" <!-- {if $field.is_need} -->id="extend_field{$field.id}i"<!--{/if}-->>{$field.reg_field_name}：</td>
-			<td width="72%" align="left" bgcolor="#FFFFFF">
-			<input name="extend_field{$field.id}" type="text" class="inputBg" value="{$field.content}"/><!-- {if $field.is_need} --><span style="color:#FF0000"> *</span><!-- {/if} -->
-			</td>
-		</tr>
-		<!-- {/if} -->
-		{/foreach}
-                <tr>
-                  <td colspan="2" align="center" bgcolor="#FFFFFF"><input name="act" type="hidden" value="act_edit_profile" />
-                    <input name="submit" type="submit" value="{$lang.confirm_edit}" class="bnt_blue_1" style="border:none;" />
-                  </td>
-                </tr>
-       </table>
-    </form>
-     <form name="formPassword" action="user.php" method="post" onSubmit="return editPassword()" >
-     <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
-        <tr>
-          <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.old_password}：</td>
-          <td width="76%" align="left" bgcolor="#FFFFFF"><input name="old_password" type="password" size="25"  class="inputBg" /></td>
-        </tr>
-        <tr>
-          <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.new_password}：</td>
-          <td align="left" bgcolor="#FFFFFF"><input name="new_password" type="password" size="25"  class="inputBg" /></td>
-        </tr>
-        <tr>
-          <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.confirm_password}：</td>
-          <td align="left" bgcolor="#FFFFFF"><input name="comfirm_password" type="password" size="25"  class="inputBg" /></td>
-        </tr>
-        <tr>
-          <td colspan="2" align="center" bgcolor="#FFFFFF"><input name="act" type="hidden" value="act_edit_password" />
-            <input name="submit" type="submit" class="bnt_blue_1" style="border:none;" value="{$lang.confirm_edit}" />
-          </td>
-        </tr>
-      </table>
-    </form>
+                    <span>{$lang.female}&nbsp;&nbsp; </span>
+                  </div>
+                </div> 
+                <div class="accountSettingsCard_formRow"> 
+                 <label for="email" class="accountSettingsCard_formLabel">{$lang.email}:*</label> 
+                 <input name="email" type="text" class="accountSettingsCard_formField" value="{$profile.email}" /> 
+                </div> 
+                {foreach from=$extend_info_list item=field}
+                <!-- {if $field.id eq 6} -->
+                <div class="accountSettingsCard_formRow"> 
+                 <label for="sel_question" class="accountSettingsCard_formLabel">{$lang.passwd_question}:</label> 
+                 <div class="sessioncamexclude accountSettingsCard_formField date_select">
+                   <select name='sel_question' style="width:100%">
+                    <option value='0'>{$lang.sel_question}</option>
+                    {html_options options=$passwd_questions selected=$profile.passwd_question}
+                    </select>
+                 </div>
+                </div> 
+                
+                <div class="accountSettingsCard_formRow"> 
+                 <label for="passwd_answer" class="accountSettingsCard_formLabel" <!-- {if $field.is_need} -->id="passwd_quesetion"<!--{/if}-->>{$lang.passwd_answer}:<!-- {if $field.is_need} -->*<!-- {/if} --></label> 
+                 <input name="passwd_answer" type="text" class="accountSettingsCard_formField" value="{$profile.passwd_answer}" /> 
+                </div>
+
+                <!-- {else} -->
+                <div class="accountSettingsCard_formRow"> 
+                 <label for="extend_field{$field.id}" class="accountSettingsCard_formLabel" <!-- {if $field.is_need} -->id="extend_field{$field.id}i"<!--{/if}-->>{$field.reg_field_name}:<!-- {if $field.is_need} -->*<!-- {/if} --></label> 
+                 <input name="extend_field{$field.id}" type="text" class="accountSettingsCard_formField" value="{$field.content}" /> 
+                </div> 
+                <!-- {/if} -->
+                {/foreach}
+                <input name="act" type="hidden" value="act_edit_profile" />
+                <input name="submit" type="submit" value="{$lang.confirm_edit}" class="accountSettingsCard_submitButton" /> 
+               </fieldset> 
+              </form> 
+             </div> 
+            </div> 
+           </div> 
+          </div>
+
+          <div class="myAccountSection_accountSettings"> 
+           <div class="accountSettingsCard_row"> 
+            <div class="accountSettingsCard_wrapper"> 
+             <div class="accountSettingsCard"> 
+              <form id="accountSettingsForm" class="accountSettingsCard_form" name="formPassword" action="user.php" method="post" onSubmit="return editPassword()"> 
+               <fieldset class="accountSettingsCard_formFieldset"> 
+                <div class="accountSettingsCard_formRow"> 
+                 <label for="old_password" class="accountSettingsCard_formLabel">{$lang.old_password}:</label> 
+                 <input name="old_password" type="password" class="accountSettingsCard_formField" value="" /> 
+                </div> 
+
+                <div class="accountSettingsCard_formRow"> 
+                 <label for="new_password" class="accountSettingsCard_formLabel">{$lang.new_password}:</label> 
+                 <input name="new_password" type="password" class="accountSettingsCard_formField" value="" /> 
+                </div> 
+
+                <div class="accountSettingsCard_formRow"> 
+                 <label for="comfirm_password" class="accountSettingsCard_formLabel">{$lang.confirm_password}:</label> 
+                 <input name="comfirm_password" type="password" class="accountSettingsCard_formField" value="" /> 
+                </div> 
+                
+                <input name="act" type="hidden" value="act_edit_password" />
+                <input name="submit" type="submit" value="{$lang.confirm_edit}" class="accountSettingsCard_submitButton" /> 
+               </fieldset> 
+              </form> 
+             </div> 
+            </div> 
+           </div> 
+          </div>
+
      <!--{/if}-->
      <!--#用户信息界面 end-->
+
      <!-- {if $action eq 'bonus'} 用户的红包列表 start-->
       <script type="text/javascript">
         {foreach from=$lang.profile_js item=item key=key}
           var {$key} = "{$item}";
         {/foreach}
       </script>
-      <h5><span>{$lang.label_bonus}</span></h5>
-      <div class="blank"></div>
-       <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
-        <tr>
-          <th align="center" bgcolor="#FFFFFF">{$lang.bonus_sn}</th>
-          <th align="center" bgcolor="#FFFFFF">{$lang.bonus_name}</th>
-          <th align="center" bgcolor="#FFFFFF">{$lang.bonus_amount}</th>
-          <th align="center" bgcolor="#FFFFFF">{$lang.min_goods_amount}</th>
-          <th align="center" bgcolor="#FFFFFF">{$lang.bonus_end_date}</th>
-          <th align="center" bgcolor="#FFFFFF">{$lang.bonus_status}</th>
-        </tr>
-        <!-- {if $bonus} -->
-        <!--{foreach from=$bonus item=item}-->
-        <tr>
-          <td align="center" bgcolor="#FFFFFF">{$item.bonus_sn|default:N/A}</td>
-          <td align="center" bgcolor="#FFFFFF">{$item.type_name}</td>
-          <td align="center" bgcolor="#FFFFFF">{$item.type_money}</td>
-          <td align="center" bgcolor="#FFFFFF">{$item.min_goods_amount}</td>
-          <td align="center" bgcolor="#FFFFFF">{$item.use_enddate}</td>
-          <td align="center" bgcolor="#FFFFFF">{$item.status}</td>
-        </tr>
-        <!--{/foreach}-->
-        <!-- {else} -->
-        <tr>
-          <td colspan="6" bgcolor="#FFFFFF">{$lang.user_bonus_empty}</td>
-        </tr>
-        <!-- {/if} -->
-      </table>
-      <div class="blank5"></div>
-      <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
-      <div class="blank5"></div>
-      <h5><span>{$lang.add_bonus}</span></h5>
-      <div class="blank"></div>
-      <form name="addBouns" action="user.php" method="post" onSubmit="return addBonus()">
-        <div style="padding: 15px;">
-        {$lang.bonus_number}
-          <input name="bonus_sn" type="text" size="30" class="inputBg" />
-          <input type="hidden" name="act" value="act_add_bonus" class="inputBg" />
-          <input type="submit" class="bnt_blue_1" style="border:none;" value="{$lang.add_bonus}" />
-        </div>
-      </form>
-    <!-- {/if} -->
-   <!--用户红包结束-->
+
+      <div class="myAccountSection_yourOrders" > 
+           <p class="myAccountSection_yourOrders_title">{$lang.label_bonus}</p> 
+         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+          <tr>
+            <th align="center" bgcolor="#FFFFFF">{$lang.bonus_sn}</th>
+            <th align="center" bgcolor="#FFFFFF">{$lang.bonus_name}</th>
+            <th align="center" bgcolor="#FFFFFF">{$lang.bonus_amount}</th>
+            <th align="center" bgcolor="#FFFFFF">{$lang.min_goods_amount}</th>
+            <th align="center" bgcolor="#FFFFFF">{$lang.bonus_end_date}</th>
+            <th align="center" bgcolor="#FFFFFF">{$lang.bonus_status}</th>
+          </tr>
+          <!-- {if $bonus} -->
+          <!--{foreach from=$bonus item=item}-->
+          <tr>
+            <td align="center" bgcolor="#FFFFFF">{$item.bonus_sn|default:N/A}</td>
+            <td align="center" bgcolor="#FFFFFF">{$item.type_name}</td>
+            <td align="center" bgcolor="#FFFFFF">{$item.type_money}</td>
+            <td align="center" bgcolor="#FFFFFF">{$item.min_goods_amount}</td>
+            <td align="center" bgcolor="#FFFFFF">{$item.use_enddate}</td>
+            <td align="center" bgcolor="#FFFFFF">{$item.status}</td>
+          </tr>
+          <!--{/foreach}-->
+          <!-- {else} -->
+          <tr>
+            <td colspan="6" bgcolor="#FFFFFF">{$lang.user_bonus_empty}</td>
+          </tr>
+          <!-- {/if} -->
+        </table>
+
+        <div class="blank5"></div>
+        <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+
+      </div>
+      
+      <div class="myAccountSection_yourOrders" > 
+         <p class="myAccountSection_yourOrders_title">{$lang.add_bonus}</p> 
+        <form name="addBouns" action="user.php" method="post" onSubmit="return addBonus()">
+          <div style="padding: 15px;">
+          {$lang.bonus_number}
+            <input name="bonus_sn" type="text" size="30" class="bouns_sn_input" />
+            <input type="hidden" name="act" value="act_add_bonus" class="" />
+            <input type="submit" class="bnt_blue_1" style="border:none;background: #477580" value="{$lang.add_bonus}" />
+          </div>
+        </form>
+      </div>
+      <!-- {/if} -->
+      <!--用户红包结束-->
+
+
       <!--#订单列表界面 start-->
        <!-- {if $action eq 'order_list'} -->
-       <h5><span>{$lang.label_order}</span></h5>
-       <div class="blank"></div>
-       <table width="100%" border="0" cellpadding="5" cellspacing="1">
+       <div class="myAccountSection_yourOrders" > 
+         <p class="myAccountSection_yourOrders_title">{$lang.label_order}</p> 
+        <table width="100%" border="0" cellpadding="5" cellspacing="1">
           <thead bgcolor="#757575" style="color:#fff">
             <tr align="center">
               <td>{$lang.order_number}</td>
@@ -211,10 +253,11 @@
           </table>
         <div class="blank5"></div>
        <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
-       <!-- {if $no_bind_erp == 1} -->
-       <div class="blank5"></div>
-       <h5><span>{$lang.merge_order}</span></h5>
-       <div class="blank"></div>
+      </div>
+
+      <!-- {if $no_bind_erp == 1} -->
+      <div class="myAccountSection_yourOrders" > 
+         <p class="myAccountSection_yourOrders_title">{$lang.add_bonus}</p> 
         <script type="text/javascript">
         {foreach from=$lang.merge_order_js item=item key=key}
           var {$key} = "{$item}";
@@ -238,62 +281,66 @@
 
                 </select></td>
               <td width="36%" bgcolor="#ffffff">&nbsp;<input name="act" value="merge_order" type="hidden" />
-              <input type="submit" name="Submit"  class="bnt_blue_1" style="border:none;"  value="{$lang.merge_order}" /></td>
+              <input type="submit" name="Submit"  class="bnt_blue_1" style="border:none;background:#477580;"  value="{$lang.merge_order}" /></td>
             </tr>
-            <tr>
+            <tr style="border-bottom: none;">
               <td bgcolor="#ffffff">&nbsp;</td>
               <td colspan="4" align="left" bgcolor="#ffffff">{$lang.merge_order_notice}</td>
             </tr>
           </table>
         </form>
+        </div>
         <!-- {/if} -->
-       <!--{/if}-->
-      <!--#订单列表界面 end-->
-       <!--#包裹状态查询界面 start-->
-      <!-- {if $action eq 'track_packages'} -->
-        <h5><span>{$lang.label_track_packages}</span></h5>
-        <div class="blank"></div>
-        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="order_table">
-        <tr align="center">
-          <td bgcolor="#ffffff">{$lang.order_number}</td>
-          <td bgcolor="#ffffff">{$lang.handle}</td>
-        </tr>
-        <!--{foreach from=$orders item=item}-->
-        <tr>
-          <td align="center" bgcolor="#ffffff"><a href="user.php?act=order_detail&order_id={$item.order_id}">{$item.order_sn}</a></td>
-          <td align="center" bgcolor="#ffffff"><a href="user.php?act=delivery_info&order_sn={$item.order_sn}">{$lang.delivery_status}</a></td>
-        </tr>
-        <!--{/foreach}-->
-      </table>
-      <script>
-      var query_status = '{$lang.query_status}';
-      var ot = document.getElementById('order_table');
-      for (var i = 1; i < ot.rows.length; i++)
-      {
-        var row = ot.rows[i];
-        var cel = row.cells[1];
-        cel.getElementsByTagName('a').item(0).innerHTML = query_status;
-      }
-      </script>
-      <div class="blank5"></div>
-      <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
       <!--{/if}-->
-    <!--#包裹状态查询界面 end-->
-     <!-- ==========订单详情页面,包括：订单状态，商品列表，费用总计，收货人信息，支付方式，其它信息========== -->
+      <!--#订单列表界面 end-->
+
+      <!--#包裹状态查询界面 start-->
+      <!-- {if $action eq 'track_packages'} -->
+        <div class="myAccountSection_yourOrders" > 
+         <p class="myAccountSection_yourOrders_title">{$lang.label_track_packages}</p> 
+         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="order_table">
+          <tr align="center">
+            <td bgcolor="#ffffff">{$lang.order_number}</td>
+            <td bgcolor="#ffffff">{$lang.handle}</td>
+          </tr>
+          <!--{foreach from=$orders item=item}-->
+          <tr>
+            <td align="center" bgcolor="#ffffff"><a href="user.php?act=order_detail&order_id={$item.order_id}">{$item.order_sn}</a></td>
+            <td align="center" bgcolor="#ffffff"><a href="user.php?act=delivery_info&order_sn={$item.order_sn}">{$lang.delivery_status}</a></td>
+          </tr>
+          <!--{/foreach}-->
+        </table>
+        <script>
+        var query_status = '{$lang.query_status}';
+        var ot = document.getElementById('order_table');
+        for (var i = 1; i < ot.rows.length; i++)
+        {
+          var row = ot.rows[i];
+          var cel = row.cells[1];
+          cel.getElementsByTagName('a').item(0).innerHTML = query_status;
+        }
+        </script>
+        <div class="blank5"></div>
+        <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+       </div>
+       <!--{/if}-->
+      <!--#包裹状态查询界面 end-->
+
+      <!-- ==========订单详情页面,包括：订单状态，商品列表，费用总计，收货人信息，支付方式，其它信息========== -->
       <!--{if $action eq order_detail} -->
-        <h5><span>{$lang.order_status}</span></h5>
-        <div class="blank"></div>
-         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+      <div class="myAccountSection_yourOrders" > 
+         <p class="myAccountSection_yourOrders_title">{$lang.order_status}</p> 
+        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
         <tr>
           <td width="15%" align="right" bgcolor="#ffffff">{$lang.detail_order_sn}：</td>
           <td align="left" bgcolor="#ffffff">{$order.order_sn}
           <!-- {if $order.extension_code eq "group_buy"} -->
-					<a href="./group_buy.php?act=view&id={$order.extension_id}" class="f6"><strong>{$lang.order_is_group_buy}</strong></a>
-					<!-- {elseif $order.extension_code eq "exchange_goods"} -->
-					<a href="./exchange.php?act=view&id={$order.extension_id}" class="f6"><strong>{$lang.order_is_exchange}</strong></a>
-					<!--{/if}-->  
-					<a href="user.php?act=message_list&order_id={$order.order_id}" class="f6">[{$lang.business_message}]</a>
-					</td>
+          <a href="./group_buy.php?act=view&id={$order.extension_id}" class="f6"><strong>{$lang.order_is_group_buy}</strong></a>
+          <!-- {elseif $order.extension_code eq "exchange_goods"} -->
+          <a href="./exchange.php?act=view&id={$order.extension_id}" class="f6"><strong>{$lang.order_is_exchange}</strong></a>
+          <!--{/if}-->  
+          <a href="user.php?act=message_list&order_id={$order.order_id}" class="f6">[{$lang.business_message}]</a>
+          </td>
         </tr>
         <tr>
           <td align="right" bgcolor="#ffffff">{$lang.detail_order_status}：</td>
@@ -329,28 +376,13 @@
           <td align="right" bgcolor="#ffffff">{$lang.consignment}：</td>
           <td align="left" bgcolor="#ffffff"><a href="user.php?act=delivery_info&order_sn={$order.order_sn}" target="_blank">{$order.invoice_no}</a></td>
         </tr>
-        
-        <!-- 快递100部分开始 -->
-        </table>
-        <br/>
-        <h5><span>物流跟踪</span></h5>
-        <div class="blank"></div>
-        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
-        <tr>
-            <td bgcolor="#ffffff"><div id="retData"></div></td>
-        </tr>
-        </table>
-        <!-- 快递100部分结束 -->
-
-        <!--{/if}-->
-
+        <!-- {/if} -->
         <!--{if $order.to_buyer}-->
         <tr>
           <td align="right" bgcolor="#ffffff">{$lang.detail_to_buyer}：</td>
           <td align="left" bgcolor="#ffffff">{$order.to_buyer}</td>
         </tr>
         <!-- {/if} -->
-
         <!--{if $virtual_card}-->
         <tr>
           <td align="right" bgcolor="#ffffff">{$lang.virtual_card_info}：</td>
@@ -365,15 +397,29 @@
           </td>
         </tr>
         <!--{/if}-->
-      </table>
-        <div class="blank"></div>
-        <h5><span>{$lang.goods_list}</span>
-        <!-- {if $allow_to_cart} -->
+        </table>
+      </div>
+
+       <!-- 快递100部分开始 -->
+       <!-- {if $order.invoice_no}-->
+      <div class="myAccountSection_yourOrders" > 
+         <p class="myAccountSection_yourOrders_title">{$lang.delivery_info}</p> 
+        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+        <tr>
+            <td bgcolor="#ffffff"><div id="retData"></div></td>
+        </tr>
+        </table>
+      </div>
+      <!--{/if}-->
+      <!-- 快递100部分结束 -->
+
+      <!-- 商品列表 start -->
+      <div class="myAccountSection_yourOrders" > 
+         <p class="myAccountSection_yourOrders_title">{$lang.goods_list}</p> 
+         <!-- {if $allow_to_cart} -->
         <a href="javascript:;" onclick="returnToCart({$order.order_id})" class="f6">{$lang.return_to_cart}</a>
         <!-- {/if} -->
-        </h5>
-        <div class="blank"></div>
-         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
           <tr>
             <th width="23%" align="center" bgcolor="#ffffff">{$lang.goods_name}</th>
             <th width="29%" align="center" bgcolor="#ffffff">{$lang.goods_attr}</th>
@@ -414,10 +460,13 @@
             </td>
           </tr>
         </table>
-         <div class="blank"></div>
-        <h5><span>{$lang.fee_total}</span></h5>
-        <div class="blank"></div>
-         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+      </div>
+      <!-- 商品列表 end -->
+       
+      <!-- 费用总计 开始 -->
+      <div class="myAccountSection_yourOrders" > 
+         <p class="myAccountSection_yourOrders_title">{$lang.fee_total}</p> 
+        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
           <tr>
             <td align="right" bgcolor="#ffffff">
                 {$lang.goods_all_price}<!-- {if $order.extension_code eq "group_buy"} -->{$lang.gb_deposit}<!-- {/if} -->: {$order.formated_goods_amount}
@@ -475,9 +524,13 @@
           </tr>
     <!--{/if}-->
         </table>
-         <div class="blank"></div>
-        <h5><span>{$lang.consignee_info}</span></h5>
-        <div class="blank"></div>
+      </div>
+      <!-- 费用总计、结束 -->
+
+
+      <!-- 收货人信息 开始 -->
+      <div class="myAccountSection_yourOrders" > 
+         <p class="myAccountSection_yourOrders_title">{$lang.consignee_info}</p> 
          <!-- {if $order.allow_update_address gt 0} -->
           <form action="user.php" method="post" name="formAddress" id="formAddress">
            <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
@@ -505,9 +558,9 @@
                 <td align="left" bgcolor="#ffffff"><input name="mobile" type="text"  class="inputBg" value="{$order.mobile|escape}" size="25" /></td>
               </tr>
               <tr>
-                <td colspan="4" align="center" bgcolor="#ffffff"><input type="hidden" name="act" value="save_order_address" />
+                <td colspan="4" align="center" bgcolor="#ffffff" style="text-align: center;"><input type="hidden" name="act" value="save_order_address" />
                   <input type="hidden" name="order_id" value="{$order.order_id}" />
-                  <input type="submit" class="bnt_blue_2" value="{$lang.update_address}"  />
+                  <input type="submit" class="bnt_blue_2" value="{$lang.update_address}" style="background: #79a9b4;"  />
                 </td>
               </tr>
             </table>
@@ -545,40 +598,47 @@
             <!--{/if}-->
           </table>
           <!-- {/if} -->
-          <div class="blank"></div>
-        <h5><span>{$lang.payment}</span></h5>
-        <div class="blank"></div>
-        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
-                <tr>
-                  <td bgcolor="#ffffff">
-                  {$lang.select_payment}: {$order.pay_name}。{$lang.order_amount}: <strong>{$order.formated_order_amount}</strong><br />
-                  {$order.pay_desc}
-                  </td>
-                </tr>
-                  <tr>
-                  <td bgcolor="#ffffff" align="right">
-                  <!--{if $payment_list}-->
-              <form name="payment" method="post" action="user.php">
-              {$lang.change_payment}:
-              <select name="pay_id">
-                <!--{foreach from=$payment_list item=payment}-->
-                <option value="{$payment.pay_id}">
-                {$payment.pay_name}({$lang.pay_fee}:{$payment.format_pay_fee})
-                </option>
-                <!--{/foreach}-->
-              </select>
-              <input type="hidden" name="act" value="act_edit_payment" />
-              <input type="hidden" name="order_id" value="{$order.order_id}" />
-              <input type="submit" name="Submit" class="submit" value="{$lang.button_submit}" />
-              </form>
-              <!--{/if}-->
-                  </td>
-                </tr>
-              </table>
-        <div class="blank"></div>
-        <h5><span>{$lang.other_info}</span></h5>
-        <div class="blank"></div>
-        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+      </div>
+      <!-- 收货人信息 结束 -->
+
+      
+      <!-- 支付方式 开始 -->
+      <div class="myAccountSection_yourOrders" > 
+         <p class="myAccountSection_yourOrders_title">{$lang.payment}</p> 
+          <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+            <tr>
+              <td bgcolor="#ffffff">
+              {$lang.select_payment}: {$order.pay_name}。{$lang.order_amount}: <strong>{$order.formated_order_amount}</strong><br />
+              {$order.pay_desc}
+              </td>
+            </tr>
+              <tr>
+              <td bgcolor="#ffffff" align="right">
+              <!--{if $payment_list}-->
+          <form name="payment" method="post" action="user.php">
+          {$lang.change_payment}:
+          <select name="pay_id">
+            <!--{foreach from=$payment_list item=payment}-->
+            <option value="{$payment.pay_id}">
+            {$payment.pay_name}({$lang.pay_fee}:{$payment.format_pay_fee})
+            </option>
+            <!--{/foreach}-->
+          </select>
+          <input type="hidden" name="act" value="act_edit_payment" />
+          <input type="hidden" name="order_id" value="{$order.order_id}" />
+          <input type="submit" name="Submit" class="submit" value="{$lang.button_submit}" />
+          </form>
+          <!--{/if}-->
+              </td>
+            </tr>
+          </table>
+      </div>
+      <!-- 支付方式 结束 -->
+
+      <!-- 其他信息 开始 -->
+      <div class="myAccountSection_yourOrders" > 
+         <p class="myAccountSection_yourOrders_title">{$lang.other_info}</p> 
+         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
           <!-- {if $order.shipping_id > 0} -->
           <tr>
             <td width="15%" align="right" bgcolor="#ffffff">{$lang.shipping}：</td>
@@ -639,8 +699,52 @@
             <td colspan="3" align="left" bgcolor="#ffffff">{$order.how_oos_name}</td>
           </tr>
         </table>
+      </div>
+      <!-- 其他信息 结束 -->
+
       <!--{/if} -->
     <!--#订单详情页 end-->
+
+
+
+
+          <!-- 用户菜单部分  -->
+          <!-- #BeginLibraryItem "/library/user_menu2.lbi" --><!-- #EndLibraryItem -->
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+
+
+<!--当前位置 start-->
+<div class="block box">
+ <div id="ur_here">
+  <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+ </div>
+</div>
+<!--当前位置 end-->
+<div class="blank"></div>
+<div class="block clearfix userpage">
+  <!--left start-->
+  <div class="AreaL">
+    <div class="box">
+     <div class="box_1">
+      <div class="userCenterBox">
+        <!-- #BeginLibraryItem "/library/user_menu.lbi" --><!-- #EndLibraryItem -->
+      </div>
+     </div>
+    </div>
+  </div>
+  <!--left end-->
+  <!--right start-->
+  <div class="AreaR">
+    <div class="box">
+     <div class="box_1">
+      <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
+         
+     
     <!--#会员余额 start-->
       <!--{if $action eq "account_raply" || $action eq "account_log" || $action eq "account_deposit" || $action eq "account_detail"} -->
         <script type="text/javascript">
