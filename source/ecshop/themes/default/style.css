@@ -188,7 +188,7 @@ visibility:hidden;
 ==================== */
   /*顶部管理型导航*/
 .clear0{ clear:both; padding:0px; margin:0px;}
-.clear10{clear:both; padding:0px; margin:0px; padding-top:10px;}
+.clear10{clear:both; padding:0px; margin:0px; padding-top:10px;background:#ffffff;}
 .top-bar{height: 40px; background: #90c4d1;}
 .fd_top, .wrap{ width:1200px; margin:auto} 
 .bar-left{ float:left; height:40px; color: #385d66; }
@@ -725,6 +725,7 @@ position:absolute; top:0px; right:0px;}
     padding: 19px 0 15px;
     font-weight: 700;
     text-decoration: none;
+    height: 100%;
 
 }
 .footer-links {
@@ -733,26 +734,23 @@ position:absolute; top:0px; right:0px;}
     background: #ffffff;
 }
 .footer-bottom {
-    background-color: #2e3337;
+    background-color: #f5f5f5;
     padding-top: 30px;
-    color: #ffffff;
+    color: #2c2d2d;
+    padding-left: 40px; 
 }
 .footerSocialLinks {
 
     margin: 8px 20px 0 0;
     float: left;
 }
-.footer-row {
 
-    overflow: hidden;
-
-}
 .footer-row {
 
     clear: both;
     margin-left: auto;
     margin-right: auto;
-    width: 1180px;
+    width: 70%;
 
 }
 .panel-links {
@@ -834,7 +832,6 @@ position:absolute; top:0px; right:0px;}
 
 }
 .panel-links li {
-
     text-align: center;
 
 }
@@ -1358,14 +1355,13 @@ a, abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, c
   .list-pop .txt{ padding-left: 20px; }
 
 .panel-links li {
-
     float: left;
     width: 25%;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing:border-box;
     box-sizing: border-box;
     border-right: 1px solid #999;
-    text-align: center;
-
+    text-align: center;   
 }
 
 .primaryBanner_imageLarge {
@@ -1482,16 +1478,12 @@ html {
 .item__inner {
     border: 1px solid #e6e6e6;
     padding: 10px;
-    width:283px;
-    height:487px;
+    width:260px;
+    height:430px;
     float:left;
-    border:none; 
+    /*border:none; */
     overflow:hidden;
-}
-
-
-div {
-    display: block;
+    margin:5px;
 }
 
 .breadcrumbs_container {
@@ -1499,6 +1491,7 @@ div {
     white-space: nowrap;
     overflow-y: auto;
     margin: 0;
+    font-size: 20px;
 }
 ul {
     padding-left: 0;
@@ -1551,12 +1544,6 @@ html {
     overflow: hidden;
 }
 
-user agent stylesheet
-div {
-    display: block;
-}
-
-
 Inherited from html.no-touch.lang-en_US.js.thg-tracked
 html {
     font-size: 16px;
@@ -1585,6 +1572,7 @@ div {
 }
 
 .productlist .item.brand-dropdown-area, .productlist .item.site-branding, .productlist .item.size-1of3 {
+    float: left;
     max-width: 34%;
 }
 .productlist .item {
@@ -1606,9 +1594,6 @@ div {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 15px 0 0;
-}
-.brand-dropdown-area, .site-branding, .size-1of3 {
-    width: 33.33333%;
 }
 .brand-dropdown-area, .site-branding, .ssl-logo, .unit {
     float: left;
@@ -1701,7 +1686,6 @@ p {
     display: block;
     text-align: center;
 }
-@media screen and (min-width: 700px)
 .listTitle_results {
     padding-left: 10px;
     text-align: right;
@@ -1744,11 +1728,7 @@ p {
     margin-top: 0;
     padding: 0;
 }
-@media screen and (min-width: 700px)
-.listTitle_text.listTitle_text {
-    width: 70%;
-    display: inline;
-}
+
 
 .listTitle {
     display: block;
@@ -1762,7 +1742,7 @@ p {
 }
 .item img {
     max-width: 100%;
-    max-height: 261px;
+    max-height: 100%;
 }
 img {
     vertical-align: bottom;
@@ -1781,3 +1761,71 @@ img {
     width: auto;
 }
 
+.item_price {
+    display: inline-block;
+    width: 50%;
+}
+
+.item-detail-list {
+  max-width: 1200px;
+  min-width: 300px;
+  word-wrap: break-word;
+}
+
+.table_right {
+  float: right;
+}
+
+.goods_counter {
+    float: right;
+    font-size: 20px;
+    font-weight: 300;
+    word-wrap: break-word;
+    line-height: 62px;
+    margin-top: 0;
+    padding-top: 0;
+    text-transform: capitalize;
+    font-family: Muli,Helvetica,Arial,sans-serif;
+}
+.prclist {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.panel-links li a {
+    -webkit-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    display: block;
+    padding: 19px 0 15px;
+    font-weight: bold;
+}
+.footer-row a {
+    color: #477580;
+}
+.footerSocialLinks_list {
+    margin: 0 auto;
+    float: none;
+}
+.footer-row {
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1180px;
+}
+.panel-1{
+  height: 100px;
+}
+a, abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, u, ul, var, video {
+    margin: 0;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}

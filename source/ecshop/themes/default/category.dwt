@@ -11,7 +11,7 @@
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
 <!-- {if $cat_style} -->
-<link href="{$cat_style}" rel="stylesheet" type="text/css" />
+<link href="{$cat_style}" rel="stylesheet" type="texgoods.phpt/css" />
 <!-- {/if} -->
 {* 包含脚本文件 *}
 {insert_scripts files='common.js,global.js,compare.js'}
