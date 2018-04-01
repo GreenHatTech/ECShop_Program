@@ -3,6 +3,54 @@
 <script type="text/javascript">
 var process_request = "{$lang.process_request}";
 </script>
+<style>
+    .nav-row {
+        background-color: #477580;
+        min-width: 1200px;
+        clear: both
+    }
+
+    .nav-main {
+        clear: both;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1180px;
+        text-align:justify;
+    }
+
+    .nav-main > ul {
+        line-height: 0;
+        height: 41px;
+        margin: 0;
+        text-align:justify
+    }
+
+    .nav-main .nav-link {
+        display: inline-block
+
+    }
+
+    .nav-main .nav-link a {
+        display: block;
+        font-family: Muli,Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        text-transform: capitalize;
+      
+    }
+
+    .nav-main .nav-link a:hover {
+        text-decoration: none
+    }
+
+    .nav-main .nav-link > a {
+        font-family: Muli,Helvetica,Arial,sans-serif;
+        font-size: 14.16px;
+        text-transform: uppercase;
+        color: #fff;
+        padding: 6px 13px;
+        line-height: 29px
+    }
+</style>
 <div class="top-bar">
   <div class="fd_top fd_top1">
     <div class="bar-left">
@@ -10,7 +58,7 @@ var process_request = "{$lang.process_request}";
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="?lang=zh_cn">简体</a> 
+        <a href="?lang=zh_cn">简体</a>
         <a href="?lang=zh_tw">繁体</a>
         <a href="?lang=en_us">英文</a>
         <a href="user.php" class="">用户中心</a>
@@ -25,28 +73,7 @@ var process_request = "{$lang.process_request}";
     <div class="logo"><a href="../index.php" name="top"><img src="../images/logo.gif" /></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
-      <ul>
-        <li><a href="../index.php"{if $navigator_list.config.index eq 1} class="cur"{/if}>{$lang.home}</a></li>
-        <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
-        <!-- {if $smarty.foreach.nav_middle_list.last}-->
-        <li><a href="{$nav.url}" 
-        
-          <!-- {if $nav.opennew eq 1} -->
-          target="_blank"
-          <!-- {/if} -->
-          >{$nav.name}</a></li>
-        <!-- {else} -->
-        <li><a href="{$nav.url}" 
-        
-          <!-- {if $nav.opennew eq 1} -->
-          target="_blank"
-          <!-- {/if} -->
-          >{$nav.name}</a></li>
-        <!-- {/if} -->
-        <!-- {if $nav.active eq 1} -->
-        <!-- {/if} -->
-        <!-- {/foreach} -->
-      </ul>
+
       </div>
     </div>
     <div class="serach-box">
@@ -61,4 +88,33 @@ var process_request = "{$lang.process_request}";
     </div>
   </div>
 </div>
-<div class="clear0 "></div>
+<div class="nav-row">
+  <nav class="nav nav-main" data-component="blockNav" data-componentload="helper">
+    <ul>
+                    <li class="nav-link nav-sale"><a href="../index.php"{if $navigator_list.config.index eq 1} class="cur"{/if}>{$lang.home}</a></li>
+                    <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
+                      <!-- {if $smarty.foreach.nav_middle_list.last}-->
+                      <li class="nav-link nav-sale"><a href="{$nav.url}"
+
+                        <!-- {if $nav.opennew eq 1} -->
+                        target="_blank"
+                        <!-- {/if} -->
+                        >{$nav.name}</a></li>
+                      <!-- {else} -->
+                      <li class="nav-link"><a href="{$nav.url}"
+
+                        <!-- {if $nav.opennew eq 1} -->
+                        target="_blank"
+                        <!-- {/if} -->
+                        >{$nav.name}</a></li>
+                      <!-- {/if} -->
+                      <!-- {if $nav.active eq 1} -->
+                      <!-- {/if} -->
+                      <!-- {/foreach} -->
+
+
+    </ul>
+  </nav>
+</div>
+
+<div class="clear0"></div>
