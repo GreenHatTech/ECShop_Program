@@ -37,6 +37,8 @@ $_LANG['label_user_surplus'] = '资金管理';
 $_LANG['label_track_packages'] = '跟踪包裹';
 $_LANG['label_transform_points'] = '积分兑换';
 $_LANG['label_logout'] = '退出';
+/* ning add 20180401 */
+$_LANG['label_user_menu'] = '用户菜单';
 
 /* 会员余额(预付款) */
 $_LANG['add_surplus_log'] = '查看帐户明细';

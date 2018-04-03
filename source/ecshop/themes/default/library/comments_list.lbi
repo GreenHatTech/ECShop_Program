@@ -1,23 +1,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--用户评论 START-->
      <div class="box">
-     <div class="box_1">
-      <h3><span class="text">{$lang.user_comment}</span>({$lang.total}<font class="f1">{$pager.record_count}</font>{$lang.user_comment_num})</h3>
-      <div class="boxCenterList clearfix" style="height:1%;">
-       <ul class="comments">
+      <div class="box_1" style="border: none;">
+      <h2 class="good_desc" style="border-bottom: 1px solid #e6e6e6;">{$lang.user_comment}<span style="font-size:14px;margin-left:10px">( { $lang.total}
+      <font class="f1">{$pager.record_count}</font>{$lang.user_comment_num}  )</span></h2>
+      <div class="boxCenterList clearfix" style="height:1%;padding:15px;padding-left:0">
+       <ul class="comments" style="border:none">
        <!-- {if $comments} -->
        <!-- {foreach from=$comments item=comment} -->
-        <li class="word">
-        <font class="f2"><!-- {if $comment.username} -->{$comment.username|escape:html}<!-- {else} -->{$lang.anonymous}<!-- {/if} --></font> <font class="f3">( {$comment.add_time} )</font><br />
-        <img src="../images/stars{$comment.rank}.gif" alt="{$comment.comment_rank}" />
-        <p>{$comment.content}</p>
-				<!-- {if $comment.re_content} -->
+        <li class="word" style="margin:10px,0,10px,0">
+        <div><img src="../images/stars{$comment.rank}.gif" alt="{$comment.comment_rank}" style="align-items: center;align=left"/></div>
+        <div style="color:rgb(44, 45, 45);font-weight: 350;font-size: 18px;margin-bottom:10px;margin-top:10px">{$comment.content}</div>
+        <div style="color:rgb(44, 45, 45);font-weight: 300;font-size: 14px;margin-left:10px">
+        <!-- {if $comment.username} -->
+          {$comment.username|escape:html}
+        <!-- {else} -->
+          {$lang.anonymous}
+        <!-- {/if} -->
+        ( {$comment.add_time} )
+        </div>
+        <!-- {if $comment.re_content} -->
         <p><font class="f1">{$lang.admin_username}</font>{$comment.re_content}</p>
-				<!-- {/if} -->
+        <!-- {/if} -->
         </li>
         <!-- {/foreach} -->
+        
         <!--{else}-->
-        <li>{$lang.no_comments}</li>
+        <li style="color:rgb(44, 45, 45);font-weight: 350;font-size: 16px;margin-bottom:10px;margin-top:10px">{$lang.no_comments}</li>
         <!--{/if}-->
        </ul>
        <!--翻页 start-->
@@ -25,7 +34,13 @@
         <form name="selectPageForm" action="{$smarty.server.PHP_SELF}" method="get">
         <!-- {if $pager.styleid eq 0 } -->
         <div id="pager">
-          {$lang.pager_1}{$pager.record_count}{$lang.pager_2}{$lang.pager_3}{$pager.page_count}{$lang.pager_4} <span> <a href="{$pager.page_first}">{$lang.page_first}</a> <a href="{$pager.page_prev}">{$lang.page_prev}</a> <a href="{$pager.page_next}">{$lang.page_next}</a> <a href="{$pager.page_last}">{$lang.page_last}</a> </span>
+          {$lang.pager_1}{$pager.record_count}{$lang.pager_2}{$lang.pager_3}{$pager.page_count}{$lang.pager_4} 
+          <span> 
+            <a href="{$pager.page_first}" style="color:rgb(71, 117, 128);">{$lang.page_first}</a> 
+            <a href="{$pager.page_prev}" style="color:rgb(71, 117, 128);">{$lang.page_prev}</a> 
+            <a href="{$pager.page_next}" style="color:rgb(71, 117, 128);">{$lang.page_next}</a> 
+            <a href="{$pager.page_last}" style="color:rgb(71, 117, 128);">{$lang.page_last}</a> 
+          </span>
             <!--{foreach from=$pager.search key=key item=item}-->
             <input type="hidden" name="{$key}" value="{$item}" />
             <!--{/foreach}-->
@@ -82,7 +97,7 @@
         <tr>
           <td align="right">E-mail：</td>
           <td>
-          <input type="text" name="email" id="email"  maxlength="100" value="{$smarty.session.email|escape}" class="inputBorder"/>
+          <input type="text" name="email" id="email"  maxlength="100" value="{$smarty.session.email|escape}" class="inputBorder" style="height:30px;font-size:16px;"/>
           </td>
         </tr>
         <tr>
@@ -104,14 +119,26 @@
           </td>
         </tr>
         <tr>
-          <td colspan="2">
+          <td colspan="2" style="margin-left:15px">
           <!-- 判断是否启用验证码{if $enabled_captcha} -->
           <div style="padding-left:15px; text-align:left; float:left;">
           {$lang.comment_captcha}：<input type="text" name="captcha"  class="inputBorder" style="width:50px; margin-left:5px;"/>
           <img src="captcha.php?{$rand}" alt="captcha" onClick="this.src='captcha.php?'+Math.random()" class="captcha">
           </div>
           <!-- {/if} -->
-          <input name="" type="submit"  value="" class="f_r" style="border:none; background:url(../images/commentsBnt.gif); width:75px; height:21px; margin-right:8px;">
+          <input name="" type="submit"  class="f_r" style="
+          font-family: Muli, Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          font-weight: 300;
+          height: auto;
+          padding:9px;
+          vertical-align: baseline;
+          margin-bottom: 24px;
+          color: rgb(238, 238, 238);
+          text-align: center;
+          border: 1px solid #477580;
+          text-transform: uppercase;
+          background: #477580;"/>
           </td>
         </tr>
       </table>

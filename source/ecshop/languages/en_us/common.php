@@ -50,7 +50,7 @@ $_LANG['query_info'] = 'Run %d queries, spents %f seconds, %d people online';
 $_LANG['gzip_enabled'] = '，Gzip enabled';
 $_LANG['gzip_disabled'] = '，Gzip disabled';
 $_LANG['memory_info'] = '，take up memory %0.3f MB';
-$_LANG['cart_info'] = 'products in your cart（%d）';
+$_LANG['cart_info'] = 'cart（%d）';
 $_LANG['shopping_and_other'] = 'Customers who bought this item also bought.';
 $_LANG['bought_notes'] = 'Bought notes';
 $_LANG['later_bought_amounts'] = 'bought amounts latest';
@@ -140,6 +140,8 @@ $_LANG['compare'] = 'Compare';
 $_LANG['volume_price'] = 'Following the purchase of goods to reach the number that they can enjoy a range of preferential prices';
 $_LANG['number_to'] = 'number';
 $_LANG['article_list'] = 'Article list';
+/* ning add 20180401 */
+$_LANG['your_account'] = 'Your Account';
 
 /* 商品比较JS语言项 */
 $_LANG['compare_js']['button_compare'] = 'Compare chosen products';

@@ -1,19 +1,52 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <div class="all_ms">
   <!--{foreach from=$cat_goods item=goods}-->
-  <a class="goodsItem" href="{$goods.url}"> <div  class="img-box"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></div>
-  <div class="goods-brief">{$goods.brief|truncate:20}</div>
-    <div class="gos-title">{$goods.short_name|escape:html}</div> 
-	<div class="prices">
-	    <!-- {if $goods.promote_price neq ""} -->
-    <font class="shop_s">{$lang.promote_price}<b>{$goods.promote_price}</b></font>
-    <!-- {else}-->
-    <font class="shop_s"><b>{$goods.shop_price}</b></font>
-    <!--{/if}-->
-	</div>
+  <div class="goodsItem" href="{$goods.url}" style="display:block"> <div  class="img-box"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" style="display:inline"/></div>
+    <div class="goods-brief" >{$goods.brief|truncate:20}
+       <div class="gos-title" style="font-family: Muli,Helvetica,Arial,sans-serif;
+                                  font-size: 20px;
+                                  line-height: 20px;
+                                  color: #2c2d2d;
+                                  font-weight: 300;
+                                  display: block;
+                                  margin-top: 0;
+                                  margin-bottom: 24px;
+                                  -webkit-box-flex: 1;
+                                  -webkit-flex-grow: 1;
+                                  -ms-flex-positive: 1;
+                                  flex-grow: 1;
+                                  text-decoration: none;">{$goods.short_name|escape:html}</div>
+   	<div class="prices" >
+   	    <!-- {if $goods.promote_price neq ""} -->
+       <font class="shop_s">{$lang.promote_price}<b>{$goods.promote_price}</b></font>
+       <!-- {else}-->
+       <font class="shop_s"><p>{$goods.shop_price}</p></font>
+       <!--{/if}-->
+
+   	</div>
+    </div>
+    <a href="{$goods.url}" style="font-family: Muli,Helvetica,Arial,sans-serif;
+                  font-size: 14px;
+                  color: #2c2d2d;
+                  font-weight: 300;
+                  text-transform: uppercase;
+                  background-color: #477580;
+                  border: 1px solid #477580;
+                  padding: 9px;
+                  color: #fff;
+                  line-height: 20px;
+                  border-radius: 0;
+                  display: inline-block;
+                  cursor: pointer;
+                  text-align: center;
+                  -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+                  display: block;
+                  margin-top: 40px;">SHOP NOW</a>
+
 	 
 
-  </a>
+  </div>
   <!--{/foreach}-->
   <div class="clear0"></div>
 </div>

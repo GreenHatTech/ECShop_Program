@@ -10,11 +10,143 @@
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+
+<link href="{$ecs_themes_path}/css/account-1a49356ad1.css" rel="stylesheet" type="text/css" />
+<link href="{$ecs_themes_path}/css/screen-1c23e8a1ad.css" rel="stylesheet" type="text/css" />
+<link href="{$ecs_themes_path}/css/user_info.css" rel="stylesheet" type="text/css" />
+
+
 {* 包含脚本文件 *}
 {insert_scripts files='transport.js,common.js,user.js'}
 </head>
 <body>
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="blank" style="height: 15px;"></div>
+
+<section class="page-container">
+  <div class="primary-wrap column-row">
+    <section class="middle-rail column-span24">
+      <div class="myAccountWrapper">
+        <div class="myAccount js-myAccount-wrapper">
+          <!-- 当前位置 start -->
+          <div id="ur_here"> <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --> </div>
+          <!-- 当前位置 end -->
+          
+          <!-- *用户中心默认显示页面 start-->
+          <!-- {if $action eq 'default'} -->
+          <!--用户欢迎语部分 start -->
+          <div class="myAccountSection_header">
+            <div class="myAccountSection_header_pageTitle">
+              <p class="myAccountSection_header_title">{$lang.label_welcome}</p>
+              <p class="myAccountSection_header_welcome"><b>{$info.username}</b> {$lang.welcome_to} {$info.shop_name}！</p>
+            </div>
+            <div class="myAccountSection_header_buttons">
+              <a title="{$lang.user_logout}" href="user.php?act=logout" data-e2e="logoutButton" class="myAccount_logOutButton js-tag-sign-out" rel="nofollow">{$lang.user_logout}</a>
+             
+            </div>
+            <div style="clear: both;border-top: 1px solid #e6e6e6;">
+               <div style="margin:5px 0; padding:10px 0px; font-weight: bold;text-align: left;"> 
+                <img src="images/note.gif" style="vertical-align: baseline;" alt="note" />&nbsp;{$user_notice} </div>
+              <p class="myAccountSection_header_extra_text">{$lang.last_time}: {$info.last_time} <br /></p>
+              <p class="myAccountSection_header_extra_text">{$rank_name} {$next_rank_name} <br /></p>
+              <!--{if $info.is_validate eq 0} -->
+              <p class="myAccountSection_header_extra_text">{$lang.not_validated} <a href="javascript:sendHashMail()" style="color:#006bd0;">{$lang.resend_hash_mail}</a><br /></p>
+              <!--{/if} -->
+            </div>
+          </div>
+          <!--用户欢迎语部分 end -->
+          
+          <!-- 用户信息主体部分 start -->
+          <div class="myAccountSection_yourOrders" > 
+           <p class="myAccountSection_yourOrders_title">{$lang.user_center}</p> 
+           <div class="orderCard_row" > 
+            <div class="orderCard_wrapper" style="width: 50%; "> 
+              <!-- float: none!important;margin-left: auto!important;margin-right: auto!important;-->
+             <div class="orderCard" style="min-height: auto"> 
+              <div class=""> 
+               <p class="orderCard_orderNumber">{$lang.your_account}</p> 
+               <div class="orderCard_detailsRow"> 
+                <div class="orderCard_detailsColumn-left"> 
+                 <p class="orderCard_status">{$lang.your_surplus}:</p> 
+                </div> 
+                <div class="orderCard_detailsColumn-right"> 
+                 <p class="orderCard_status"><a href="user.php?act=account_log" style="color:#006bd0;">{$info.surplus}</a></p> 
+                </div> 
+               </div> 
+               <div class="orderCard_detailsRow"> 
+                <div class="orderCard_detailsColumn-left"> 
+                 <p class="orderCard_status">{$lang.your_bonus}:</p> 
+                </div> 
+                <div class="orderCard_detailsColumn-right"> 
+                 <p class="orderCard_status"><a href="user.php?act=bonus" style="color:#006bd0;">{$info.bonus}</a></p> 
+                </div> 
+               </div> 
+               <!-- {if $info.credit_line gt 0} 如果有信用额度 -->
+                <div class="orderCard_detailsRow"> 
+                <div class="orderCard_detailsColumn-left"> 
+                 <p class="orderCard_status">{$lang.credit_line}:</p> 
+                </div> 
+                <div class="orderCard_detailsColumn-right"> 
+                 <p class="orderCard_status">{$info.formated_credit_line}</p> 
+                </div> 
+               </div> 
+                <!-- {/if} -->
+               <div class="orderCard_detailsRow"> 
+                <div class="orderCard_detailsColumn-left"> 
+                 <p class="orderCard_status">{$lang.your_integral}:</p> 
+                </div> 
+                <div class="orderCard_detailsColumn-right"> 
+                 <p class="orderCard_status">{$info.integral}</p> 
+                </div> 
+               </div> </div> 
+             </div> 
+            </div> 
+
+            <div class="orderCard_wrapper" style="width: 50%; "> 
+             <div class="orderCard" style="min-height: auto"> 
+              <div class=""> 
+               <p class="orderCard_orderNumber">{$lang.your_notice}</p> 
+               <!--{foreach from=$prompt item=item}-->
+               <div class="orderCard_detailsRow"> 
+                <p class="orderCard_status">{$item.text}</p> 
+               </div>
+               <!--{/foreach}-->
+               <div class="orderCard_detailsRow"> 
+                <p class="orderCard_status">{$lang.last_month_order}{$info.order_count}{$lang.order_unit}</p> 
+               </div>
+               <!-- {if $info.shipped_order} -->
+                <div class="orderCard_detailsRow"> 
+                <p class="orderCard_status">{$lang.please_received}</p> 
+               </div>
+                <!-- {foreach from=$info.shipped_order item=item}-->
+                <div class="orderCard_detailsRow"> 
+                <p class="orderCard_status">
+                  <a href="user.php?act=order_detail&order_id={$item.order_id}" style="color:#006bd0;">{$item.order_sn}</a>
+                </p> 
+               </div>
+                <!-- {/foreach} -->
+               <!-- {/if}-->
+                </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div>
+          <!-- 用户信息主体部分 end -->
+          <!-- {/if} -->
+          <!-- #用户中心默认显示页面 end-->
+
+          <!-- 用户菜单部分  -->
+          <!-- #BeginLibraryItem "/library/user_menu2.lbi" --><!-- #EndLibraryItem -->
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+
+
+
 <!--当前位置 start-->
 <div class="block box">
   <div id="ur_here"> <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --> </div>
@@ -36,46 +168,7 @@
     <div class="box">
       <div class="box_1">
         <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
-          <!-- *用户中心默认显示页面 start-->
-          <!-- {if $action eq 'default'} -->
-          <font class="f5"><b class="f4">{$info.username}</b> {$lang.welcome_to} {$info.shop_name}！</font><br />
-          <div class="blank"></div>
-          {$lang.last_time}: {$info.last_time}<br />
-          <div class="blank5"></div>
-          {$rank_name} {$next_rank_name}<br />
-          <div class="blank5"></div>
-          <!--{if $info.is_validate eq 0} -->
-          {$lang.not_validated} <a href="javascript:sendHashMail()" style="color:#006bd0;">{$lang.resend_hash_mail}</a><br />
-          <!--{/if} -->
-          <div style="margin:5px 0; border:1px solid #a1675a;padding:10px 20px; background-color:#e8d1c9;"> <img src="images/note.gif" alt="note" />&nbsp;{$user_notice} </div>
-          <br />
-          <br />
-          <div class="f_l" style="width:350px;">
-            <h5><span>{$lang.your_account}</span></h5>
-            <div class="blank"></div>
-            {$lang.your_surplus}:<a href="user.php?act=account_log" style="color:#006bd0;">{$info.surplus}</a><br />
-            <!-- {if $info.credit_line gt 0} 如果有信用额度 -->
-            {$lang.credit_line}:{$info.formated_credit_line}<br />
-            <!-- {/if} -->
-            {$lang.your_bonus}:<a href="user.php?act=bonus" style="color:#006bd0;">{$info.bonus}</a><br />
-            {$lang.your_integral}:{$info.integral}<br />
-          </div>
-          <div class="f_r" style="width:350px;">
-            <h5><span>{$lang.your_notice}</span></h5>
-            <div class="blank"></div>
-            <!--{foreach from=$prompt item=item}-->
-            {$item.text}<br />
-            <!--{/foreach}-->
-            {$lang.last_month_order}{$info.order_count}{$lang.order_unit}<br />
-            <!-- {if $info.shipped_order} -->
-            {$lang.please_received}<br />
-            <!-- {foreach from=$info.shipped_order item=item}-->
-            <a href="user.php?act=order_detail&order_id={$item.order_id}" style="color:#006bd0;">{$item.order_sn}</a>
-            <!-- {/foreach} -->
-            <!-- {/if}-->
-          </div>
-          <!-- {/if} -->
-          <!-- #用户中心默认显示页面 end-->
+          
           <!-- *我的留言 start-->
           <!-- {if $action eq 'message_list'} -->
           <h5><span>{$lang.label_message}</span></h5>

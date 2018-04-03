@@ -1,0 +1,110 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+          <div class="myAccountSection_settings">
+            <p class="myAccountSection_settings_title">{$lang.label_user_menu}</p>
+            <div class="settingsCard_row">
+              <div class="settingsCard_wrapper settingsCard_menu">
+                <a href="user.php" {if $action eq 'default'}class="curs"{/if} >
+                  <div class="settingsCard">
+                    <img class="settingsCard_svg settingsCard_img" src="../images/u1.gif" />
+                    <p class="settingsCard_title">{$lang.label_welcome}</p>
+                  </div>
+                </a>
+              </div>
+              <div class="settingsCard_wrapper settingsCard_menu">
+                <a href="user.php?act=profile" {if $action eq 'profile'}class="curs"{/if} >
+                  <div class="settingsCard">
+                    <img class="settingsCard_svg settingsCard_img" src="../images/u2.gif" />
+                    <p class="settingsCard_title">{$lang.label_profile}</p>
+                  </div>
+              </div>
+              <div class="settingsCard_wrapper settingsCard_menu">
+                <a href="user.php?act=order_list" {if $action eq 'order_list'|| $action eq 'order_detail'}class="curs"{/if} >
+                  <div class="settingsCard">
+                    <img class="settingsCard_svg settingsCard_img" src="../images/u3.gif" />
+                    <p class="settingsCard_title">{$lang.label_order}</p>
+                  </div>
+              </div>
+              <div class="settingsCard_wrapper settingsCard_menu">
+                <a href="user.php?act=address_list" {if $action eq 'address_list'}class="curs"{/if} >
+                  <div class="settingsCard">
+                    <img class="settingsCard_svg settingsCard_img" src="../images/u4.gif" />
+                    <p class="settingsCard_title">{$lang.label_address}</p>
+                  </div>
+              </div>
+              <div class="settingsCard_wrapper settingsCard_menu">
+                <a href="user.php?act=collection_list" {if $action eq 'collection_list'}class="curs"{/if} >
+                  <div class="settingsCard">
+                    <img class="settingsCard_svg settingsCard_img" src="../images/u5.gif" />
+                    <p class="settingsCard_title">{$lang.label_collection}</p>
+                  </div>
+              </div>
+              <div class="settingsCard_wrapper settingsCard_menu">
+                <a href="user.php?act=message_list" {if $action eq 'message_list'}class="curs"{/if} >
+                  <div class="settingsCard">
+                    <img class="settingsCard_svg settingsCard_img" src="../images/u6.gif" />
+                    <p class="settingsCard_title">{$lang.label_message}</p>
+                  </div>
+              </div>
+              <div class="settingsCard_wrapper settingsCard_menu">
+                <a href="user.php?act=tag_list" {if $action eq 'tag_list'}class="curs"{/if} >
+                  <div class="settingsCard">
+                    <img class="settingsCard_svg settingsCard_img" src="../images/u7.gif" />
+                    <p class="settingsCard_title">{$lang.label_tag}</p>
+                  </div>
+              </div>
+              <div class="settingsCard_wrapper settingsCard_menu">
+                <a href="user.php?act=booking_list" {if $action eq 'booking_list'}class="curs"{/if} >
+                  <div class="settingsCard">
+                    <img class="settingsCard_svg settingsCard_img" src="../images/u8.gif" />
+                    <p class="settingsCard_title">{$lang.label_booking}</p>
+                  </div>
+              </div>
+              <div class="settingsCard_wrapper settingsCard_menu">
+                <a href="user.php?act=bonus" {if $action eq 'bonus'}class="curs"{/if} >
+                  <div class="settingsCard">
+                    <img class="settingsCard_svg settingsCard_img" src="../images/u9.gif" />
+                    <p class="settingsCard_title">{$lang.label_bonus}</p>
+                  </div>
+              </div>
+              <!-- {if $affiliate.on eq 1} -->
+              <div class="settingsCard_wrapper settingsCard_menu">
+                <a href="user.php?act=affiliate" {if $action eq 'affiliate'}class="curs"{/if} >
+                  <div class="settingsCard">
+                    <img class="settingsCard_svg settingsCard_img" src="../images/u10.gif" />
+                    <p class="settingsCard_title">{$lang.label_affiliate}</p>
+                  </div>
+              </div>
+              <!-- {/if} -->
+              <div class="settingsCard_wrapper settingsCard_menu">
+                <a href="user.php?act=comment_list" {if $action eq 'comment_list'}class="curs"{/if} >
+                  <div class="settingsCard">
+                    <img class="settingsCard_svg settingsCard_img" src="../images/u11.gif" />
+                    <p class="settingsCard_title">{$lang.label_comment}</p>
+                  </div>
+              </div>
+              <div class="settingsCard_wrapper settingsCard_menu">
+                <a href="user.php?act=track_packages" {if $action eq 'track_packages'}class="curs"{/if} >
+                  <div class="settingsCard">
+                    <img class="settingsCard_svg settingsCard_img" src="../images/u12.gif" />
+                    <p class="settingsCard_title">{$lang.label_track_packages}</p>
+                  </div>
+              </div>
+              <div class="settingsCard_wrapper settingsCard_menu">
+                <a href="user.php?act=account_log" {if $action eq 'account_log'}class="curs"{/if} >
+                  <div class="settingsCard">
+                    <img class="settingsCard_svg settingsCard_img" src="../images/u13.gif" />
+                    <p class="settingsCard_title">{$lang.label_user_surplus}</p>
+                  </div>
+              </div>
+              <!--{if $show_transform_points}-->
+              <div class="settingsCard_wrapper settingsCard_menu">
+                <a href="user.php?act=transform_points" {if $action eq 'transform_points'}class="curs"{/if} >
+                  <div class="settingsCard">
+                    <img class="settingsCard_svg settingsCard_img" src="../images/u14.gif" />
+                    <p class="settingsCard_title">{$lang.label_transform_points}</p>
+                  </div>
+              </div>
+              <!--{/if}-->
+
+            </div>
+          </div>

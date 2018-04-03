@@ -35,7 +35,7 @@ var process_request = "{$lang.process_request}";
         font-family: Muli,Helvetica,Arial,sans-serif;
         font-size: 16px;
         text-transform: capitalize;
-      
+
     }
 
     .nav-main .nav-link a:hover {

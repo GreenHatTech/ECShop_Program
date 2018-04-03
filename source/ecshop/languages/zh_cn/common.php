@@ -140,6 +140,8 @@ $_LANG['compare'] = '比较';
 $_LANG['volume_price'] = '购买商品达到以下数量区间时可享受的优惠价格';
 $_LANG['number_to'] = '数量';
 $_LANG['article_list'] = '文章列表';
+/* ning add 20180401 */
+$_LANG['your_account'] = '用户中心';
 
 
 /* 商品比较JS语言项 */
