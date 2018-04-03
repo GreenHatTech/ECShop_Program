@@ -738,4 +738,8 @@ $_LANG['shoppingbag_label'] = 'Shopping Bag';
 */
 $_LANG['shopping_continue'] = 'CONTINUE SHOPPING';
 $_LANG['checkout'] = 'CHECKOUT';
+/*新增
+--addtobag  2018.4.1 ---Autda
+*/
+$_LANG['addtobag'] = 'Add To Bag';
 ?>

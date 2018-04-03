@@ -59,16 +59,16 @@
                     <a href="goods.php?id={$goods.goods_id}" target="_blank" class="f6" style="color: #000;">{$goods.goods_name}</a>
                   <!-- {/if} -->
                   <!-- {if $goods.parent_id gt 0} 配件 -->
-                  <span style="color:#FF0000">（{$lang.accessories}）</span>
+                  <span style="color: #000; font-weight: 500">（{$lang.accessories}）</span>
                   <!-- {/if} -->
                   <!-- {if $goods.is_gift gt 0} 赠品 -->
-                  <span style="color:#FF0000">（{$lang.largess}）</span>
+                  <span style="color: #000; font-weight: 500">（{$lang.largess}）</span>
                   <!-- {/if} -->
                 <!-- {elseif $goods.goods_id gt 0 && $goods.extension_code eq 'package_buy'} -->
-                  <a href="javascript:void(0)" onclick="setSuitShow({$goods.goods_id})" class="f6">{$goods.goods_name}<span style="color:#FF0000;">（{$lang.remark_package}）</span></a>
-                  <div id="suit_{$goods.goods_id}" style="display:none">
+                  <a href="javascript:void(0)" onclick="setSuitShow({$goods.goods_id})" class="f6" style="color: #000;">{$goods.goods_name}<span style="color:#000;">（{$lang.remark_package}）</span></a>
+                  <div id="suit_{$goods.goods_id}" style="display:none color: #000;">
                       <!-- {foreach from=$goods.package_goods_list item=package_goods_list} -->
-                        <a href="goods.php?id={$package_goods_list.goods_id}" target="_blank" class="f6">{$package_goods_list.goods_name}</a><br />
+                        <a href="goods.php?id={$package_goods_list.goods_id}" target="_blank" class="f6" style="color: #000;">{$package_goods_list.goods_name}</a><br />
                       <!-- {/foreach} -->
                   </div>
                 <!-- {else} 优惠活动 -->
@@ -271,43 +271,43 @@
 
   <!-- {if $favourable_list} 优惠活动 -->
   <div class="block">
-    <div class="flowBox">
-    <h6><span>{$lang.label_favourable}</span></h6>
+    <div class="flowBoxChange" style="border-top:1px solid #BBB;background:#FFFFFF; padding-top:10px;">
+    <div style="padding-left:1px;"><span style="font-family: Lato-Regular,Helvetica,Arial,sans-serif;font-size: 22px;font-weight: 400;display: block;text-align: left;padding-bottom:10px;">{$lang.label_favourable}</span></div>
         <!-- {foreach from=$favourable_list item=favourable} -->
         <form action="flow.php" method="post">
           <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <tr>
-              <td align="right" bgcolor="#ffffff">{$lang.favourable_name}</td>
-              <td bgcolor="#ffffff"><strong>{$favourable.act_name}</strong></td>
+              <td align="left" bgcolor="#ffffff" style="width:160px;padding-bottom:10px;">{$lang.favourable_name}</td>
+              <td bgcolor="#ffffff" style="font-weight:300;">{$favourable.act_name}</td>
             </tr>
             <tr>
-              <td align="right" bgcolor="#ffffff">{$lang.favourable_period}</td>
-              <td bgcolor="#ffffff">{$favourable.start_time} --- {$favourable.end_time}</td>
+              <td align="left" bgcolor="#ffffff" style="width:160px;padding-bottom:10px;">{$lang.favourable_period}</td>
+              <td bgcolor="#ffffff" style="font-weight:300;">{$favourable.start_time} --- {$favourable.end_time}</td>
             </tr>
             <tr>
-              <td align="right" bgcolor="#ffffff">{$lang.favourable_range}</td>
-              <td bgcolor="#ffffff">{$lang.far_ext[$favourable.act_range]}<br />
+              <td align="left" bgcolor="#ffffff" style="width:160px;padding-bottom:10px;">{$lang.favourable_range}</td>
+              <td bgcolor="#ffffff" style="font-weight:300;">{$lang.far_ext[$favourable.act_range]}<br />
               {$favourable.act_range_desc}</td>
             </tr>
             <tr>
-              <td align="right" bgcolor="#ffffff">{$lang.favourable_amount}</td>
-              <td bgcolor="#ffffff">{$favourable.formated_min_amount} --- {$favourable.formated_max_amount}</td>
+              <td align="left" bgcolor="#ffffff" style="width:160px;padding-bottom:10px;">{$lang.favourable_amount}</td>
+              <td bgcolor="#ffffff" style="font-weight:300;">{$favourable.formated_min_amount} --- {$favourable.formated_max_amount}</td>
             </tr>
             <tr>
-              <td align="right" bgcolor="#ffffff">{$lang.favourable_type}</td>
-              <td bgcolor="#ffffff">
+              <td align="left" bgcolor="#ffffff" style="width:160px;padding-bottom:10px;">{$lang.favourable_type}</td>
+              <td bgcolor="#ffffff" style="font-weight:300;">
                 <span class="STYLE1">{$favourable.act_type_desc}</span>
                 <!-- {if $favourable.act_type eq 0} -->
                 <!-- {foreach from=$favourable.gift item=gift} --><br />
                   <input type="checkbox" value="{$gift.id}" name="gift[]" />
-                  <a href="goods.php?id={$gift.id}" target="_blank" class="f6">{$gift.name}</a> [{$gift.formated_price}]
+                  <a href="goods.php?id={$gift.id}" target="_blank" class="f6" style="color: #000;font-weight:300;">{$gift.name}</a> [{$gift.formated_price}]
                 <!-- {/foreach} -->
               <!-- {/if} -->          </td>
             </tr>
             <!-- {if $favourable.available} -->
             <tr>
               <td align="right" bgcolor="#ffffff">&nbsp;</td>
-              <td align="center" bgcolor="#ffffff"><input type="image" src="images/bnt_cat.gif" alt="Add to cart"  border="0" /></td>
+              <td align="center" bgcolor="#ffffff" style="padding-bottom:10px;flex:auto;-webkit-box-ordinal-group: 1;-webkit-order: 0;-ms-flex-order: 0;order: 0;display: flex;margin-left: auto;margin-right: auto;"><input type="submit" value="{$lang.addtobag}" style="font-family: Lato-Light,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 1.4;color: #2e3337;font-weight: 300;background-color: #333;border-style: none;padding: 10px;color: #fff;border-radius: 0;display: inline-block;cursor: pointer;text-transform: uppercase;text-decoration: none;text-align: center;-webkit-box-sizing: border-box;box-sizing: border-box;margin-left: auto;line-height: 18px;"/></td>
             </tr>
             <!-- {/if} -->
           </table>

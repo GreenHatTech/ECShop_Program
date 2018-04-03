@@ -139,7 +139,7 @@ $_LANG['province'] = '省份';
 $_LANG['city'] = '城市';
 $_LANG['area'] = '所在区域';
 $_LANG['consignee_add'] = '添加新收货地址';
-$_LANG['shipping_address'] = '配送至这个地址';
+$_LANG['shipping_address'] = '保存';
 $_LANG['address_amount'] = '您的收货地址最多只能是三个';
 $_LANG['not_fount_consignee'] = '对不起，您选定的收货地址不存在。';
 

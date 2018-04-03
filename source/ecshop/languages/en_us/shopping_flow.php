@@ -140,7 +140,7 @@ $_LANG['province'] = 'Province';
 $_LANG['city'] = 'City';
 $_LANG['area'] = 'Area';
 $_LANG['consignee_add'] = 'Add a new consignee.';
-$_LANG['shipping_address'] = 'Shipping according to this address.';
+$_LANG['shipping_address'] = 'Save';
 $_LANG['address_amount'] = 'The place of receipt should be less than three.';
 $_LANG['not_fount_consignee'] = 'Sorry, the place of receipt is nonexistence.';
 

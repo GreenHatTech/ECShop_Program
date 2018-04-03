@@ -1,68 +1,94 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<div class="flowBox">
-<h6><span>{$lang.consignee_info}</span></h6>
+<div class="flowBoxChange" style="border-top:1px solid #BBB;background:#FFFFFF; padding-top:10px;">
+    <div style="padding-left:25px;"><span style="font-size: 22px;font-weight: 400;display: block;text-align: left;">{$lang.consignee_info}</span></div>
 {insert_scripts files='utils.js,transport.js'}
 <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+  <tr>
+      <td bgcolor="#ffffff" align=right style="width: 200px;padding-top:10px;padding-bottom:10px;">{$lang.consignee_name} *</td>
+      <td bgcolor="#ffffff" style="padding-left:10px;padding-top:10px;padding-bottom:10px;"><input name="consignee" type="text" class="inputBg" id="consignee_{$sn}" value="{$consignee.consignee|escape}" style="padding: 0 5px; height: 30px;position: relative;display: inline-block;margin: 0;border: 1px solid #999;border-radius: 2px;color: #333;vertical-align: middle;font-size: 16px;transition: border linear .1s,box-shadow linear .1s,-webkit-box-shadow linear .1s;width: 40%;line-height: normal;box-sizing: border-box;background-color: white;-webkit-rtl-ordering: logical;cursor: text;"/>
+      </td>
+  </tr>
   <!-- {if $real_goods_count gt 0} -->
   <!-- 购物车中存在实体商品显示国家和地区 -->
   <tr>
-    <td bgcolor="#ffffff">{$lang.country_province}:</td>
-    <td colspan="3" bgcolor="#ffffff">
-    <select name="country" id="selCountries_{$sn}" onchange="region.changed(this, 1, 'selProvinces_{$sn}')" style="border:1px solid #ccc;">
+    <td bgcolor="#ffffff" align=right style="width: 200px;padding-bottom:10px;">{$lang.country_province} *</td>
+    <td colspan="3" bgcolor="#ffffff" style="padding-left:10px;padding-bottom:10px;">
+    <select name="country" id="selCountries_{$sn}" onchange="region.changed(this, 1, 'selProvinces_{$sn}')" style="background-repeat: no-repeat;background-position: right 10px center;background-size: 12px;padding: 5px;height: 30px;position: relative;display: inline-block;margin: 0;border: 1px solid #999;border-radius: 2px;color: #333;vertical-align: middle;font-size: 16px;transition: border linear .1s,box-shadow linear .1s,-webkit-box-shadow linear .1s;-webkit-writing-mode: horizontal-tb !important;align-items: center;white-space: pre;-webkit-rtl-ordering: logical;width: 40%;">
         <option value="0">{$lang.please_select}{$name_of_region[0]}</option>
         <!-- {foreach from=$country_list item=country} -->
         <option value="{$country.region_id}" {if $consignee.country eq $country.region_id}selected{/if}>{$country.region_name}</option>
         <!-- {/foreach} -->
       </select>
-      <select name="province" id="selProvinces_{$sn}" onchange="region.changed(this, 2, 'selCities_{$sn}')" style="border:1px solid #ccc;">
+    </td>
+  </tr>
+  <tr>
+      <td bgcolor="#ffffff" style="width: 200px;padding-bottom:10px;"></td>
+      <td colspan="3" bgcolor="#ffffff" style="padding-left:10px;padding-bottom:10px;">
+      <select name="province" id="selProvinces_{$sn}" onchange="region.changed(this, 2, 'selCities_{$sn}')" style="background-repeat: no-repeat;background-position: right 10px center;background-size: 12px;padding: 5px;height: 30px;position: relative;display: inline-block;margin: 0;border: 1px solid #999;border-radius: 2px;color: #333;vertical-align: middle;font-size: 16px;transition: border linear .1s,box-shadow linear .1s,-webkit-box-shadow linear .1s;-webkit-writing-mode: horizontal-tb !important;align-items: center;white-space: pre;-webkit-rtl-ordering: logical;width: 40%;">
         <option value="0">{$lang.please_select}{$name_of_region[1]}</option>
         <!-- {foreach from=$province_list.$sn item=province} -->
         <option value="{$province.region_id}" {if $consignee.province eq $province.region_id}selected{/if}>{$province.region_name}</option>
         <!-- {/foreach} -->
       </select>
-      <select name="city" id="selCities_{$sn}" onchange="region.changed(this, 3, 'selDistricts_{$sn}')" style="border:1px solid #ccc;">
+    </td>
+  </tr>
+  <tr>
+      <td bgcolor="#ffffff" style="width: 200px;padding-bottom:10px;"></td>
+      <td colspan="3" bgcolor="#ffffff" style="padding-left:10px;padding-bottom:10px;">
+      <select name="city" id="selCities_{$sn}" onchange="region.changed(this, 3, 'selDistricts_{$sn}')" style="background-repeat: no-repeat;background-position: right 10px center;background-size: 12px;padding: 5px;height: 30px;position: relative;display: inline-block;margin: 0;border: 1px solid #999;border-radius: 2px;color: #333;vertical-align: middle;font-size: 16px;transition: border linear .1s,box-shadow linear .1s,-webkit-box-shadow linear .1s;-webkit-writing-mode: horizontal-tb !important;align-items: center;white-space: pre;-webkit-rtl-ordering: logical;width: 40%;">
         <option value="0">{$lang.please_select}{$name_of_region[2]}</option>
         <!-- {foreach from=$city_list.$sn item=city} -->
         <option value="{$city.region_id}" {if $consignee.city eq $city.region_id}selected{/if}>{$city.region_name}</option>
         <!-- {/foreach} -->
       </select>
-      <select name="district" id="selDistricts_{$sn}" {if !$district_list.$sn}style="display:none"{/if} style="border:1px solid #ccc;">
+    </td>
+  </tr>
+  
+  <tr>
+      <td bgcolor="#ffffff" style="width: 200px;padding-bottom:10px;"></td>
+      <td colspan="3" bgcolor="#ffffff" style="padding-left:10px;padding-bottom:10px;">
+      <select name="district" id="selDistricts_{$sn}" {if !$district_list.$sn}style="display:none"{/if} style="background-repeat: no-repeat;background-position: right 10px center;background-size: 12px;padding: 5px;height: 30px;position: relative;display: inline-block;margin: 0;border: 1px solid #999;border-radius: 2px;color: #333;vertical-align: middle;font-size: 16px;transition: border linear .1s,box-shadow linear .1s,-webkit-box-shadow linear .1s;-webkit-writing-mode: horizontal-tb !important;align-items: center;white-space: pre;-webkit-rtl-ordering: logical;width: 40%;">
         <option value="0">{$lang.please_select}{$name_of_region[3]}</option>
         <!-- {foreach from=$district_list.$sn item=district} -->
         <option value="{$district.region_id}" {if $consignee.district eq $district.region_id}selected{/if}>{$district.region_name}</option>
-        <!-- {/foreach} -->
+         <!-- {/foreach} -->
       </select>
-    {$lang.require_field} </td>
+      </td>
   </tr>
+ 
   <!-- {/if} -->
-  <tr>
-    <td bgcolor="#ffffff">{$lang.consignee_name}:</td>
-    <td bgcolor="#ffffff"><input name="consignee" type="text" class="inputBg" id="consignee_{$sn}" value="{$consignee.consignee|escape}" />
-    {$lang.require_field} </td>
-    <td bgcolor="#ffffff">{$lang.email_address}:</td>
-    <td bgcolor="#ffffff"><input name="email" type="text" class="inputBg"  id="email_{$sn}" value="{$consignee.email|escape}" />
-    {$lang.require_field}</td>
-  </tr>
+
   <!-- {if $real_goods_count gt 0} -->
   <!-- 购物车中存在实体商品显示详细地址以及邮政编码 -->
   <tr>
-    <td bgcolor="#ffffff">{$lang.detailed_address}:</td>
-    <td bgcolor="#ffffff"><input name="address" type="text" class="inputBg"  id="address_{$sn}" value="{$consignee.address|escape}" />
-    {$lang.require_field}</td>
-    <td bgcolor="#ffffff">{$lang.postalcode}:</td>
-    <td bgcolor="#ffffff"><input name="zipcode" type="text" class="inputBg"  id="zipcode_{$sn}" value="{$consignee.zipcode|escape}" /></td>
+  <td bgcolor="#ffffff" align=right style="width: 200px;padding-bottom:10px;">{$lang.detailed_address} *</td>
+    <td bgcolor="#ffffff" style="padding-left:10px;padding-bottom:10px;"><input name="address" type="text" class="inputBg"  id="address_{$sn}" value="{$consignee.address|escape}" style="padding: 0 5px; height: 30px;position: relative;display: inline-block;margin: 0;border: 1px solid #999;border-radius: 2px;color: #333;vertical-align: middle;font-size: 16px;transition: border linear .1s,box-shadow linear .1s,-webkit-box-shadow linear .1s;width: 40%;line-height: normal;box-sizing: border-box;background-color: white;-webkit-rtl-ordering: logical;cursor: text;"/>
+    </td>
   </tr>
+  <tr>
+      <td bgcolor="#ffffff" align=right style="width: 200px;padding-bottom:10px;">{$lang.postalcode}</td>
+      <td bgcolor="#ffffff" style="padding-left:10px;padding-bottom:10px;"><input name="zipcode" type="text" class="inputBg"  id="zipcode_{$sn}" value="{$consignee.zipcode|escape}" style="padding: 0 5px; height: 30px;position: relative;display: inline-block;margin: 0;border: 1px solid #999;border-radius: 2px;color: #333;vertical-align: middle;font-size: 16px;transition: border linear .1s,box-shadow linear .1s,-webkit-box-shadow linear .1s;width: 40%;line-height: normal;box-sizing: border-box;background-color: white;-webkit-rtl-ordering: logical;cursor: text;"/></td>
+    </tr>
   <!-- {/if} -->
+  <tr>  
+    <td bgcolor="#ffffff" align=right style="width: 200px;padding-bottom:10px;">{$lang.email_address} *</td>
+    <td bgcolor="#ffffff" style="padding-left:10px;padding-bottom:10px;"><input name="email" type="text" class="inputBg"  id="email_{$sn}" value="{$consignee.email|escape}" style="padding: 0 5px; height: 30px;position: relative;display: inline-block;margin: 0;border: 1px solid #999;border-radius: 2px;color: #333;vertical-align: middle;font-size: 16px;transition: border linear .1s,box-shadow linear .1s,-webkit-box-shadow linear .1s;width: 40%;line-height: normal;box-sizing: border-box;background-color: white;-webkit-rtl-ordering: logical;cursor: text;"/>
+    </td>
+  </tr>
+
   <tr>
-    <td bgcolor="#ffffff">{$lang.phone}:</td>
-    <td bgcolor="#ffffff"><input name="tel" type="text" class="inputBg"  id="tel_{$sn}" value="{$consignee.tel|escape}" />
-    {$lang.require_field}</td>
-    <td bgcolor="#ffffff">{$lang.backup_phone}:</td>
-    <td bgcolor="#ffffff"><input name="mobile" type="text" class="inputBg"  id="mobile_{$sn}" value="{$consignee.mobile|escape}" /></td>
+    <td bgcolor="#ffffff" align=right style="width: 200px;padding-bottom:10px;">{$lang.phone} *</td>
+    <td bgcolor="#ffffff" style="padding-left:10px;padding-bottom:10px;"><input name="tel" type="text" class="inputBg"  id="tel_{$sn}" value="{$consignee.tel|escape}" style="padding: 0 5px; height: 30px;position: relative;display: inline-block;margin: 0;border: 1px solid #999;border-radius: 2px;color: #333;vertical-align: middle;font-size: 16px;transition: border linear .1s,box-shadow linear .1s,-webkit-box-shadow linear .1s;width: 40%;line-height: normal;box-sizing: border-box;background-color: white;-webkit-rtl-ordering: logical;cursor: text;"/>
+  </tr>
+  <tr>  
+    </td>
+    <td bgcolor="#ffffff" align=right style="width: 200px;padding-bottom:10px;">{$lang.backup_phone}</td>
+    <td bgcolor="#ffffff" style="padding-left:10px;padding-bottom:10px;"><input name="mobile" type="text" class="inputBg"  id="mobile_{$sn}" value="{$consignee.mobile|escape}" style="padding: 0 5px; height: 30px;position: relative;display: inline-block;margin: 0;border: 1px solid #999;border-radius: 2px;color: #333;vertical-align: middle;font-size: 16px;transition: border linear .1s,box-shadow linear .1s,-webkit-box-shadow linear .1s;width: 40%;line-height: normal;box-sizing: border-box;background-color: white;-webkit-rtl-ordering: logical;cursor: text;"/></td>
   </tr>
   <tr>
-    <td colspan="4" align="center" bgcolor="#ffffff">
-    <input type="submit" name="Submit" class="bnt_blue_2" value="{$lang.shipping_address}" />
+      <td bgcolor="#ffffff" align=right style="width: 200px;padding-bottom:10px;"></td>>
+    <td colspan="4" align="left" bgcolor="#ffffff" style="padding-left:150px;padding-bottom:10px;flex:auto;-webkit-box-ordinal-group: 1;-webkit-order: 0;-ms-flex-order: 0;order: 0;display: flex;margin-right: auto; width:10%;text-align:left;">
+    <input type="submit" name="Submit" class="bnt_blue_2" value="{$lang.shipping_address}" style="font-family: Lato-Light,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 1.4;color: #2e3337;font-weight: 300;background-color: #333;border-style: none;padding: 10px;color: #fff;border-radius: 0;display: inline-block;cursor: pointer;text-transform: uppercase;text-decoration: none;text-align: center;-webkit-box-sizing: border-box;box-sizing: border-box;margin-left: auto;line-height: 10px;" />
       <!-- {if $smarty.session.user_id gt 0 and $consignee.address_id gt 0} -->
       <!-- 如果登录了，显示删除按钮 -->
       <input name="button" type="button" onclick="if (confirm('{$lang.drop_consignee_confirm}')) location.href='flow.php?step=drop_consignee&amp;id={$consignee.address_id}'"  class="bnt_blue" value="{$lang.drop}" />

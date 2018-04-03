@@ -737,4 +737,8 @@ $_LANG['shoppingbag_label'] = '購物車';
 */
 $_LANG['shopping_continue'] = '繼續購物';
 $_LANG['checkout'] = '結算';
+/*新增
+--addtobag  2018.4.1 ---Autda
+*/
+$_LANG['addtobag'] = '加入購物車';
 ?>
