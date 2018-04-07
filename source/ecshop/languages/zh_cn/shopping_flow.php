@@ -174,4 +174,7 @@ $_LANG['bonus_is_ok'] = '该红包序列号可以使用，可以抵扣 %s';
 $_LANG['shopping_myship'] = '我的配送';
 $_LANG['shopping_activity'] = '活动列表';
 $_LANG['shopping_package'] = '超值礼包列表';
+
+/* 2018.4.7增加-AutDa*/
+$_LANG['order_submit'] = '提交订单';
 ?>

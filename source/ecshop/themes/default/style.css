@@ -489,7 +489,7 @@ position:absolute; top:0px; right:0px;}
 /* ====================
      购物流程
 ==================== */
-    .flowBox{border:1px solid #d8d8d8; border-top:2px solid #A51F1C; background:#FFFFFF}
+    .flowBox{border:1px solid #d8d8d8; background:#FFFFFF}
     .flowBox table{ margin:5px auto;}
 		/*2.62在购物车里面显示相关配件*/
 		.flowGoodsFittings{padding:10px;}
