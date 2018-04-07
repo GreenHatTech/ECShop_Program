@@ -136,9 +136,9 @@
           margin-bottom: 24px;
           color: rgb(238, 238, 238);
           text-align: center;
-          border: 1px solid #477580;
+          border: 1px solid #ff8787;
           text-transform: uppercase;
-          background: #477580;"/>
+          background: #ff8787;"/>
           </td>
         </tr>
       </table>

@@ -45,15 +45,11 @@
               <p class="myAccountSection_header_title">{$lang.label_track_packages}</p>
               <!-- {elseif $action eq 'order_detail'} -->
               <p class="myAccountSection_header_title">{$lang.order_detail}</p>
-              <!-- {elseif $action eq "account_raply" || $action eq "account_log" || $action eq "account_deposit" || $action eq "account_detail"} -->
-              <p class="myAccountSection_header_title">{$lang.user_balance}</p>
-              <!-- {elseif $action eq 'address_list'} -->
-              <p class="myAccountSection_header_title">{$lang.consignee_info}</p>
-              <!-- {elseif $action eq 'transform_points'} -->
-              <p class="myAccountSection_header_title">{$lang.transform_points}</p>
               <!--{/if}-->
             </div>
-            <!-- #BeginLibraryItem "/library/user_logout.lbi" --><!-- #EndLibraryItem -->
+            <div class="myAccountSection_header_buttons">
+              <a title="{$lang.user_logout}" href="user.php?act=logout" data-e2e="logoutButton" class="myAccount_logOutButton js-tag-sign-out" rel="nofollow">{$lang.user_logout}</a>
+            </div>
           </div>
           <!--用户欢迎语部分 end -->
 
@@ -208,7 +204,7 @@
           {$lang.bonus_number}
             <input name="bonus_sn" type="text" size="30" class="bouns_sn_input" />
             <input type="hidden" name="act" value="act_add_bonus" class="" />
-            <input type="submit" class="bnt_blue_1" style="border:none;background: #477580" value="{$lang.add_bonus}" />
+            <input type="submit" class="bnt_blue_1" style="border:none;background: #ff8787" value="{$lang.add_bonus}" />
           </div>
         </form>
       </div>
@@ -281,7 +277,7 @@
 
                 </select></td>
               <td width="36%" bgcolor="#ffffff">&nbsp;<input name="act" value="merge_order" type="hidden" />
-              <input type="submit" name="Submit"  class="bnt_blue_1" style="border:none;background:#477580;"  value="{$lang.merge_order}" /></td>
+              <input type="submit" name="Submit"  class="bnt_blue_1" style="border:none;background:#ff8787;"  value="{$lang.merge_order}" /></td>
             </tr>
             <tr style="border-bottom: none;">
               <td bgcolor="#ffffff">&nbsp;</td>
@@ -560,7 +556,7 @@
               <tr>
                 <td colspan="4" align="center" bgcolor="#ffffff" style="text-align: center;"><input type="hidden" name="act" value="save_order_address" />
                   <input type="hidden" name="order_id" value="{$order.order_id}" />
-                  <input type="submit" class="bnt_blue_2 skincarerx_btn_color" value="{$lang.update_address}" style="background: #79a9b4;"  />
+                  <input type="submit" class="bnt_blue_2" value="{$lang.update_address}" style="background: #79a9b4;"  />
                 </td>
               </tr>
             </table>
@@ -626,7 +622,7 @@
           </select>
           <input type="hidden" name="act" value="act_edit_payment" />
           <input type="hidden" name="order_id" value="{$order.order_id}" />
-          <input type="submit" name="Submit" class="submit skincarerx_btn_color" value="{$lang.button_submit}" />
+          <input type="submit" name="Submit" class="submit" value="{$lang.button_submit}" />
           </form>
           <!--{/if}-->
               </td>
@@ -705,20 +701,61 @@
       <!--{/if} -->
     <!--#订单详情页 end-->
 
+
+
+
+          <!-- 用户菜单部分  -->
+          <!-- #BeginLibraryItem "/library/user_menu2.lbi" --><!-- #EndLibraryItem -->
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+
+
+<!--当前位置 start-->
+<div class="block box">
+ <div id="ur_here">
+  <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+ </div>
+</div>
+<!--当前位置 end-->
+<div class="blank"></div>
+<div class="block clearfix userpage">
+  <!--left start-->
+  <div class="AreaL">
+    <div class="box">
+     <div class="box_1">
+      <div class="userCenterBox">
+        <!-- #BeginLibraryItem "/library/user_menu.lbi" --><!-- #EndLibraryItem -->
+      </div>
+     </div>
+    </div>
+  </div>
+  <!--left end-->
+  <!--right start-->
+  <div class="AreaR">
+    <div class="box">
+     <div class="box_1">
+      <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
+         
+     
     <!--#会员余额 start-->
-    <!--{if $action eq "account_raply" || $action eq "account_log" || $action eq "account_deposit" || $action eq "account_detail"} -->
-    <script type="text/javascript">
+      <!--{if $action eq "account_raply" || $action eq "account_log" || $action eq "account_deposit" || $action eq "account_detail"} -->
+        <script type="text/javascript">
           {foreach from=$lang.account_js item=item key=key}
             var {$key} = "{$item}";
           {/foreach}
         </script>
-    <div class="myAccountSection_yourOrders" > 
-         <p class="myAccountSection_yourOrders_title">{$lang.user_balance}</p> 
+        <h5><span>{$lang.user_balance}</span></h5>
+        <div class="blank"></div>
          <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
           <tr>
             <td align="right" bgcolor="#ffffff"><a href="user.php?act=account_deposit" class="f6">{$lang.surplus_type_0}</a> | <a href="user.php?act=account_raply" class="f6">{$lang.surplus_type_1}</a> | <a href="user.php?act=account_detail" class="f6">{$lang.add_surplus_log}</a> | <a href="user.php?act=account_log" class="f6">{$lang.view_application}</a> </td>
           </tr>
         </table>
+        <!-- {/if} -->
         <!-- {if $action eq "account_raply"} -->
         <form name="formSurplus" method="post" action="user.php" onSubmit="return submitSurplus()">
         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
@@ -735,8 +772,8 @@
             <td bgcolor="#ffffff" colspan="2" align="center">
             <input type="hidden" name="surplus_type" value="1" />
               <input type="hidden" name="act" value="act_account" />
-              <input type="submit" name="submit"  class="bnt_blue_1 skincarerx_btn_color"  value="{$lang.submit_request}" />
-              <input type="reset" name="reset" class="bnt_blue_1 skincarerx_btn_color"  value="{$lang.button_reset}" />
+              <input type="submit" name="submit"  class="bnt_blue_1" value="{$lang.submit_request}" />
+              <input type="reset" name="reset" class="bnt_blue_1" value="{$lang.button_reset}" />
             </td>
           </tr>
         </table>
@@ -799,7 +836,7 @@
         <input type="hidden" name="surplus_type" value="0" />
           <input type="hidden" name="rec_id" value="{$order.id}" />
           <input type="hidden" name="act" value="act_account" />
-          <input type="submit" class="bnt_blue_1 skincarerx_btn_color" name="submit" value="{$lang.submit_request}" />
+          <input type="submit" class="bnt_blue_1" name="submit" value="{$lang.submit_request}" />
           <input type="reset" class="bnt_blue_1" name="reset" value="{$lang.button_reset}" />
         </td>
       </tr>
@@ -899,17 +936,13 @@
           </tr>
         </table>
         <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
-        <!-- {/if} -->
-      </div>
-
-    <!--{/if} -->
-    <!--#会员余额 end-->
-
-    <!--#收货地址页面 -->
+      <!-- {/if} -->
+      <!--#会员余额 end-->
+      <!--#收货地址页面 -->
       <!--{if $action eq 'address_list'} -->
-      <div class="myAccountSection_yourOrders" > 
-         <p class="myAccountSection_yourOrders_title">{$lang.consignee_info}</p> 
-            {* 包含脚本文件 *}
+        <h5><span>{$lang.consignee_info}</span></h5>
+        <div class="blank"></div>
+         {* 包含脚本文件 *}
             {insert_scripts files='utils.js,transport.js,region.js,shopping_flow.js'}
             <script type="text/javascript">
               region.isAdmin = false;
@@ -981,10 +1014,10 @@
                 <tr>
                   <td align="right" bgcolor="#ffffff">&nbsp;</td>
                   <td colspan="3" align="center" bgcolor="#ffffff"><!-- {if $consignee.consignee && $consignee.email} -->
-                    <input type="submit" name="submit" class="bnt_blue_1 skincarerx_btn_color" value="{$lang.confirm_edit}" />
-                    <input name="button" type="button" class="bnt_blue skincarerx_btn_color"  onclick="if (confirm('{$lang.confirm_drop_address}'))location.href='user.php?act=drop_consignee&id={$consignee.address_id}'" value="{$lang.drop}" />
+                    <input type="submit" name="submit" class="bnt_blue_1" value="{$lang.confirm_edit}" />
+                    <input name="button" type="button" class="bnt_blue"  onclick="if (confirm('{$lang.confirm_drop_address}'))location.href='user.php?act=drop_consignee&id={$consignee.address_id}'" value="{$lang.drop}" />
                     <!-- {else} -->
-                    <input type="submit" name="submit" class="bnt_blue_2 skincarerx_btn_color"  value="{$lang.add_address}"/>
+                    <input type="submit" name="submit" class="bnt_blue_2"  value="{$lang.add_address}"/>
                     <!-- {/if} -->
                     <input type="hidden" name="act" value="act_edit_address" />
                     <input name="address_id" type="hidden" value="{$consignee.address_id}" />
@@ -993,15 +1026,13 @@
               </table>
             </form>
             <!-- {/foreach} -->
-      </div>
       <!--{/if} -->
-      <!--#收货地址添加页面 -->
-
+    <!--#收货地址添加页面 -->
       <!--* 积分兑换-->
-      <!--{if $action eq 'transform_points'} -->
-      <div class="myAccountSection_yourOrders" > 
-         <p class="myAccountSection_yourOrders_title">{$lang.transform_points}</p> 
-         <!--{if $exchange_type eq 'ucenter'}-->
+       <!--{if $action eq 'transform_points'} -->
+       <h5><span>{$lang.transform_points}</span></h5>
+             <div class="blank"></div>
+       <!--{if $exchange_type eq 'ucenter'}-->
         <form action="user.php" method="post" name="transForm" onsubmit="return calcredit();">
        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
                 <tr>
@@ -1189,20 +1220,18 @@
           //]]>
        </script>
        <!--{/if}-->
-      </div>
         <!--{/if} -->
         <!--#积分兑换 -->
 
-          <!-- 用户菜单部分  -->
-          <!-- #BeginLibraryItem "/library/user_menu2.lbi" --><!-- #EndLibraryItem -->
-        </div>
+
+
+
       </div>
-    </section>
+     </div>
+    </div>
   </div>
-</section>
-
-
-
+  <!--right end-->
+</div>
 <div class="blank"></div>
 <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
 

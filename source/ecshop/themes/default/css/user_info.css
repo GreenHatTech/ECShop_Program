@@ -6,29 +6,15 @@
     height: 20px;
 }
 .settingsCard_menu {
-    width: 20% !important;
+    width: 16.666% !important;
     clear: none !important;
 }
 .settingsCard_menu .settingsCard {
-    min-height: 150px !important;
+    min-height: auto !important;
 }
-
-.settingsCard_menu .curs .settingsCard_title p {
+.settingsCard_menu .curs .settingsCard_title {
     color: #79a9b4;
     font-weight: bold;
-}
-
-.settingsCard_menu .settingsCard_title {
-    width: 100%;
-    display: table;
-    height: 40px;
-}
-
-.settingsCard_menu .settingsCard_title p {
-    height: 40px;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
 }
 
 .myAccountSection_header_extra_text {
@@ -106,24 +92,5 @@
 
 .pagebar .page_now {
     color: #FFFFFF;
-    background: #477580;
-}
-
-/* 统一修正按钮颜色 */
-.skincarerx_btn_color {
-    background: #477580;
-    color: #fff;
-}
-
-.message_list .msgBottomBorder {
-    text-align: left;
-}
-
-.message_list input {
-    height: auto;
-    padding: 0;
-}
-
-.message_list .inputBg {
-    height: auto;
+    background: #ff8787;
 }

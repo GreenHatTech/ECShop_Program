@@ -143,13 +143,13 @@
           <a href="javascript:;" onClick="javascript:display_mode('list')"><img src="images/display_mode_list<!-- {if $pager.display == 'list'} -->_act<!-- {/if} -->.gif" alt="{$lang.display.list}"></a>
           <a href="javascript:;" onClick="javascript:display_mode('grid')"><img src="images/display_mode_grid<!-- {if $pager.display == 'grid'} -->_act<!-- {/if} -->.gif" alt="{$lang.display.grid}"></a>
           <a href="javascript:;" onClick="javascript:display_mode('text')"><img src="images/display_mode_text<!-- {if $pager.display == 'text'} -->_act<!-- {/if} -->.gif" alt="{$lang.display.text}"></a>&nbsp;&nbsp;
-              <select name="sort">
+              <select name="sort" class='search_select'>
               {html_options options=$lang.sort selected=$pager.search.sort}
               </select>
-              <select name="order">
+              <select name="order" class='search_select'>
               {html_options options=$lang.order selected=$pager.search.order}
               </select>
-              <input type="image" name="imageField" src="../images/bnt_go.gif" alt="go"/>
+              <input type="image" name="imageField" src="../images/bnt_go.gif" alt="go" style="vertical-align: middle;"/>
               <input type="hidden" name="page" value="{$pager.page}" />
               <input type="hidden" name="display" value="{$pager.display}" id="display" />
               <!--{foreach from=$pager.search key=key item=item}-->

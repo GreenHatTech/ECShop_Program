@@ -344,8 +344,8 @@
               <td></td>
               <td>
                 <input type="hidden" name="act" value="send_pwd_email" />
-                <input type="submit" name="submit" value="{$lang.submit}" style="border:none;margin-right:220px;color:#fff;background-color:#477580;" />
-                <input name="button" type="button" onclick="history.back()" value="{$lang.back_page_up}" style="border:none;color:#fff;background-color:#477580;"/>
+                <input type="submit" name="submit" value="{$lang.submit}" style="border:none;margin-right:220px;color:#fff;background-color:#ff8787;" />
+                <input name="button" type="button" onclick="history.back()" value="{$lang.back_page_up}" style="border:none;color:#fff;background-color:#ff8787;"/>
               </td>
             </tr>
           </table>
@@ -378,8 +378,8 @@
               <tr>
                 <td></td>
                 <td><input type="hidden" name="act" value="get_passwd_question" />
-                  <input type="submit" name="submit" value="{$lang.submit}" style="border:none;margin-right:220px;color:#fff;background-color:#477580;" />
-                  <input name="button" type="button" onclick="history.back()" value="{$lang.back_page_up}" style="border:none;color:#fff;background-color:#477580;"/>
+                  <input type="submit" name="submit" value="{$lang.submit}" style="border:none;margin-right:220px;color:#fff;background-color:#ff8787;" />
+                  <input name="button" type="button" onclick="history.back()" value="{$lang.back_page_up}" style="border:none;color:#fff;background-color:#ff8787;"/>
           </td>
               </tr>
             </table>
@@ -421,8 +421,8 @@
           <tr>
             <td></td>
             <td><input type="hidden" name="act" value="check_answer" />
-              <input type="submit" name="submit" value="{$lang.submit}" style="border:none;margin-right:220px;color:#fff;background-color:#477580;"/>
-              <input name="button" type="button" onclick="history.back()" value="{$lang.back_page_up}" style="border:none;color:#fff;background-color:#477580;"/>
+              <input type="submit" name="submit" value="{$lang.submit}" style="border:none;margin-right:220px;color:#fff;background-color:#ff8787;"/>
+              <input name="button" type="button" onclick="history.back()" value="{$lang.back_page_up}" style="border:none;color:#fff;background-color:#ff8787;"/>
 	    </td>
           </tr>
         </table>
@@ -505,8 +505,8 @@
         <tr>
           <td></td>
           <td><input type="hidden" name="act" value="sms_get_password" />
-            <input type="submit" name="submit" value="{$lang.submit}" style="border:none;margin-right:220px;color:#fff;background-color:#477580;" />
-            <input name="button" type="button" onclick="history.back()" value="{$lang.back_page_up}" style="border:none;color:#fff;background-color:#477580;" />
+            <input type="submit" name="submit" value="{$lang.submit}" style="border:none;margin-right:220px;color:#fff;background-color:#ff8787;" />
+            <input name="button" type="button" onclick="history.back()" value="{$lang.back_page_up}" style="border:none;color:#fff;background-color:#ff8787;" />
           </td>
         </tr>
       </table>
@@ -555,7 +555,7 @@
           <td>
             <input type="hidden" name="act" value="act_edit_password" />
             <input type="hidden" name="uid" value="{$uid}" />
-            <input type="submit" name="submit" value="{$lang.submit}" style="border:none;color:#fff;background-color:#477580;" />
+            <input type="submit" name="submit" value="{$lang.submit}" style="border:none;color:#fff;background-color:#ff8787;" />
           </td>
         </tr>
       </table>

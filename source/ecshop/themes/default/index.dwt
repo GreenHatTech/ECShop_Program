@@ -6,6 +6,7 @@
 <meta name="Description" content="{$description}" />
 <!-- TemplateBeginEditable name="doctitle" -->
 <title>{$page_title}</title>
+
 <!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
@@ -165,8 +166,8 @@ Hot commodities:</div>
                                       color: #2c2d2d;
                                       font-weight: 300;
                                       text-transform: uppercase;
-                                      background-color: #477580;
-                                      border: 1px solid #477580;
+                                      background-color: #ff8787;
+                                      border: 1px solid #ff8787;
                                       padding: 9px;
                                       color: #fff;
                                       line-height: 20px;
