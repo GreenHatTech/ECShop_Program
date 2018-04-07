@@ -10,7 +10,11 @@
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
-
+<link rel="stylesheet" href="themes/default//css/screen-1c23e8a1ad.css" type="text/css" media="screen">
+<link rel="stylesheet" href="themes/default//css/account-1a49356ad1.css" type="text/css" media="screen">
+<link rel="stylesheet" href="themes/default//css/responsive_components-desktop-97f4bed450.css" type="text/css" media="screen">
+<link rel="stylesheet" href="themes/default//css/platform_components-desktop-8e8117978c.css" type="text/css" media="screen">
+<link rel="stylesheet" href="themes/default//css/skincarerx-takeover.css" type="text/css" media="screen">
 {* 包含脚本文件 *}
 {insert_scripts files='common.js,shopping_flow.js'}
 </head>
@@ -60,16 +64,16 @@
                     <a href="goods.php?id={$goods.goods_id}" target="_blank" class="f6" style="color: #000;">{$goods.goods_name}</a>
                   <!-- {/if} -->
                   <!-- {if $goods.parent_id gt 0} 配件 -->
-                  <span style="color: #000; font-weight: 500">（{$lang.accessories}）</span>
+                  <span style="font-family: Muli, Helvetica, Arial, sans-serif;color: #000; font-weight: 500">（{$lang.accessories}）</span>
                   <!-- {/if} -->
                   <!-- {if $goods.is_gift gt 0} 赠品 -->
-                  <span style="color: #000; font-weight: 500">（{$lang.largess}）</span>
+                  <span style="font-family: Muli, Helvetica, Arial, sans-serif;color: #000; font-weight: 500">（{$lang.largess}）</span>
                   <!-- {/if} -->
                 <!-- {elseif $goods.goods_id gt 0 && $goods.extension_code eq 'package_buy'} -->
-                  <a href="javascript:void(0)" onclick="setSuitShow({$goods.goods_id})" class="f6" style="color: #000;">{$goods.goods_name}<span style="color:#000;">（{$lang.remark_package}）</span></a>
-                  <div id="suit_{$goods.goods_id}" style="display:none color: #000;">
+                  <a href="javascript:void(0)" onclick="setSuitShow({$goods.goods_id})" class="f6" style="font-family: Muli, Helvetica, Arial, sans-serif;color: #000;">{$goods.goods_name}<span style="font-family: Muli, Helvetica, Arial, sans-serif;color:#000;">（{$lang.remark_package}）</span></a>
+                  <div id="suit_{$goods.goods_id}" style="font-family: Muli, Helvetica, Arial, sans-serif;display:none color: #000;">
                       <!-- {foreach from=$goods.package_goods_list item=package_goods_list} -->
-                        <a href="goods.php?id={$package_goods_list.goods_id}" target="_blank" class="f6" style="color: #000;">{$package_goods_list.goods_name}</a><br />
+                        <a href="goods.php?id={$package_goods_list.goods_id}" target="_blank" class="f6" style="font-family: Muli, Helvetica, Arial, sans-serif;color: #000;">{$package_goods_list.goods_name}</a><br />
                       <!-- {/foreach} -->
                   </div>
                 <!-- {else} 优惠活动 -->
@@ -353,22 +357,22 @@
         var flow_no_payment = "{$lang.flow_no_payment}";
         var flow_no_shipping = "{$lang.flow_no_shipping}";
         </script>
-        <div class="flowBox">
-        <h6><span>{$lang.goods_list}</span><!--{if $allow_edit_cart} --><a href="flow.php" class="f6">{$lang.modify}</a><!--{/if} --></h6>
-        <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+        <div style="border:1px solid #d8d8d8; background:#FFFFFF">
+        <h6 style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 24px;line-height: 36px;color: #2c2d2d;font-weight: 300;text-transform: uppercase;margin-bottom: 24px;margin-top: 0;display: block;"><span>{$lang.goods_list}</span></h6>
+        <table width="99%" align="center" border="0" cellpadding="5" cellspacing="0" bgcolor="#dddddd">
             <tr>
-              <th bgcolor="#ffffff">{$lang.goods_name}</th>
-              <th bgcolor="#ffffff">{$lang.goods_attr}</th>
+              <th bgcolor="#ffffff" style="width:281px;text-align:center;padding-top: 10px;padding-bottom: 10px;">{$lang.goods_name}</th>
+              <th bgcolor="#ffffff" style="width:281px;text-align:center;padding-top: 10px;padding-bottom: 10px;">{$lang.goods_attr}</th>
               <!-- {if $show_marketprice} -->
-              <th bgcolor="#ffffff">{$lang.market_prices}</th>
+              <th bgcolor="#ffffff" style="width:281px;text-align:center;padding-top: 10px;padding-bottom: 10px;">{$lang.market_prices}</th>
               <!-- {/if} -->
-              <th bgcolor="#ffffff">{if $gb_deposit}{$lang.deposit}{else}{$lang.shop_prices}{/if}</th>
-              <th bgcolor="#ffffff">{$lang.number}</th>
-              <th bgcolor="#ffffff">{$lang.subtotal}</th>
+              <th bgcolor="#ffffff" style="width:281px;text-align:center;padding-top: 10px;padding-bottom: 10px;">{if $gb_deposit}{$lang.deposit}{else}{$lang.shop_prices}{/if}</th>
+              <th bgcolor="#ffffff" style="width:281px;text-align:center;padding-top: 10px;padding-bottom: 10px;">{$lang.number}</th>
+              <th bgcolor="#ffffff" style="width:281px;text-align:center;padding-top: 10px;padding-bottom: 10px;">{$lang.subtotal}</th>
             </tr>
             <!-- {foreach from=$goods_list item=goods} -->
             <tr>
-              <td bgcolor="#ffffff">
+              <td bgcolor="#ffffff"  align="center" style="text-align:center;padding-top:10px;padding-bottom:10px;">
               <!-- {if $goods.goods_id gt 0 && $goods.extension_code eq 'package_buy'} -->
           <a href="javascript:void(0)" onclick="setSuitShow({$goods.goods_id})" class="f6">{$goods.goods_name}<span style="color:#FF0000;">（{$lang.remark_package}）</span></a>
           <div id="suit_{$goods.goods_id}" style="display:none">
@@ -386,55 +390,75 @@
           <!-- {/if} -->
           <!-- {if $goods.is_shipping} -->(<span style="color:#FF0000">{$lang.free_goods}</span>)<!-- {/if} -->
               </td>
-              <td bgcolor="#ffffff">{$goods.goods_attr|nl2br}</td>
+              <td bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$goods.goods_attr|nl2br}</td>
               <!-- {if $show_marketprice} -->
-              <td align="right" bgcolor="#ffffff">{$goods.formated_market_price}</td>
+              <td align="right" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$goods.formated_market_price}</td>
               <!-- {/if} -->
-              <td bgcolor="#ffffff" align="right">{$goods.formated_goods_price}</td>
-              <td bgcolor="#ffffff" align="right">{$goods.goods_number}</td>
-              <td bgcolor="#ffffff" align="right">{$goods.formated_subtotal}</td>
+              <td bgcolor="#ffffff" align="right" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$goods.formated_goods_price}</td>
+              <td bgcolor="#ffffff" align="right" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$goods.goods_number}</td>
+              <td bgcolor="#ffffff" align="right" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$goods.formated_subtotal}</td>
             </tr>
             <!-- {/foreach} -->
             <!-- {if !$gb_deposit} 团购且有保证金时不显示 -->
             <tr>
-              <td bgcolor="#ffffff" colspan="7">
+              <td bgcolor="#ffffff" colspan="7" style="text-align:right;padding-top:20px;padding-bottom:10px;">
               <!-- {if $discount gt 0} -->{$your_discount}<br /><!-- {/if} -->
-              {$shopping_money}<!-- {if $show_marketprice} -->，{$market_price_desc}<!--{/if}-->
+              {$shopping_money}<!-- {if $show_marketprice} -->&nbsp;&nbsp;&nbsp;{$market_price_desc}<!--{/if}-->
               </td>
             </tr>
+            <!--{if $allow_edit_cart} -->
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="text-align:right">
+              <a href="flow.php" style="font-family: Lato-Light,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 1.4;color: #2e3337;font-weight: 300;background-color: #ebebeb;border-style: none;padding: 10px;color: #333;border-radius: 0;display: inline-block;cursor: pointer;text-transform: uppercase;text-decoration: none;text-align: center;-webkit-box-sizing: border-box;box-sizing: border-box;line-height: 18px;margin-bottom: 0;">{$lang.modify}</a>
+            </td>
+            </tr><!--{/if} -->
             <!-- {/if} -->
           </table>
       </div>
-      <div class="blank"></div>
+      <div class="blank" style="padding-top:10px;padding-bottom:10px;"></div>
       <div class="flowBox">
-      <h6><span>{$lang.consignee_info}</span><a href="flow.php?step=consignee" class="f6">{$lang.modify}</a></h6>
+      <h6 style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 24px;line-height: 36px;color: #2c2d2d;font-weight: 300;text-transform: uppercase;margin-bottom: 24px;margin-top: 0;display: block;"><span>{$lang.consignee_info}</span></h6>
       <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <tr>
-              <td bgcolor="#ffffff">{$lang.consignee_name}:</td>
-              <td bgcolor="#ffffff">{$consignee.consignee|escape}</td>
-              <td bgcolor="#ffffff">{$lang.email_address}:</td>
-              <td bgcolor="#ffffff">{$consignee.email|escape}</td>
+              <td bgcolor="#ffffff" style="padding-top:10px;">{$lang.consignee_name}:</td>
+              <td bgcolor="#ffffff" style="padding-top:10px;">{$consignee.consignee|escape}</td>
+              <td bgcolor="#ffffff" style="padding-top:10px;">{$lang.email_address}:</td>
+              <td bgcolor="#ffffff" style="padding-top:10px;">{$consignee.email|escape}</td>
             </tr>
             <!-- {if $total.real_goods_count gt 0} -->
             <tr>
-              <td bgcolor="#ffffff">{$lang.detailed_address}:</td>
-              <td bgcolor="#ffffff">{$consignee.address|escape} </td>
-              <td bgcolor="#ffffff">{$lang.postalcode}:</td>
-              <td bgcolor="#ffffff">{$consignee.zipcode|escape}</td>
+              <td bgcolor="#ffffff" style="padding-top:10px;">{$lang.detailed_address}:</td>
+              <td bgcolor="#ffffff" style="padding-top:10px;">{$consignee.address|escape} </td>
+              <td bgcolor="#ffffff" style="padding-top:10px;">{$lang.postalcode}:</td>
+              <td bgcolor="#ffffff" style="padding-top:10px;">{$consignee.zipcode|escape}</td>
             </tr>
             <!-- {/if} -->
             <tr>
-              <td bgcolor="#ffffff">{$lang.phone}:</td>
-              <td bgcolor="#ffffff">{$consignee.tel} </td>
-              <td bgcolor="#ffffff">{$lang.backup_phone}:</td>
-              <td bgcolor="#ffffff">{$consignee.mobile|escape}</td>
+              <td bgcolor="#ffffff" style="padding-top:10px;">{$lang.phone}:</td>
+              <td bgcolor="#ffffff" style="padding-top:10px;">{$consignee.tel} </td>
+              <td bgcolor="#ffffff" style="padding-top:10px;">{$lang.backup_phone}:</td>
+              <td bgcolor="#ffffff" style="padding-top:10px;">{$consignee.mobile|escape}</td>
             </tr>
+            <tr>
+                
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="text-align:right">
+                  <a href="flow.php?step=consignee" style="font-family: Lato-Light,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 1.4;color: #2e3337;font-weight: 300;background-color: #ebebeb;border-style: none;padding: 10px;color: #333;border-radius: 0;display: inline-block;cursor: pointer;text-transform: uppercase;text-decoration: none;text-align: center;-webkit-box-sizing: border-box;box-sizing: border-box;line-height: 18px;margin-bottom: 0;">{$lang.modify}</a>
+                </td>
+                </tr>
           </table>
       </div>
-     <div class="blank"></div>
+     <div class="blank" style="padding-top:10px;padding-bottom:10px;"></div>
     <!--{if $total.real_goods_count neq 0}-->
     <div class="flowBox">
-    <h6><span>{$lang.shipping_method}</span></h6>
+    <h6 style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 24px;line-height: 36px;color: #2c2d2d;font-weight: 300;text-transform: uppercase;margin-bottom: 24px;margin-top: 0;display: block;"><span>{$lang.shipping_method}</span></h6>
     <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="shippingTable">
             <tr>
               <th bgcolor="#ffffff" width="5%">&nbsp;</th>
@@ -457,18 +481,18 @@
             <!-- {/foreach} 循环配送方式 -->
             <tr>
               <td colspan="6" bgcolor="#ffffff" align="right"><label for="ECS_NEEDINSURE">
-                <input name="need_insure" id="ECS_NEEDINSURE" type="checkbox"  onclick="selectInsure(this.checked)" value="1" {if $order.need_insure}checked="true"{/if} {if $insure_disabled}disabled="true"{/if}  />
+                <input style="height:20px;"name="need_insure" id="ECS_NEEDINSURE" type="checkbox"  onclick="selectInsure(this.checked)" value="1" {if $order.need_insure}checked="true"{/if} {if $insure_disabled}disabled="true"{/if}  />
                 {$lang.need_insure} </label></td>
             </tr>
           </table>
     </div>
-    <div class="blank"></div>
+    <div class="blank" style="padding-top:10px;padding-bottom:10px;"></div>
         <!--{else}-->
         <input name = "shipping" type="radio" value = "-1" checked="checked"  style="display:none"/>
         <!--{/if}-->
     <!--{if $is_exchange_goods neq 1 || $total.real_goods_count neq 0}-->
     <div class="flowBox">
-    <h6><span>{$lang.payment_method}</span></h6>
+    <h6 style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 24px;line-height: 36px;color: #2c2d2d;font-weight: 300;text-transform: uppercase;margin-bottom: 24px;margin-top: 0;display: block;"><span>{$lang.payment_method}</span></h6>
     <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="paymentTable">
             <tr>
               <th width="5%" bgcolor="#ffffff">&nbsp;</th>
@@ -480,21 +504,21 @@
             <!-- 循环支付方式 -->
             {if $payment.pay_code!='yunqi'}
             <tr>
-              <td valign="top" bgcolor="#ffffff"><input type="radio" name="payment" value="{$payment.pay_id}" {if $order.pay_id eq $payment.pay_id}checked{/if} isCod="{$payment.is_cod}" onclick="selectPayment(this)" {if $cod_disabled and $payment.is_cod eq "1"}disabled="true"{/if}/></td>
-              <td valign="top" bgcolor="#ffffff"><strong>{$payment.pay_name}</strong></td>
-              <td valign="top" bgcolor="#ffffff">{$payment.pay_desc}</td>
-              <td align="right" bgcolor="#ffffff" valign="top">{$payment.format_pay_fee}</td>
+              <td valign="top" bgcolor="#ffffff" style="color:#000"><input type="radio" name="payment" value="{$payment.pay_id}" {if $order.pay_id eq $payment.pay_id}checked{/if} isCod="{$payment.is_cod}" onclick="selectPayment(this)" {if $cod_disabled and $payment.is_cod eq "1"}disabled="true"{/if}/></td>
+              <td valign="top" bgcolor="#ffffff" style="color:#000"><strong>{$payment.pay_name}</strong></td>
+              <td valign="top" bgcolor="#ffffff" style="color:#000">{$payment.pay_desc}</td>
+              <td align="right" bgcolor="#ffffff" valign="top" style="color:#000">{$payment.format_pay_fee}</td>
             </tr>
             {else}
             <tr>
-              <td rowspan=2 valign="middle" bgcolor="#ffffff">
+              <td rowspan=2 valign="middle" bgcolor="#ffffff" style="color:#000">
                 <input type="radio" id="yunqi_payment" name="payment" value="{$payment.pay_id}" {if $order.pay_id eq $payment.pay_id}checked{/if} isCod="{$payment.is_cod}" onclick="selectPayment(this)" {if $cod_disabled and $payment.is_cod eq "1"}disabled="true"{/if}/></td>
-              <td class="list-tit" valign="top" bgcolor="#ffffff">
-                <strong>{$payment.pay_name} <i style="display:inline-block;width: 70px ;text-align: center" id="payMethod">（支付宝）</i></strong>
+              <td class="list-tit" valign="top" bgcolor="#ffffff" style="color:#000">
+                <strong>{$payment.pay_name} <i style="display:inline-block;width: 100px ;text-align: left" id="payMethod">（支付宝）</i></strong>
                 
               </td>
-              <td valign="top" bgcolor="#ffffff">{$payment.pay_desc}</td>
-              <td align="right" bgcolor="#ffffff" valign="top">{$payment.format_pay_fee}</td>
+              <td valign="top" bgcolor="#ffffff" style="color:#000">{$payment.pay_desc}</td>
+              <td align="right" bgcolor="#ffffff" valign="top" style="color:#000">{$payment.format_pay_fee}</td>
             </tr>
             <tr>
               <td align="left" bgcolor="#ffffff" valign="top" colspan=3>
@@ -516,10 +540,10 @@
     <!--{else}-->
         <input name = "payment" type="radio" value = "-1" checked="checked"  style="display:none"/>
     <!--{/if}-->
-    <div class="blank"></div>
+    <div class="blank" style="padding-top:10px;padding-bottom:10px;"></div>
           <!-- {if $pack_list} 是否有包装 -->
           <div class="flowBox">
-          <h6><span>{$lang.goods_package}</span></h6>
+          <h6 style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 24px;line-height: 36px;color: #2c2d2d;font-weight: 300;text-transform: uppercase;margin-bottom: 24px;margin-top: 0;display: block;"><span>{$lang.goods_package}</span></h6>
           <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="packTable">
             <tr>
               <th width="5%" scope="col" bgcolor="#ffffff">&nbsp;</th>
@@ -553,12 +577,12 @@
             <!-- {/foreach} 循环包装 -->
           </table>
        </div>
-             <div class="blank"></div>
+             <div class="blank" style="padding-top:10px;padding-bottom:10px;"></div>
           <!-- {/if} 是否使用包装 -->
 
           <!-- {if $card_list} 是否有贺卡 -->
           <div class="flowBox">
-          <h6><span>{$lang.goods_card}</span></h6>
+          <h6 style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 24px;line-height: 36px;color: #2c2d2d;font-weight: 300;text-transform: uppercase;margin-bottom: 24px;margin-top: 0;display: block;"><span>{$lang.goods_card}</span></h6>
           <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="cardTable">
             <tr>
               <th bgcolor="#ffffff" width="5%" scope="col">&nbsp;</th>
@@ -597,23 +621,23 @@
             </tr>
           </table>
         </div>
-                <div class="blank"></div>
+                <div class="blank" style="padding-top:10px;padding-bottom:10px;"></div>
         <!-- {/if} 是否使用贺卡 -->
 
       <div class="flowBox">
-    <h6><span>{$lang.other_info}</span></h6>
+    <h6 style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 24px;line-height: 36px;color: #2c2d2d;font-weight: 300;text-transform: uppercase;margin-bottom: 24px;margin-top: 0;display: block;"><span>{$lang.other_info}</span></h6>
       <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <!-- {if $allow_use_surplus} 是否使用余额 -->
             <tr>
               <td width="20%" bgcolor="#ffffff"><strong>{$lang.use_surplus}: </strong></td>
-              <td bgcolor="#ffffff"><input name="surplus" type="text" class="inputBg" id="ECS_SURPLUS" size="10" value="{$order.surplus|default:0}" onblur="changeSurplus(this.value)" {if $disable_surplus}disabled="disabled"{/if} />
+              <td bgcolor="#ffffff"><input style="height:25px;" name="surplus" type="text" class="inputBg" id="ECS_SURPLUS" size="10" value="{$order.surplus|default:0}" onblur="changeSurplus(this.value)" {if $disable_surplus}disabled="disabled"{/if} />
               {$lang.your_surplus}{$your_surplus|default:0} <span id="ECS_SURPLUS_NOTICE" class="notice"></span></td>
             </tr>
             <!-- {/if} 是否使用余额 -->
             <!-- {if $allow_use_integral} 是否使用积分 -->
             <tr>
               <td bgcolor="#ffffff"><strong>{$lang.use_integral}</strong></td>
-              <td bgcolor="#ffffff"><input name="integral" type="text" class="input" id="ECS_INTEGRAL" onblur="changeIntegral(this.value)" value="{$order.integral|default:0}" size="10" />
+              <td bgcolor="#ffffff"><input style="height:25px;" name="integral" type="text" class="inputBg" id="ECS_INTEGRAL" onblur="changeIntegral(this.value)" value="{$order.integral|default:0}" size="10" />
               {$lang.can_use_integral}:{$your_integral|default:0} {$points_name}，{$lang.noworder_can_integral}{$order_max_integral}  {$points_name}. <span id="ECS_INTEGRAL_NOTICE" class="notice"></span></td>
             </tr>
             <!-- {/if} 是否使用积分 -->
@@ -622,7 +646,7 @@
               <td bgcolor="#ffffff"><strong>{$lang.use_bonus}:</strong></td>
               <td bgcolor="#ffffff">
                 {$lang.select_bonus}
-                <select name="bonus" onchange="changeBonus(this.value)" id="ECS_BONUS" style="border:1px solid #ccc;">
+                <select style="height:25px;" name="bonus" onchange="changeBonus(this.value)" id="ECS_BONUS" style="border:1px solid #ccc;">
                   <option value="0" {if $order.bonus_id eq 0}selected{/if}>{$lang.please_select}</option>
                   <!-- {foreach from=$bonus_list item=bonus} -->
                   <option value="{$bonus.bonus_id}" {if $order.bonus_id eq $bonus.bonus_id}selected{/if}>{$bonus.type_name}[{$bonus.bonus_money_formated}]</option>
@@ -630,26 +654,26 @@
                 </select>
 
                 {$lang.input_bonus_no}
-                <input name="bonus_sn" type="text" class="inputBg" size="15" value="{$order.bonus_sn}" />
-                <input name="validate_bonus" type="button" class="bnt_blue_1" value="{$lang.validate_bonus}" onclick="validateBonus(document.forms['theForm'].elements['bonus_sn'].value)" style="vertical-align:middle;" />
+                <input style="height:25px;" name="bonus_sn" type="text" class="inputBg" size="15" value="{$order.bonus_sn}" />
+                <input style="height:25px;" name="validate_bonus" type="button" value="{$lang.validate_bonus}" onclick="validateBonus(document.forms['theForm'].elements['bonus_sn'].value)" style="font-family: Lato-Light,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 1.4;color: #2e3337;font-weight: 300;background-color: #ebebeb;border-style: none;padding: 10px;color: #333;border-radius: 0;display: inline-block;cursor: pointer;text-transform: uppercase;text-decoration: none;text-align: center;-webkit-box-sizing: border-box;box-sizing: border-box;line-height: 18px;margin-bottom: 0;" />
               </td>
             </tr>
             <!-- {/if} 是否使用红包 -->
             <!-- {if $inv_content_list} 能否开发票 -->
             <tr>
               <td bgcolor="#ffffff"><strong>{$lang.invoice}:</strong>
-                <input name="need_inv" type="checkbox"  class="input" id="ECS_NEEDINV" onclick="changeNeedInv()" value="1" {if $order.need_inv}checked="true"{/if} />
+                <input style="height:20px;vertical-align:bottom;" name="need_inv" type="checkbox"  class="input" id="ECS_NEEDINV" onclick="changeNeedInv()" value="1" {if $order.need_inv}checked="true"{/if} />
               </td>
               <td bgcolor="#ffffff">
                 <!-- {if $inv_type_list} -->
                 {$lang.invoice_type}
-                <select name="inv_type" id="ECS_INVTYPE" {if $order.need_inv neq 1}disabled="true"{/if} onchange="changeNeedInv()" style="border:1px solid #ccc;">
+                <select style="height:25px;" name="inv_type" id="ECS_INVTYPE" {if $order.need_inv neq 1}disabled="true"{/if} onchange="changeNeedInv()" style="border:1px solid #ccc;">
                 {html_options options=$inv_type_list selected=$order.inv_type}</select>
                 <!-- {/if} -->
                 {$lang.invoice_title}
-                <input name="inv_payee" type="text"  class="input" id="ECS_INVPAYEE" size="20" {if !$order.need_inv}disabled="true"{/if} value="{$order.inv_payee}" onblur="changeNeedInv()" />
+                <input style="height:25px;" name="inv_payee" type="text"  class="input" id="ECS_INVPAYEE" size="20" {if !$order.need_inv}disabled="true"{/if} value="{$order.inv_payee}" onblur="changeNeedInv()" />
                 {$lang.invoice_content}
-              <select name="inv_content" id="ECS_INVCONTENT" {if $order.need_inv neq 1}disabled="true"{/if}  onchange="changeNeedInv()" style="border:1px solid #ccc;">
+              <select  style="height:25px;" name="inv_content" id="ECS_INVCONTENT" {if $order.need_inv neq 1}disabled="true"{/if}  onchange="changeNeedInv()" style="border:1px solid #ccc;">
 
                 {html_options values=$inv_content_list output=$inv_content_list selected=$order.inv_content}
 
@@ -665,7 +689,7 @@
               <td bgcolor="#ffffff"><strong>{$lang.booking_process}:</strong></td>
               <td bgcolor="#ffffff"><!-- {foreach from=$how_oos_list key=how_oos_id item=how_oos_name} -->
                 <label>
-                <input name="how_oos" type="radio" value="{$how_oos_id}" {if $order.how_oos eq $how_oos_id}checked{/if} onclick="changeOOS(this)" />
+                <input name="how_oos" type="radio" value="{$how_oos_id}" {if $order.how_oos eq $how_oos_id}checked{/if} onclick="changeOOS(this)" style="height:20px;vertical-align:bottom;"/>
                 {$how_oos_name}</label>
                 <!-- {/foreach} -->
               </td>
@@ -673,12 +697,12 @@
             <!-- {/if} 缺货处理结束 -->
           </table>
     </div>
-    <div class="blank"></div>
+    <div class="blank" style="padding-top:10px;padding-bottom:10px;"></div>
     <div class="flowBox">
-    <h6><span>{$lang.fee_total}</span></h6>
+    <h6 style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 24px;line-height: 36px;color: #2c2d2d;font-weight: 300;text-transform: uppercase;margin-bottom: 24px;margin-top: 0;display: block;"><span>{$lang.fee_total}</span></h6>
           <!-- #BeginLibraryItem "/Library/order_total.lbi" --><!-- #EndLibraryItem -->
-           <div align="center" style="margin:8px auto;">
-            <input type="image" src="images/bnt_subOrder.gif" />
+           <div align="center" style="margin:8px auto;">            
+            <input type="submit" style="font-family: Lato-Light,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 1.4;color: #2e3337;font-weight: 300;background-color: #333;border-style: none;padding: 10px;color: #fff;border-radius: 0;display: inline-block;cursor: pointer;text-transform: uppercase;text-decoration: none;text-align: center;-webkit-box-sizing: border-box;box-sizing: border-box;margin-left: auto;line-height: 18px;" value="{$lang.order_submit}"/>
             <input type="hidden" name="step" value="done" />
             </div>
     </div>
@@ -794,95 +818,105 @@
         {/literal}
         </script>
         <!-- 开始用户登录注册界面 -->
-        <div class="flowBox">
-        <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
-          <tr>
-            <td width="50%" valign="top" bgcolor="#ffffff">
-            <h6><span>用户登录：</span></h6>
-            <form action="flow.php?step=login" method="post" name="loginForm" id="loginForm" onsubmit="return checkLoginForm(this)">
-                <table width="90%" border="0" cellpadding="8" cellspacing="1" bgcolor="#eeeeee" class="table">
-                  <tr>
-                    <td bgcolor="#ffffff"><div align="right"><strong>{$lang.username}</strong></div></td>
-                    <td bgcolor="#ffffff"><input name="username" type="text" class="inputBg" id="username" /></td>
-                  </tr>
-                  <tr>
-                    <td bgcolor="#ffffff"><div align="right"><strong>{$lang.password}</strong></div></td>
-                    <td bgcolor="#ffffff"><input name="password" class="inputBg" type="password" /></td>
-                  </tr>
+        <section class="page-container">
+        <div class="flowBoxChange" style="border-top:1px solid #BBB;background:#FFFFFF; padding-top:10px;">
+        <section class="middle-rail column-span24">
+          <div class="loginCard_row">
+          <div class="loginCard_wrapper" style="width:50%;display:inline-block">
+            <div class="loginCard">
+            <h2 class="loginCard_title">EXISTING CUSTOMERS</h2>
+            <fieldset class="loginCard_fieldset">
+            <form action="flow.php?step=login" method="post" name="loginForm" id="loginForm" onsubmit="return checkLoginForm(this)" class="loginCard_form">
+                <label for="username" class="loginCard_label">{$lang.username}</label> 
+                  <input size="25" name="username" type="text" class="sessioncamexclude loginCard_input" id="username" />
+                  
+                  
+                   <label for="password" class="loginCard_label">{$lang.password}</label> 
+                    <input size="25" name="password" class="sessioncamexclude loginCard_input" type="password" id="password" />
+                  
                   <!-- 判断是否启用验证码{if $enabled_login_captcha} -->
-                  <tr>
-                    <td bgcolor="#ffffff"><div align="right"><strong>{$lang.comment_captcha}:</strong></div></td>
-                    <td bgcolor="#ffffff"><input type="text" size="8" name="captcha" class="inputBg" />
-                    <img src="captcha.php?is_login=1&{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" /> </td>
-                  </tr>
+                  
+                    <div style="display:inline">{$lang.comment_captcha}</div>
+                    <input type="text" size="8" name="captcha" class="inputBg" style="height:30px"/>
+                    <br/>
+                    <img src="captcha.php?is_login=1&{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" /> 
+                    <br/>
+                    <br/>
                   <!--{/if}-->
-                  <tr>
-            <td colspan="2"  bgcolor="#ffffff"><input type="checkbox" value="1" name="remember" id="remember" /><label for="remember">{$lang.remember}</label></td>
-          </tr>
-                  <tr>
-                    <td bgcolor="#ffffff" colspan="2" align="center"><a href="user.php?act=qpassword_name" class="f6">{$lang.get_password_by_question}</a>&nbsp;&nbsp;&nbsp;<a href="user.php?act=get_password" class="f6">{$lang.get_password_by_mail}</a></td>
-                  </tr>
-                  <tr>
-                    <td bgcolor="#ffffff" colspan="2"><div align="center">
-                        <input type="submit" class="bnt_blue" name="login" value="{$lang.forthwith_login}" />
+                  
+            <input type="checkbox" value="1" name="remember" id="remember" style="    border: 1px solid #e6e6e6;height:15px;width:15px;padding: 0 10px;margin: 0;box-sizing: border-box;border-radius: 2px;"/><label for="remember">{$lang.remember}</label>
+                  
+                    <br/>
+                    <a href="user.php?act=qpassword_name" style="color: #477580;display:block;text-align:right;">{$lang.get_password_by_question}</a>
+                    <a href="user.php?act=get_password" style="color: #477580;display:block;text-align:right;">{$lang.get_password_by_mail}</a>
+                    <br/>
+
+                    <div align="center">
+                        <input type="submit"  name="login" value="{$lang.forthwith_login}" style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 14px;font-weight: 300;text-transform: uppercase;background-color: #477580;border: 1px solid #477580;padding: 9px;color: #fff;line-height: 20px;border-radius: 0;cursor: pointer;text-align: center;box-sizing: border-box;display: inline;margin-left: auto;margin-right: auto;"/>
                         <!-- {if $anonymous_buy eq 1} 是否允许未登录用户购物 -->
-                        <input type="button" class="bnt_blue_2" value="{$lang.direct_shopping}" onclick="location.href='flow.php?step=consignee&amp;direct_shopping=1'" />
+                        <input type="button"  value="{$lang.direct_shopping}" onclick="location.href='flow.php?step=consignee&amp;direct_shopping=1'" style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 14px;font-weight: 300;text-transform: uppercase;background-color: #477580;border: 1px solid #477580;padding: 9px;color: #fff;line-height: 20px;border-radius: 0;cursor: pointer;text-align: center;box-sizing: border-box;display: inline;margin-left: auto;margin-right: auto;"/>
                         <!-- {/if} -->
                         <input name="act" type="hidden" value="signin" />
-                      </div></td>
-                  </tr>
-                </table>
+                      </div>
+                  
+                
               </form>
+            </fieldset>
+              </div>
+          </div>
 
-              </td>
-            <td valign="top" bgcolor="#ffffff">
-            <h6><span>用户注册：</span></h6>
-            <form action="flow.php?step=login" method="post" name="formUser" id="registerForm" onsubmit="return checkSignupForm(this)">
-               <table width="98%" border="0" cellpadding="8" cellspacing="1" bgcolor="#eeeeee" class="table">
-                  <tr>
-                    <td bgcolor="#ffffff" align="right" width="25%"><strong>{$lang.username}</strong></td>
-                    <td bgcolor="#ffffff"><input name="username" type="text" class="inputBg" id="username" onblur="is_registered(this.value);" /><br />
-            <span id="username_notice" style="color:#FF0000"></span></td>
-                  </tr>
-                  <tr>
-                    <td bgcolor="#ffffff" align="right"><strong>{$lang.email_address}</strong></td>
-                    <td bgcolor="#ffffff"><input name="email" type="text" class="inputBg" id="email" onblur="checkEmail(this.value);" /><br />
-            <span id="email_notice" style="color:#FF0000"></span></td>
-                  </tr>
-                  <tr>
-                    <td bgcolor="#ffffff" align="right"><strong>{$lang.password}</strong></td>
-                    <td bgcolor="#ffffff"><input name="password" class="inputBg" type="password" id="password1" onblur="check_password(this.value);" onkeyup="checkIntensity(this.value)" /><br />
-            <span style="color:#FF0000" id="password_notice"></span></td>
-                  </tr>
-                  <tr>
-                    <td bgcolor="#ffffff" align="right"><strong>{$lang.confirm_password}</strong></td>
-                    <td bgcolor="#ffffff"><input name="confirm_password" class="inputBg" type="password" id="confirm_password" onblur="check_conform_password(this.value);" /><br />
-            <span style="color:#FF0000" id="conform_password_notice"></span></td>
-                  </tr>
+          
+          <div class="loginCard_wrapper" style="width:50%;">
+              <div class="loginCard">
+          <h2 class="loginCard_title">NEW CUSTOMERS</h2>
+          <fieldset class="loginCard_fieldset">
+            <form action="flow.php?step=login" method="post" name="formUser" id="registerForm" onsubmit="return checkSignupForm(this)" class="loginCard_form">
+                <label for="username" class="loginCard_label">{$lang.username}</label>
+                    <input name="username" type="text"  id="username" onblur="is_registered(this.value);" class="sessioncamexclude loginCard_input" size="25"/>
+                    <span id="username_notice" style="color:#FF0000"></span>
+                  
+                  
+                    <label for="username" class="loginCard_label">{$lang.email_address}</label>
+                    <input name="email" type="text"  id="email" onblur="checkEmail(this.value);" class="sessioncamexclude loginCard_input" size="25"/>
+            <span id="email_notice" style="color:#FF0000"></span>
+                  
+                  
+            <label for="username" class="loginCard_label">{$lang.password}</label>
+                    <input name="password"  type="password" id="password1" onblur="check_password(this.value);" onkeyup="checkIntensity(this.value)" class="sessioncamexclude loginCard_input" size="25"/>
+            <span style="color:#FF0000" id="password_notice"></span>
+                  
+                  
+            <label for="username" class="loginCard_label">{$lang.confirm_password}</label>
+                    <input name="confirm_password"  type="password" id="confirm_password" onblur="check_conform_password(this.value);" class="sessioncamexclude loginCard_input" size="25"/>
+            <span style="color:#FF0000" id="conform_password_notice"></span>
+                  
                   <!-- 判断是否启用验证码{if $enabled_register_captcha} -->
-                  <tr>
-                    <td bgcolor="#ffffff" align="right"><strong>{$lang.comment_captcha}:</strong></td>
-                    <td bgcolor="#ffffff"><input type="text" size="8" name="captcha" class="inputBg" />
-                    <img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?'+Math.random()" /> </td>
-                  </tr>
+                  
+                  <div style="display:inline">{$lang.comment_captcha}</div>
+                    <input type="text" size="8" name="captcha" class="inputBg" style="height:30px"/>
+                    <br/>
+                    <img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?'+Math.random()" />
+                    <br/>
+                    <br/>
                   <!--{/if}-->
-                  <tr>
-                    <td colspan="2" bgcolor="#ffffff" align="center">
-                        <input type="submit" name="Submit" class="bnt_blue_1" value="{$lang.forthwith_register}" />
-                        <input name="act" type="hidden" value="signup" />
-                    </td>
-                  </tr>
-                </table>
+                  
+                  <div align="center">
+                        <input type="submit" name="Submit"  value="{$lang.forthwith_register}" style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 14px;font-weight: 300;text-transform: uppercase;background-color: #477580;border: 1px solid #477580;padding: 9px;color: #fff;line-height: 20px;border-radius: 0;cursor: pointer;text-align: center;box-sizing: border-box;display: inline;margin-left: auto;margin-right: auto;"/>
+                        <input name="act" type="hidden" value="signup" style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 14px;font-weight: 300;text-transform: uppercase;background-color: #477580;border: 1px solid #477580;padding: 9px;color: #fff;line-height: 20px;border-radius: 0;cursor: pointer;text-align: center;box-sizing: border-box;display: inline;margin-left: auto;margin-right: auto;"/>  
+                        </div>
               </form>
-              </td>
-          </tr>
+            </fieldset>
+              </div>
+              </div>
+          </div>
           {if $need_rechoose_gift}
-          <tr>
-            <td colspan="2" align="center" style="border-top:1px #ccc solid; padding:5px; color:red;">{$lang.gift_remainder}</td>
-          </tr>
+         
+            <div style=" padding:5px; color:red;text-align:center">{$lang.gift_remainder}</div>
+          
           {/if}
-        </table>
+        </section>
         </div>
+      </section>
         <!-- 结束用户登录注册界面 -->
         <!-- {/if} -->
 
