@@ -555,6 +555,7 @@ $_LANG['had_use'] = 'Used';
 
 /* 用户推荐 */
 $_LANG['affiliate_mode'] = 'Affiliate mode';
+$_LANG['affiliate_rule'] = 'Affiliate rule';
 $_LANG['affiliate_detail'] = 'Affiliate Detail';
 $_LANG['affiliate_member'] = 'Affiliate Member';
 $_LANG['affiliate_code'] = 'Affiliate Code';
