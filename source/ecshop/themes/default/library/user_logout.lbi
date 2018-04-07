@@ -1,0 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="myAccountSection_header_buttons">
+  <a title="{$lang.user_logout}" href="user.php?act=logout" data-e2e="logoutButton" class="myAccount_logOutButton js-tag-sign-out" rel="nofollow">{$lang.user_logout}</a>
+</div>

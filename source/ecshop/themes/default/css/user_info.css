@@ -94,3 +94,22 @@
     color: #FFFFFF;
     background: #477580;
 }
+
+/* 统一修正按钮颜色 */
+.skincarerx_btn_color {
+    background: #477580;
+    color: #fff;
+}
+
+.message_list .msgBottomBorder {
+    text-align: left;
+}
+
+.message_list input {
+    height: auto;
+    padding: 0;
+}
+
+.message_list .inputBg {
+    height: auto;
+}

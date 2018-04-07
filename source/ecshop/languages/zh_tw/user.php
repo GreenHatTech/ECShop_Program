@@ -551,6 +551,7 @@ $_LANG['had_use'] = '已使用';
 
 /* 用戶推薦 */
 $_LANG['affiliate_mode'] = '分成模式';
+$_LANG['affiliate_rule'] = '分成規則';
 $_LANG['affiliate_detail'] = '分成明細';
 $_LANG['affiliate_member'] = '我推薦的會員';
 $_LANG['affiliate_code'] = '推薦代碼';
