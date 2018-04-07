@@ -5,7 +5,7 @@ var process_request = "{$lang.process_request}";
 </script>
 <style>
     .nav-row {
-        background-color: #477580;
+        background-color: #ff8787;
         min-width: 1200px;
         clear: both
     }
@@ -58,10 +58,9 @@ var process_request = "{$lang.process_request}";
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="?lang=zh_cn">简体</a>
-        <a href="?lang=zh_tw">繁体</a>
-        <a href="?lang=en_us">英文</a>
-        <a href="user.php" class="">用户中心</a>
+        <a href="?lang=zh_cn">zh_cn</a>
+        <a href="?lang=en_us">en_gb</a>
+        <a href="user.php" class="">user_center</a>
       </div>
       <!-- #BeginLibraryItem "/library/cart.lbi" --> {insert_scripts files='transport.js'}
       <div class="cart" id="ECS_CARTINFO"> {insert name='cart_info'} </div>
@@ -71,6 +70,7 @@ var process_request = "{$lang.process_request}";
 <div class="nav-menu">
   <div class="wrap">
     <div class="logo"><a href="../index.php" name="top"><img src="../images/logo.gif" /></a></div>
+    <!--<div class="logo"><a href="../index.php" name="top"><span style="    margin: 30px; display: block;">FANGFEI BEAUTY</span></a></div>-->
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
 
@@ -81,7 +81,7 @@ var process_request = "{$lang.process_request}";
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td width="135"><input name="keywords" type="text" id="keyword" value="{$search_keywords|escape}" class="B_input"  /></td>
-            <td><input name="imageField" type="submit" value="搜索" class="go" style="cursor:pointer;" /></td>
+            <td><input name="imageField" type="submit" value="search" class="go" style="cursor:pointer;" /></td>
           </tr>
         </table>
       </form>

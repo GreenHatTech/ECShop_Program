@@ -24,7 +24,7 @@
     <a href="{$pager.page_first}">{$lang.page_first} ...</a>
     <!-- {/if} -->
     <!-- {if $pager.page_prev} -->
-    <a class="prev" href="{$pager.page_prev}">上一页</a>
+    <a class="prev" href="{$pager.page_prev}"><</a>
     <!-- {/if} -->
     <!-- {if $pager.page_count neq 1} -->
     <!--{foreach from=$pager.page_number key=key item=item}-->
@@ -36,7 +36,7 @@
     <!--{/foreach}-->
     <!-- {/if} -->
     <!-- {if $pager.page_next} -->
-    <a class="next" href="{$pager.page_next}">下一页</a>
+    <a class="next" href="{$pager.page_next}">></a>
     <!-- {/if} -->
     <!-- {if $pager.page_last} -->
     <a class="last" href="{$pager.page_last}">...{$lang.page_last}</a>
