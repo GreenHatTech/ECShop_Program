@@ -39,7 +39,7 @@
         <form id="formCart" name="formCart" method="post" action="flow.php">
            <table width="99%" align="center" border="0" cellpadding="5" cellspacing="0" bgcolor="#dddddd">
             <tr>
-              <th align="left" bgcolor="#ffffff" style="width:281px;text-align:center;border-bottom:1px solid #BBB;border-top:1px solid #BBB;padding-top: 10px;padding-bottom: 10px;">{$lang.goods_name}</th>
+              <th bgcolor="#ffffff" style="width:281px;text-align:center;border-bottom:1px solid #BBB;border-top:1px solid #BBB;padding-top: 10px;padding-bottom: 10px;">{$lang.goods_name}</th>
       <!-- {if $show_goods_attribute eq 1} 显示商品属性 -->
               <th bgcolor="#ffffff" style="text-align:center;border-bottom:1px solid #BBB;border-top:1px solid #BBB;padding-top: 10px;">{$lang.goods_attr}</th>
               <!-- {/if} -->
@@ -53,7 +53,7 @@
             </tr>
             <!-- {foreach from=$goods_list item=goods} -->
             <tr>
-              <td bgcolor="#ffffff" align="center" style="border-bottom:1px solid #BBB;">
+              <td bgcolor="#ffffff" align="center" style="border-bottom:1px solid #BBB;text-align:center;">
                 <!-- {if $goods.goods_id gt 0 && $goods.extension_code neq 'package_buy'} 商品 -->
                   <!-- {if $show_goods_thumb eq 1} -->
                     <a href="goods.php?id={$goods.goods_id}" target="_blank" class="f6" style="color: #000;">{$goods.goods_name}</a>
