@@ -6,15 +6,29 @@
     height: 20px;
 }
 .settingsCard_menu {
-    width: 16.666% !important;
+    width: 20% !important;
     clear: none !important;
 }
 .settingsCard_menu .settingsCard {
-    min-height: auto !important;
+    min-height: 150px !important;
 }
-.settingsCard_menu .curs .settingsCard_title {
+
+.settingsCard_menu .curs .settingsCard_title p {
     color: #79a9b4;
     font-weight: bold;
+}
+
+.settingsCard_menu .settingsCard_title {
+    width: 100%;
+    display: table;
+    height: 40px;
+}
+
+.settingsCard_menu .settingsCard_title p {
+    height: 40px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .myAccountSection_header_extra_text {

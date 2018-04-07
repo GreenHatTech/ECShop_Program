@@ -343,7 +343,7 @@
                   </select></td>
               </tr>
               <tr>
-                <td colspan="2" align="center" bgcolor="#ffffff"><input type="button" name="gen_code" value="{$lang.generate}" onclick="genCode()" class="bnt_blue_1" style="background: #79a9b4;" />
+                <td colspan="2" align="center" bgcolor="#ffffff"><input type="button" name="gen_code" value="{$lang.generate}" onclick="genCode()" class="bnt_blue_1" style="background: #79a9b4;width: auto;" />
                 </td>
               </tr>
               <tr>
