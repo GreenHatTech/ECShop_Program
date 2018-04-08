@@ -13,9 +13,6 @@
 <meta name="viewport" content="width=1200" />
 <link rel="stylesheet" href="{$ecs_themes_path}/css/screen-1c23e8a1ad.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="{$ecs_themes_path}/css/account-1a49356ad1.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="{$ecs_themes_path}/css/responsive_components-desktop-97f4bed450.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="{$ecs_themes_path}/css/platform_components-desktop-8e8117978c.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="{$ecs_themes_path}/css/skincarerx-takeover.css" type="text/css" media="screen" />
 {* 包含脚本文件 *}
 {insert_scripts files='common.js,user.js,transport.js'}
 <body>
@@ -28,8 +25,8 @@
     <div class="header__body">
       <div class="header__bodyinner">
         <div class="siteBranding">
-          <a class="siteBranding__logo icon icon-logo" href="index.php" title="SkinCareRx">
-            SkinCareRx
+          <a class="siteBranding__logo icon icon-logo" href="index.php" title="Fang Fei Beauty">
+            Fang Fei Beauty
           </a>
         </div>
         <div class="ssl-logo">
@@ -44,7 +41,7 @@
                     <!-- Begin DigiCert site seal HTML and JavaScript -->
                     <div id="DigiCertClickID_A_R3Hmlz" data-language="en_US">
                       <a href="index.php">
-                        DigiCert.com
+                        Fang Fei Beauty
                       </a>
                     </div>
                     <!-- End DigiCert site seal HTML and JavaScript -->
@@ -152,8 +149,8 @@
     <div class="header__body">
       <div class="header__bodyinner">
         <div class="siteBranding">
-          <a class="siteBranding__logo icon icon-logo" href="index.php" title="SkinCareRx">
-            SkinCareRx
+          <a class="siteBranding__logo icon icon-logo" href="index.php" title="Fang Fei Beauty">
+            Fang Fei Beauty
           </a>
         </div>
         <div class="ssl-logo">
@@ -168,7 +165,7 @@
                     <!-- Begin DigiCert site seal HTML and JavaScript -->
                     <div id="DigiCertClickID_A_R3Hmlz" data-language="en_US">
                       <a href="index.php">
-                        DigiCert.com
+                        Fang Fei Beauty
                       </a>
                     </div>
                     <!-- End DigiCert site seal HTML and JavaScript -->
@@ -231,32 +228,34 @@
                       <span id="conform_password_notice" style="color:#FF0000;font-size:12px"> *</span>
                     </div>
                   </li>
-                  <!-- {foreach from=$extend_info_list item=field} -->
+                 <!-- {foreach from=$extend_info_list item=field} -->
                   <!-- {if $field.id eq 6} -->
                   <li class="createAccount_listItem">
                     <label class="createAccount_label">{$lang.passwd_question}</label>
                     <select name='sel_question'>
-                      <option value='0'>{$lang.sel_question}</option>
-                    {html_options options=$passwd_questions}
-                    </select>
-                  </li>
+                      <option value='0'>{$lang.sel_question}</option>{html_options options=$passwd_questions}</select></li>
                   <li class="createAccount_listItem">
-                    <label for="passwd_answer" <!-- {if $field.is_need} -->id="passwd_quesetion"<!--{/if}--> class="createAccount_label">{$lang.passwd_answer}</label>
+                    <label for="passwd_answer" <!-- {if $field.is_need} -->id="passwd_quesetion"
+                      <!--{/if}-->class="createAccount_label">{$lang.passwd_answer}</label>
                     <div class="m-unit-main">
-                      <input id="passwd_answer" name="passwd_answer" class="createAccount_input sessioncamexclude" tabindex="1" type="text" class="inputBg" maxlengt='20'/>
-                      <!-- {if $field.is_need} --><span style="color:#FF0000;font-size:12px;"> *</span><!-- {/if} -->
-                    </div>
+                      <input id="passwd_answer" name="passwd_answer" class="createAccount_input sessioncamexclude" tabindex="1" type="text" class="inputBg" maxlengt='20' />
+                      <!-- {if $field.is_need} -->
+                      <span style="color:#FF0000;font-size:12px;">*</span>
+                      <!-- {/if} --></div>
                   </li>
-            <!-- {else} -->
+                  <!-- {else} -->
                   <li class="createAccount_listItem">
-                    <label class="createAccount_label" <!-- {if $field.is_need} -->id="extend_field{$field.id}i"<!--{/if}-->>{$field.reg_field_name}</label>
+                    <label class="createAccount_label" <!-- {if $field.is_need} -->id="extend_field{$field.id}i"
+                      <!--{/if}-->>{$field.reg_field_name}</label>
                     <div class="m-unit-main">
-                      <input name="extend_field{$field.id}" type="text" size="25" class="createAccount_input sessioncamexclude" /><!-- {if $field.is_need} --><span style="color:#FF0000;font-size:12px;"> *</span><!-- {/if} -->
-                    </div>
+                      <input name="extend_field{$field.id}" type="text" size="25" class="createAccount_input sessioncamexclude" />
+                      <!-- {if $field.is_need} -->
+                      <span style="color:#FF0000;font-size:12px;">*</span>
+                      <!-- {/if} --></div>
                     </td>
                   </li>
-            <!-- {/if} -->
-            <!-- {/foreach} -->
+                  <!-- {/if} -->
+                  <!-- {/foreach} -->
                   <li class="createAccount_listItem">
                     <div id="vcode" style="display: none">
                       <label class="createAccount_label">{$lang.comment_captcha}</label>
@@ -268,10 +267,10 @@
                     </div>
                   </li>
                   <li id="sms" class="createAccount_listItem" style="display: none">
-                       <label class="createAccount_label">短信验证码</label>
+                       <label class="createAccount_label">SMS verification code</label>
                        <div class="m-unit-main">
                         <input type="text" name="sms_code" value="" size="8" style="width:150px" >
-                        <input id="get_sms" type="button" style="align-content: center;width:100px;height:28px;background:#d2d2d2;color:#fff;cursor:pointer" onclick="send_sms()" value="获取验证码" disabled="disabled"/>
+                        <input id="get_sms" type="button" style="align-content: center;width:100px;height:28px;background:#d2d2d2;color:#fff;cursor:pointer" onclick="send_sms()" value="Get the verification code" disabled="disabled"/>
                         <span style="color:#FF0000;font-size:12px;display: none;" id="sms_tip"></span>
                         </div>
                   </li>
@@ -481,10 +480,10 @@
       <br />
       <table width="70%" border="0" align="center">
         <tr>
-          <td colspan="2" height="40px;" align="center"><p class="createAccount_termsAndConditions"><strong>短信找回密码</strong></p></td>
+          <td colspan="2" height="40px;" align="center"><p class="createAccount_termsAndConditions"><strong>Please enter your phone number and verification code.</strong></p></td>
         </tr>
         <tr>
-          <td width="40%" align="right">手机号：</td>
+          <td width="40%" align="right">Phone Number：</td>
           <td width="60%"><input type="text" id="username" name="username" size="50"></td>
         </tr>
         <tr id="vcode_rep">
@@ -495,10 +494,10 @@
           </td>
         </tr>
         <tr id="sms_123">
-          <td align="right">短信验证码：</td>
+          <td align="right">SMS verification code：</td>
           <td>
             <input type="text" name="sms_code" id="sms_code" value="" size="15">
-            <input id="get_sms_rep" type="button" style="align-content: center;background:#d2d2d2;color:#fff;cursor:pointer" onclick="rep_send_sms()" value="获取验证码" disabled="disabled"/>
+            <input id="get_sms_rep" type="button" style="align-content: center;background:#d2d2d2;color:#fff;cursor:pointer" onclick="rep_send_sms()" value="Get the verification code" disabled="disabled"/>
             <span style="color:#FF0000;font-size:12px;display: none" id="sms_tip_rep"></span>
           </td>
         </tr>
@@ -528,10 +527,10 @@
       <br />
       <table width="70%" border="0" align="center">
         <tr>
-          <td colspan="2" height="40px;" align="center"><p class="createAccount_termsAndConditions"><strong>重置密码</strong></p></td>
+          <td colspan="2" height="40px;" align="center"><p class="createAccount_termsAndConditions"><strong>Reset your password</strong></p></td>
         </tr>
         <tr>
-          <td width="40%" align="right">新密码</td>
+          <td width="40%" align="right">New password</td>
           <td width="60%"><input type="password" id="" name="new_password" size="50" onblur="check_password(this.value);" onkeyup="checkIntensity(this.value)"></td>
         </tr>
         <tr>
@@ -547,7 +546,7 @@
           </td>
         </tr>
         <tr>
-          <td width="40%" align="right">确认密码</td>
+          <td width="40%" align="right">Confirm password</td>
           <td width="60%"><input type="password" id="" name="confirm_password" size="50"></td>
         </tr>
         <tr>

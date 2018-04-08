@@ -313,7 +313,7 @@
             <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
               <tr>
                 <td align="right" bgcolor="#ffffff">{$lang.label_need_image}</td>
-                <td bgcolor="#ffffff"><select name="need_image" id="need_image" class="inputBg">
+                <td bgcolor="#ffffff"><select name="need_image" id="need_image" class="inputBg input_height_auto">
                     <option value="true" selected>{$lang.need}</option>
                     <option value="false">{$lang.need_not}</option>
                   </select>
@@ -321,18 +321,18 @@
               </tr>
               <tr>
                 <td align="right" bgcolor="#ffffff">{$lang.label_goods_num}</td>
-                <td bgcolor="#ffffff"><input name="goods_num" type="text" id="goods_num" value="6" class="inputBg" /></td>
+                <td bgcolor="#ffffff"><input name="goods_num" type="text" id="goods_num" value="6" class="inputBg input_height_auto" /></td>
               </tr>
               <tr>
                 <td align="right" bgcolor="#ffffff">{$lang.label_arrange}</td>
-                <td bgcolor="#ffffff"><select name="arrange" id="arrange" class="inputBg">
+                <td bgcolor="#ffffff"><select name="arrange" id="arrange" class="inputBg input_height_auto">
                     <option value="h" selected>{$lang.horizontal}</option>
                     <option value="v">{$lang.verticle}</option>
                   </select></td>
               </tr>
               <tr>
                 <td align="right" bgcolor="#ffffff">{$lang.label_rows_num}</td>
-                <td bgcolor="#ffffff"><input name="rows_num" type="text" id="rows_num" value="1" class="inputBg" /></td>
+                <td bgcolor="#ffffff"><input name="rows_num" type="text" id="rows_num" value="1" class="inputBg input_height_auto" /></td>
               </tr>
               <tr>
                 <td align="right" bgcolor="#ffffff">{$lang.label_charset}</td>
@@ -343,7 +343,7 @@
                   </select></td>
               </tr>
               <tr>
-                <td colspan="2" align="center" bgcolor="#ffffff"><input type="button" name="gen_code" value="{$lang.generate}" onclick="genCode()" class="bnt_blue_1" style="background: #79a9b4;width: auto;" />
+                <td colspan="2" align="center" bgcolor="#ffffff"><input type="button" name="gen_code" value="{$lang.generate}" onclick="genCode()" class="bnt_blue_1 btn_color" style="width: auto;" />
                 </td>
               </tr>
               <tr>

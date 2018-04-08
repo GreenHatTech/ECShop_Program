@@ -399,6 +399,10 @@ $_LANG['other_office_phone'] = '办公电话';
 $_LANG['other_home_phone'] = '家庭电话';
 $_LANG['other_mobile_phone'] = '手机';
 $_LANG['remember'] = '请保存我这次的登录信息。';
+$_LANG['label_forget_passwd'] = '找回密码';
+$_LANG['label_passwd_email'] = '邮件';
+$_LANG['label_passwd_question'] = '密码问题';
+$_LANG['label_passwd_sms'] = '短信';
 
 $_LANG['msg_un_blank'] = '用户名不能为空';
 $_LANG['msg_un_length'] = '用户名最长不得超过7个汉字';
