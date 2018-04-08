@@ -10,7 +10,7 @@
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="themes/default//css/screen-1c23e8a1ad.css" type="text/css" media="screen">
+
 <link rel="stylesheet" href="themes/default//css/account-1a49356ad1.css" type="text/css" media="screen">
 <link rel="stylesheet" href="themes/default//css/responsive_components-desktop-97f4bed450.css" type="text/css" media="screen">
 <link rel="stylesheet" href="themes/default//css/platform_components-desktop-8e8117978c.css" type="text/css" media="screen">
@@ -94,7 +94,7 @@
                 {$goods.goods_number}
                 <!-- {/if} -->
               </td>
-              <td align="center" bgcolor="#ffffff" style="width:140px;vertical-align: middle;border-bottom:1px solid #BBB;">{$goods.subtotal}</td>
+              <td align="center" bgcolor="#ffffff" style="width:140px;vertical-align: middle;border-bottom:1px solid #BBB;text-align:center;">{$goods.subtotal}</td>
               <td align="center" bgcolor="#ffffff" style="text-align: center;width:140px;vertical-align: middle;border-bottom:1px solid #BBB;">
               <a href="javascript:if (confirm('{$lang.drop_goods_confirm}')) location.href='flow.php?step=drop_goods&amp;id={$goods.rec_id}'; " class="f6" style="color: #000;font-family: Lato-Light,Helvetica,Arial,sans-serif;text-align: center;display: block;font-weight: 400;">
               {$lang.drop}
@@ -194,7 +194,7 @@
 
   <!-- {if $collection_goods} -->
   <div class="flowBox">
-    <h6><span>{$lang.label_collection}</span></h6>
+    <h6 style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 24px;line-height: 36px;color: #2c2d2d;font-weight: 300;text-transform: uppercase;margin-bottom: 24px;margin-top: 0;display: block;"><span>{$lang.label_collection}</span></h6>
     <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
       <!-- {foreach from=$collection_goods item=goods} -->
           <tr>
@@ -251,7 +251,7 @@
   </script>
   <div class="block" >
     <div class="flowBox">
-    <h6><span>{$lang.goods_fittings}</span></h6>
+    <h6 style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 24px;line-height: 36px;color: #2c2d2d;font-weight: 300;text-transform: uppercase;margin-bottom: 24px;margin-top: 0;display: block;"><span>{$lang.goods_fittings}</span></h6>
     <form action="flow.php" method="post">
         <div class="flowGoodsFittings clearfix">
           <!-- {foreach from=$fittings_list item=fittings} -->
@@ -392,11 +392,11 @@
               </td>
               <td bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$goods.goods_attr|nl2br}</td>
               <!-- {if $show_marketprice} -->
-              <td align="right" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$goods.formated_market_price}</td>
+              <td bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$goods.formated_market_price}</td>
               <!-- {/if} -->
-              <td bgcolor="#ffffff" align="right" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$goods.formated_goods_price}</td>
-              <td bgcolor="#ffffff" align="right" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$goods.goods_number}</td>
-              <td bgcolor="#ffffff" align="right" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$goods.formated_subtotal}</td>
+              <td bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$goods.formated_goods_price}</td>
+              <td bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$goods.goods_number}</td>
+              <td bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$goods.formated_subtotal}</td>
             </tr>
             <!-- {/foreach} -->
             <!-- {if !$gb_deposit} 团购且有保证金时不显示 -->
@@ -461,31 +461,32 @@
     <h6 style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 24px;line-height: 36px;color: #2c2d2d;font-weight: 300;text-transform: uppercase;margin-bottom: 24px;margin-top: 0;display: block;"><span>{$lang.shipping_method}</span></h6>
     <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="shippingTable">
             <tr>
-              <th bgcolor="#ffffff" width="5%">&nbsp;</th>
-              <th bgcolor="#ffffff" width="25%">{$lang.name}</th>
-              <th bgcolor="#ffffff">{$lang.describe}</th>
-              <th bgcolor="#ffffff" width="15%">{$lang.fee}</th>
-              <th bgcolor="#ffffff" width="15%">{$lang.free_money}</th>
-              <th bgcolor="#ffffff" width="15%">{$lang.insure_fee}</th>
+              <th bgcolor="#ffffff" width="5%" style="text-align:center;padding-top:10px;padding-bottom:10px;">&nbsp;</th>
+              <th bgcolor="#ffffff" width="25%" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.name}</th>
+              <th bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.describe}</th>
+              <th bgcolor="#ffffff" width="15%" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.fee}</th>
+              <th bgcolor="#ffffff" width="15%" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.free_money}</th>
+              <th bgcolor="#ffffff" width="15%" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.insure_fee}</th>
             </tr>
             <!-- {foreach from=$shipping_list item=shipping} 循环配送方式 -->
             <tr>
-              <td bgcolor="#ffffff" valign="top"><input name="shipping" type="radio" value="{$shipping.shipping_id}" {if $order.shipping_id eq $shipping.shipping_id}checked="true"{/if} supportCod="{$shipping.support_cod}" insure="{$shipping.insure}" onclick="selectShipping(this)" />
+              <td bgcolor="#ffffff" valign="top" style="text-align:center;padding-top:10px;padding-bottom:10px;"><input name="shipping" type="radio" value="{$shipping.shipping_id}" {if $order.shipping_id eq $shipping.shipping_id}checked="true"{/if} supportCod="{$shipping.support_cod}" insure="{$shipping.insure}" onclick="selectShipping(this)" />
               </td>
-              <td bgcolor="#ffffff" valign="top"><strong>{$shipping.shipping_name}</strong></td>
-              <td bgcolor="#ffffff" valign="top">{$shipping.shipping_desc}</td>
-              <td bgcolor="#ffffff" align="right" valign="top">{$shipping.format_shipping_fee}</td>
-              <td bgcolor="#ffffff" align="right" valign="top">{$shipping.free_money}</td>
-              <td bgcolor="#ffffff" align="right" valign="top">{if $shipping.insure neq 0}{$shipping.insure_formated}{else}{$lang.not_support_insure}{/if}</td>
+              <td bgcolor="#ffffff" valign="top" style="text-align:center;padding-top:10px;padding-bottom:10px;"><strong>{$shipping.shipping_name}</strong></td>
+              <td bgcolor="#ffffff" valign="top" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$shipping.shipping_desc}</td>
+              <td bgcolor="#ffffff" align="right" valign="top" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$shipping.format_shipping_fee}</td>
+              <td bgcolor="#ffffff" align="right" valign="top" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$shipping.free_money}</td>
+              <td bgcolor="#ffffff" align="right" valign="top" style="text-align:center;padding-top:10px;padding-bottom:10px;">{if $shipping.insure neq 0}{$shipping.insure_formated}{else}{$lang.not_support_insure}{/if}</td>
             </tr>
             <!-- {/foreach} 循环配送方式 -->
             <tr>
-              <td colspan="6" bgcolor="#ffffff" align="right"><label for="ECS_NEEDINSURE">
+              <td colspan="6" bgcolor="#ffffff" style="text-align:right;padding-top:10px;padding-bottom:10px;"><label for="ECS_NEEDINSURE">
                 <input style="height:20px;"name="need_insure" id="ECS_NEEDINSURE" type="checkbox"  onclick="selectInsure(this.checked)" value="1" {if $order.need_insure}checked="true"{/if} {if $insure_disabled}disabled="true"{/if}  />
                 {$lang.need_insure} </label></td>
             </tr>
           </table>
     </div>
+
     <div class="blank" style="padding-top:10px;padding-bottom:10px;"></div>
         <!--{else}-->
         <input name = "shipping" type="radio" value = "-1" checked="checked"  style="display:none"/>
@@ -495,33 +496,33 @@
     <h6 style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 24px;line-height: 36px;color: #2c2d2d;font-weight: 300;text-transform: uppercase;margin-bottom: 24px;margin-top: 0;display: block;"><span>{$lang.payment_method}</span></h6>
     <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="paymentTable">
             <tr>
-              <th width="5%" bgcolor="#ffffff">&nbsp;</th>
-              <th width="20%" bgcolor="#ffffff">{$lang.name}</th>
-              <th bgcolor="#ffffff">{$lang.describe}</th>
-              <th bgcolor="#ffffff" width="15%">{$lang.pay_fee}</th>
+              <th width="5%" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">&nbsp;</th>
+              <th width="20%" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.name}</th>
+              <th bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.describe}</th>
+              <th bgcolor="#ffffff" width="15%" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.pay_fee}</th>
             </tr>
             <!-- {foreach from=$payment_list item=payment} -->
             <!-- 循环支付方式 -->
             {if $payment.pay_code!='yunqi'}
             <tr>
-              <td valign="top" bgcolor="#ffffff" style="color:#000"><input type="radio" name="payment" value="{$payment.pay_id}" {if $order.pay_id eq $payment.pay_id}checked{/if} isCod="{$payment.is_cod}" onclick="selectPayment(this)" {if $cod_disabled and $payment.is_cod eq "1"}disabled="true"{/if}/></td>
-              <td valign="top" bgcolor="#ffffff" style="color:#000"><strong>{$payment.pay_name}</strong></td>
-              <td valign="top" bgcolor="#ffffff" style="color:#000">{$payment.pay_desc}</td>
-              <td align="right" bgcolor="#ffffff" valign="top" style="color:#000">{$payment.format_pay_fee}</td>
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;color:#000"><input type="radio" name="payment" value="{$payment.pay_id}" {if $order.pay_id eq $payment.pay_id}checked{/if} isCod="{$payment.is_cod}" onclick="selectPayment(this)" {if $cod_disabled and $payment.is_cod eq "1"}disabled="true"{/if}/></td>
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;color:#000"><strong>{$payment.pay_name}</strong></td>
+              <td valign="top" bgcolor="#ffffff" style="text-align:left;padding-top:10px;padding-bottom:10px;color:#000">{$payment.pay_desc}</td>
+              <td align="right" bgcolor="#ffffff" valign="top" style="text-align:center;padding-top:10px;padding-bottom:10px;color:#000">{$payment.format_pay_fee}</td>
             </tr>
             {else}
             <tr>
-              <td rowspan=2 valign="middle" bgcolor="#ffffff" style="color:#000">
+              <td rowspan=2 valign="middle" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;color:#000">
                 <input type="radio" id="yunqi_payment" name="payment" value="{$payment.pay_id}" {if $order.pay_id eq $payment.pay_id}checked{/if} isCod="{$payment.is_cod}" onclick="selectPayment(this)" {if $cod_disabled and $payment.is_cod eq "1"}disabled="true"{/if}/></td>
-              <td class="list-tit" valign="top" bgcolor="#ffffff" style="color:#000">
+              <td class="list-tit" valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;color:#000">
                 <strong>{$payment.pay_name} <i style="display:inline-block;width: 100px ;text-align: left" id="payMethod">（支付宝）</i></strong>
                 
               </td>
-              <td valign="top" bgcolor="#ffffff" style="color:#000">{$payment.pay_desc}</td>
-              <td align="right" bgcolor="#ffffff" valign="top" style="color:#000">{$payment.format_pay_fee}</td>
+              <td valign="top" bgcolor="#ffffff" style="text-align:left;padding-top:10px;padding-bottom:10px;color:#000">{$payment.pay_desc}</td>
+              <td bgcolor="#ffffff" valign="top" style="text-align:center;padding-top:10px;padding-bottom:10px;color:#000">{$payment.format_pay_fee}</td>
             </tr>
             <tr>
-              <td align="left" bgcolor="#ffffff" valign="top" colspan=3>
+              <td bgcolor="#ffffff" valign="top" colspan=3 style="text-align:left;padding-top:10px;padding-bottom:10px;"> 
 
                   <span class="item">
                     <input type="radio" id="alipay" name="yunqi_paymethod" value="alipay" checked onclick="checkIpt(this);">
@@ -540,33 +541,34 @@
     <!--{else}-->
         <input name = "payment" type="radio" value = "-1" checked="checked"  style="display:none"/>
     <!--{/if}-->
+
     <div class="blank" style="padding-top:10px;padding-bottom:10px;"></div>
           <!-- {if $pack_list} 是否有包装 -->
           <div class="flowBox">
           <h6 style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 24px;line-height: 36px;color: #2c2d2d;font-weight: 300;text-transform: uppercase;margin-bottom: 24px;margin-top: 0;display: block;"><span>{$lang.goods_package}</span></h6>
           <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="packTable">
             <tr>
-              <th width="5%" scope="col" bgcolor="#ffffff">&nbsp;</th>
-              <th width="35%" scope="col" bgcolor="#ffffff">{$lang.name}</th>
-              <th width="22%" scope="col" bgcolor="#ffffff">{$lang.price}</th>
-              <th width="22%" scope="col" bgcolor="#ffffff">{$lang.free_money}</th>
-              <th scope="col" bgcolor="#ffffff">{$lang.img}</th>
+              <th width="5%" scope="col" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">&nbsp;</th>
+              <th width="35%" scope="col" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.name}</th>
+              <th width="22%" scope="col" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.price}</th>
+              <th width="22%" scope="col" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.free_money}</th>
+              <th scope="col" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.img}</th>
             </tr>
             <tr>
-              <td valign="top" bgcolor="#ffffff"><input type="radio" name="pack" value="0" {if $order.pack_id eq 0}checked="true"{/if} onclick="selectPack(this)" /></td>
-              <td valign="top" bgcolor="#ffffff"><strong>{$lang.no_pack}</strong></td>
-              <td valign="top" bgcolor="#ffffff">&nbsp;</td>
-              <td valign="top" bgcolor="#ffffff">&nbsp;</td>
-              <td valign="top" bgcolor="#ffffff">&nbsp;</td>
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;"><input type="radio" name="pack" value="0" {if $order.pack_id eq 0}checked="true"{/if} onclick="selectPack(this)" /></td>
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;"><strong>{$lang.no_pack}</strong></td>
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">&nbsp;</td>
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">&nbsp;</td>
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">&nbsp;</td>
             </tr>
             <!-- {foreach from=$pack_list item=pack} 循环包装 -->
             <tr>
-              <td valign="top" bgcolor="#ffffff"><input type="radio" name="pack" value="{$pack.pack_id}" {if $order.pack_id eq $pack.pack_id}checked="true"{/if} onclick="selectPack(this)" />
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;"><input type="radio" name="pack" value="{$pack.pack_id}" {if $order.pack_id eq $pack.pack_id}checked="true"{/if} onclick="selectPack(this)" />
               </td>
-              <td valign="top" bgcolor="#ffffff"><strong>{$pack.pack_name}</strong></td>
-              <td valign="top" bgcolor="#ffffff" align="right">{$pack.format_pack_fee}</td>
-              <td valign="top" bgcolor="#ffffff" align="right">{$pack.format_free_money}</td>
-              <td valign="top" bgcolor="#ffffff" align="center">
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;"><strong>{$pack.pack_name}</strong></td>
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$pack.format_pack_fee}</td>
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$pack.format_free_money}</td>
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">
                   <!-- {if $pack.pack_img} 是否有图片 -->
                   <a href="data/packimg/{$pack.pack_img}" target="_blank" class="f6">{$lang.view}</a>
                   <!-- {else} -->
@@ -585,27 +587,27 @@
           <h6 style="font-family: Muli,Helvetica,Arial,sans-serif;font-size: 24px;line-height: 36px;color: #2c2d2d;font-weight: 300;text-transform: uppercase;margin-bottom: 24px;margin-top: 0;display: block;"><span>{$lang.goods_card}</span></h6>
           <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="cardTable">
             <tr>
-              <th bgcolor="#ffffff" width="5%" scope="col">&nbsp;</th>
-              <th bgcolor="#ffffff" width="35%" scope="col">{$lang.name}</th>
-              <th bgcolor="#ffffff" width="22%" scope="col">{$lang.price}</th>
-              <th bgcolor="#ffffff" width="22%" scope="col">{$lang.free_money}</th>
-              <th bgcolor="#ffffff" scope="col">{$lang.img}</th>
+              <th bgcolor="#ffffff" width="5%" scope="col" style="text-align:center;padding-top:10px;padding-bottom:10px;">&nbsp;</th>
+              <th bgcolor="#ffffff" width="35%" scope="col" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.name}</th>
+              <th bgcolor="#ffffff" width="22%" scope="col" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.price}</th>
+              <th bgcolor="#ffffff" width="22%" scope="col" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.free_money}</th>
+              <th bgcolor="#ffffff" scope="col" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$lang.img}</th>
             </tr>
             <tr>
-              <td bgcolor="#ffffff" valign="top"><input type="radio" name="card" value="0" {if $order.card_id eq 0}checked="true"{/if} onclick="selectCard(this)" /></td>
-              <td bgcolor="#ffffff" valign="top"><strong>{$lang.no_card}</strong></td>
-              <td bgcolor="#ffffff" valign="top">&nbsp;</td>
-              <td bgcolor="#ffffff" valign="top">&nbsp;</td>
-              <td bgcolor="#ffffff" valign="top">&nbsp;</td>
+              <td bgcolor="#ffffff" valign="top" style="text-align:center;padding-top:10px;padding-bottom:10px;"><input type="radio" name="card" value="0" {if $order.card_id eq 0}checked="true"{/if} onclick="selectCard(this)" /></td>
+              <td bgcolor="#ffffff" valign="top" style="text-align:center;padding-top:10px;padding-bottom:10px;"><strong>{$lang.no_card}</strong></td>
+              <td bgcolor="#ffffff" valign="top" style="text-align:center;padding-top:10px;padding-bottom:10px;">&nbsp;</td>
+              <td bgcolor="#ffffff" valign="top" style="text-align:center;padding-top:10px;padding-bottom:10px;">&nbsp;</td>
+              <td bgcolor="#ffffff" valign="top" style="text-align:center;padding-top:10px;padding-bottom:10px;">&nbsp;</td>
             </tr>
             <!-- {foreach from=$card_list item=card} 循环贺卡 -->
             <tr>
-              <td valign="top" bgcolor="#ffffff"><input type="radio" name="card" value="{$card.card_id}" {if $order.card_id eq $card.card_id}checked="true"{/if} onclick="selectCard(this)"  />
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;"><input type="radio" name="card" value="{$card.card_id}" {if $order.card_id eq $card.card_id}checked="true"{/if} onclick="selectCard(this)"  />
               </td>
-              <td valign="top" bgcolor="#ffffff"><strong>{$card.card_name}</strong></td>
-              <td valign="top" align="right" bgcolor="#ffffff">{$card.format_card_fee}</td>
-              <td valign="top" align="right" bgcolor="#ffffff">{$card.format_free_money}</td>
-              <td valign="top" align="center" bgcolor="#ffffff">
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;"><strong>{$card.card_name}</strong></td>
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$card.format_card_fee}</td>
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">{$card.format_free_money}</td>
+              <td valign="top" bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;">
                   <!-- {if $card.card_img} 是否有图片 -->
                   <a href="data/cardimg/{$card.card_img}" target="_blank" class="f6">{$lang.view}</a>
                   <!-- {else} -->
@@ -615,9 +617,9 @@
             </tr>
             <!-- {/foreach} 循环贺卡 -->
             <tr>
-              <td bgcolor="#ffffff"></td>
-              <td bgcolor="#ffffff" valign="top"><strong>{$lang.bless_note}:</strong></td>
-              <td bgcolor="#ffffff" colspan="3"><textarea name="card_message" cols="60" rows="3" style="width:auto; border:1px solid #ccc;">{$order.card_message|escape}</textarea></td>
+              <td bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;"></td>
+              <td bgcolor="#ffffff" style="text-align:center;padding-top:10px;padding-bottom:10px;vertical-align:top;"><strong>{$lang.bless_note}:</strong></td>
+              <td bgcolor="#ffffff" colspan="3" style="text-align:left;padding-top:10px;padding-bottom:10px;"><textarea name="card_message" cols="60" rows="3" style="width:auto; border:1px solid #ccc;">{$order.card_message|escape}</textarea></td>
             </tr>
           </table>
         </div>
@@ -629,22 +631,22 @@
       <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <!-- {if $allow_use_surplus} 是否使用余额 -->
             <tr>
-              <td width="20%" bgcolor="#ffffff"><strong>{$lang.use_surplus}: </strong></td>
-              <td bgcolor="#ffffff"><input style="height:25px;" name="surplus" type="text" class="inputBg" id="ECS_SURPLUS" size="10" value="{$order.surplus|default:0}" onblur="changeSurplus(this.value)" {if $disable_surplus}disabled="disabled"{/if} />
+              <td width="20%" bgcolor="#ffffff" style="padding-top:10px;padding-bottom:10px;"><strong>{$lang.use_surplus}: </strong></td>
+              <td bgcolor="#ffffff" style="padding-top:10px;padding-bottom:10px;"><input style="height:25px;" name="surplus" type="text" class="inputBg" id="ECS_SURPLUS" size="10" value="{$order.surplus|default:0}" onblur="changeSurplus(this.value)" {if $disable_surplus}disabled="disabled"{/if} />
               {$lang.your_surplus}{$your_surplus|default:0} <span id="ECS_SURPLUS_NOTICE" class="notice"></span></td>
             </tr>
             <!-- {/if} 是否使用余额 -->
             <!-- {if $allow_use_integral} 是否使用积分 -->
             <tr>
-              <td bgcolor="#ffffff"><strong>{$lang.use_integral}</strong></td>
-              <td bgcolor="#ffffff"><input style="height:25px;" name="integral" type="text" class="inputBg" id="ECS_INTEGRAL" onblur="changeIntegral(this.value)" value="{$order.integral|default:0}" size="10" />
+              <td bgcolor="#ffffff" style="padding-top:10px;padding-bottom:10px;"><strong>{$lang.use_integral}</strong></td>
+              <td bgcolor="#ffffff" style="padding-top:10px;padding-bottom:10px;"><input style="height:25px;" name="integral" type="text" class="inputBg" id="ECS_INTEGRAL" onblur="changeIntegral(this.value)" value="{$order.integral|default:0}" size="10" />
               {$lang.can_use_integral}:{$your_integral|default:0} {$points_name}，{$lang.noworder_can_integral}{$order_max_integral}  {$points_name}. <span id="ECS_INTEGRAL_NOTICE" class="notice"></span></td>
             </tr>
             <!-- {/if} 是否使用积分 -->
             <!-- {if $allow_use_bonus} 是否使用红包 -->
             <tr>
-              <td bgcolor="#ffffff"><strong>{$lang.use_bonus}:</strong></td>
-              <td bgcolor="#ffffff">
+              <td bgcolor="#ffffff" style="padding-top:10px;padding-bottom:10px;"><strong>{$lang.use_bonus}:</strong></td>
+              <td bgcolor="#ffffff" style="padding-top:10px;padding-bottom:10px;">
                 {$lang.select_bonus}
                 <select style="height:25px;" name="bonus" onchange="changeBonus(this.value)" id="ECS_BONUS" style="border:1px solid #ccc;">
                   <option value="0" {if $order.bonus_id eq 0}selected{/if}>{$lang.please_select}</option>
@@ -661,10 +663,10 @@
             <!-- {/if} 是否使用红包 -->
             <!-- {if $inv_content_list} 能否开发票 -->
             <tr>
-              <td bgcolor="#ffffff"><strong>{$lang.invoice}:</strong>
+              <td bgcolor="#ffffff" style="padding-top:10px;padding-bottom:10px;"><strong>{$lang.invoice}:</strong>
                 <input style="height:20px;vertical-align:bottom;" name="need_inv" type="checkbox"  class="input" id="ECS_NEEDINV" onclick="changeNeedInv()" value="1" {if $order.need_inv}checked="true"{/if} />
               </td>
-              <td bgcolor="#ffffff">
+              <td bgcolor="#ffffff" style="padding-top:10px;padding-bottom:10px;">
                 <!-- {if $inv_type_list} -->
                 {$lang.invoice_type}
                 <select style="height:25px;" name="inv_type" id="ECS_INVTYPE" {if $order.need_inv neq 1}disabled="true"{/if} onchange="changeNeedInv()" style="border:1px solid #ccc;">
@@ -681,13 +683,13 @@
             </tr>
             <!-- {/if} -->
             <tr>
-              <td valign="top" bgcolor="#ffffff"><strong>{$lang.order_postscript}:</strong></td>
-              <td bgcolor="#ffffff"><textarea name="postscript" cols="80" rows="3" id="postscript" style="border:1px solid #ccc;">{$order.postscript|escape}</textarea></td>
+              <td bgcolor="#ffffff" style="padding-top:10px;padding-bottom:10px;vertical-align:top;"><strong>{$lang.order_postscript}:</strong></td>
+              <td bgcolor="#ffffff" style="padding-top:10px;padding-bottom:10px;"><textarea name="postscript" cols="80" rows="3" id="postscript" style="border:1px solid #ccc;">{$order.postscript|escape}</textarea></td>
             </tr>
             <!-- {if $how_oos_list} 是否使用缺货处理 -->
             <tr>
-              <td bgcolor="#ffffff"><strong>{$lang.booking_process}:</strong></td>
-              <td bgcolor="#ffffff"><!-- {foreach from=$how_oos_list key=how_oos_id item=how_oos_name} -->
+              <td bgcolor="#ffffff" style="padding-top:10px;padding-bottom:10px;"><strong>{$lang.booking_process}:</strong></td>
+              <td bgcolor="#ffffff" style="padding-top:10px;padding-bottom:10px;"><!-- {foreach from=$how_oos_list key=how_oos_id item=how_oos_name} -->
                 <label>
                 <input name="how_oos" type="radio" value="{$how_oos_id}" {if $order.how_oos eq $how_oos_id}checked{/if} onclick="changeOOS(this)" style="height:20px;vertical-align:bottom;"/>
                 {$how_oos_name}</label>
@@ -712,20 +714,31 @@
         <!-- {if $step eq "done"} -->
         <!-- 订单提交成功 -->
         <div class="flowBox" style="margin:30px auto 70px auto;">
-         <h6 style="text-align:center; height:30px; line-height:30px;">{$lang.remember_order_number}: <font style="color:red">{$order.order_sn}</font></h6>
-          <table width="99%" align="center" border="0" cellpadding="15" cellspacing="0" bgcolor="#fff" style="border:1px solid #ddd; margin:20px auto;" >
+         <h6 style="font-size: 20px;text-align:center; height:30px; line-height:30px;padding-top:10px;">{$lang.remember_order_number}: </h6>
+         <div style="text-align:center;font-family: Muli,Helvetica,Arial,sans-serif;font-size: 24px;line-height: 36px;color: #2c2d2d;font-weight: 300;text-transform: uppercase;margin-bottom: 24px;margin-top: 0;display: block;">{$order.order_sn}</div>
+          <table width="99%" align="center" border="0" cellpadding="15" cellspacing="0" bgcolor="#fff" style="margin:20px auto;" >
             <tr>
-              <td align="center" bgcolor="#FFFFFF">
-              <!--{if $order.shipping_name}-->{$lang.select_shipping}: <strong>{$order.shipping_name}</strong>，<!--{/if}-->{$lang.select_payment}: <strong>{$order.pay_name}</strong>。{$lang.order_amount}: <strong>{$total.amount_formated}</strong>
+              <td bgcolor="#FFFFFF" style="font-size: 20px;text-align:center;">
+              <!--{if $order.shipping_name}-->{$lang.select_shipping}: <strong>{$order.shipping_name}</strong><!--{/if}-->
               </td>
             </tr>
             <tr>
-              <td align="center" bgcolor="#FFFFFF">{$order.pay_desc}</td>
+            <td style="font-size: 20px;text-align:center;padding-top:10px;">
+              {$lang.select_payment}:<strong>{$order.pay_name}</strong>
+            </td>
+          </tr>
+            <tr>
+            <td style="font-size: 20px;text-align:center;padding-top:10px;">
+              {$lang.order_amount}:<strong>{$total.amount_formated}</strong>
+            </td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF" style="text-align:center;padding-top:10px;">{$order.pay_desc}</td>
             </tr>
             <!-- {if $pay_online} -->
             <!-- 如果是线上支付则显示支付按钮 -->
             <tr>
-              <td align="center" bgcolor="#FFFFFF">{$pay_online}</td>
+              <td align="center" bgcolor="#FFFFFF" style="padding-top:10px;">{$pay_online}</td>
             </tr>
             <!-- {/if} -->
           </table>

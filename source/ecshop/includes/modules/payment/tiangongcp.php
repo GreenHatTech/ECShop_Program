@@ -124,7 +124,7 @@ class tiangongcp
         $def_url .= "<input type='hidden' name='notify_url' value='" . $param['notify_url'] . "' />";
         $def_url .= "<input type='hidden' name='sign' value='" . $param['sign'] . "' />";
         $def_url .= "<input type='hidden' name='client_id' value='" . $param['client_id'] . "' />";
-        $def_url .= "<input type='submit'  value='" . $GLOBALS['_LANG']['pay_button'] . "' />";
+        $def_url .= "<input style='font-size: 14px;line-height: 1.4;color: #2e3337;font-weight: 300;background-color: #333;border-style: none;padding: 10px;color: #fff;border-radius: 0;display: inline-block;cursor: pointer;text-transform: uppercase;text-decoration: none;text-align: center;-webkit-box-sizing: border-box;box-sizing: border-box;margin-left: auto;line-height: 18px;' type='submit'  value='" . $GLOBALS['_LANG']['pay_button'] . "' />";
         $def_url .= "</form></div></br>";
 
         return $def_url;
