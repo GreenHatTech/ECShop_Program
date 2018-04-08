@@ -29,40 +29,11 @@ if (Object.prototype.toJSONString){
           return oldToJSONString.apply(this, arguments);
         }
 }}</script>
+<br>
 <div class="indexpage clearfix">
   <div class=class="primaryBanner_imageLarge primaryBanner_imageLarge-left"><!-- #BeginLibraryItem "/library/index_banner.lbi" --><!-- #EndLibraryItem --> </div>
 </div>
-<div class="brandLogos" data-component="brandLogos">
-  <a href="/brands/this-works.list" class="brandLogos_link">
-    <img src="https://s3.thcdn.com/widgets/121-
-us/47/bw180logo-075447.jpg" alt="this works" class="brandLogos_image">
-  </a>
 
-  <a href="/brands/avene.list" class="brandLogos_link">
-    <img src="https://s4.thcdn.com/widgets/121-
-us/38/avene_lgo_180x72-024538.jpg" alt="Avene" class="brandLogos_image">
-  </a>
-
-  <a href="/brands/skinceuticals.list" class="brandLogos_link">
-    <img src="https://s2.thcdn.com/widgets/121-
-us/08/180x72-ss-wk15-sm-skinceuticals-040312_%281%29-104708.png" alt="SkinCeuticals" class="brandLogos_image">
-  </a>
-
-  <a href="/brands/omorovicza.list" class="brandLogos_link">
-    <img src="https://s2.thcdn.com/widgets/121-
-us/41/180x72-be-logo-omorovicza-040009-033441.png" alt="Omorovicza" class="brandLogos_image">
-  </a>
-
-  <a href="/brands/caudalie-paris.list" class="brandLogos_link">
-    <img src="https://s4.thcdn.com/widgets/121-
-us/27/180x72-be-logo-caudalie-040341-101945-033527.png" alt="Caudalíe" class="brandLogos_image">
-  </a>
-
-  <a href="/brands/dermalogica.list" class="brandLogos_link">
-    <img src="https://s4.thcdn.com/widgets/121-
-us/19/Dermalogica_logo-042219.jpg" alt="Dermalogica" class="brandLogos_image">
-  </a>
-</div>
 
 <h2 style="    display: block;
 
@@ -74,6 +45,7 @@ us/19/Dermalogica_logo-042219.jpg" alt="Dermalogica" class="brandLogos_image">
                    text-transform: uppercase;
 
                    flex-basis: 100%;
+                   padding-top: 20px;
                    padding-right: 12px;
                    padding-left: 12px;
                    margin-top: 0;
