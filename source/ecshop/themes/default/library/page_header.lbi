@@ -94,12 +94,7 @@ var process_request = "{$lang.process_request}";
                     <li class="nav-link nav-sale"><a href="../index.php"{if $navigator_list.config.index eq 1} class="cur"{/if}>{$lang.home}</a></li>
                     <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
                       <!-- {if $smarty.foreach.nav_middle_list.last}-->
-                      <li class="nav-link nav-sale"><a href="{$nav.url}"
 
-                        <!-- {if $nav.opennew eq 1} -->
-                        target="_blank"
-                        <!-- {/if} -->
-                        >{$nav.name}</a></li>
                       <!-- {else} -->
                       <li class="nav-link"><a href="{$nav.url}"
 

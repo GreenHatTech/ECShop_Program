@@ -6,15 +6,28 @@
     height: 20px;
 }
 .settingsCard_menu {
-    width: 16.666% !important;
+    width: 20% !important;
     clear: none !important;
 }
 .settingsCard_menu .settingsCard {
-    min-height: auto !important;
+    min-height: 150px !important;
 }
-.settingsCard_menu .curs .settingsCard_title {
-    color: #79a9b4;
+.settingsCard_menu .curs .settingsCard_title p {
+    color: #ff8787;
     font-weight: bold;
+}
+
+.settingsCard_menu .settingsCard_title {
+    width: 100%;
+    display: table;
+    height: 40px;
+}
+
+.settingsCard_menu .settingsCard_title p {
+    height: 40px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .myAccountSection_header_extra_text {
@@ -93,4 +106,53 @@
 .pagebar .page_now {
     color: #FFFFFF;
     background: #ff8787;
+}
+
+.btn_color {
+    background-color: #ff8787;
+}
+
+.input_height_auto {
+    height: auto;
+}
+
+#searchForm table {
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+#searchForm table tr,
+#searchForm table td{
+    margin: 0;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: 200;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: cursive;
+}
+
+
+#searchForm input#keyword {
+    width: 135px;
+    padding-left: 45px;
+    height: 35px;
+    line-height: 35px;
+    margin-top: 1px;
+    margin: 0px;
+    background: none;
+    border: 0px;
+    box-sizing: initial;
+}
+
+#searchForm .go {
+    width: 84px;
+    line-height: 34px;
+    height: 35px;
 }

@@ -29,40 +29,11 @@ if (Object.prototype.toJSONString){
           return oldToJSONString.apply(this, arguments);
         }
 }}</script>
+<br>
 <div class="indexpage clearfix">
   <div class=class="primaryBanner_imageLarge primaryBanner_imageLarge-left"><!-- #BeginLibraryItem "/library/index_banner.lbi" --><!-- #EndLibraryItem --> </div>
 </div>
-<div class="brandLogos" data-component="brandLogos">
-  <a href="/brands/this-works.list" class="brandLogos_link">
-    <img src="https://s3.thcdn.com/widgets/121-
-us/47/bw180logo-075447.jpg" alt="this works" class="brandLogos_image">
-  </a>
 
-  <a href="/brands/avene.list" class="brandLogos_link">
-    <img src="https://s4.thcdn.com/widgets/121-
-us/38/avene_lgo_180x72-024538.jpg" alt="Avene" class="brandLogos_image">
-  </a>
-
-  <a href="/brands/skinceuticals.list" class="brandLogos_link">
-    <img src="https://s2.thcdn.com/widgets/121-
-us/08/180x72-ss-wk15-sm-skinceuticals-040312_%281%29-104708.png" alt="SkinCeuticals" class="brandLogos_image">
-  </a>
-
-  <a href="/brands/omorovicza.list" class="brandLogos_link">
-    <img src="https://s2.thcdn.com/widgets/121-
-us/41/180x72-be-logo-omorovicza-040009-033441.png" alt="Omorovicza" class="brandLogos_image">
-  </a>
-
-  <a href="/brands/caudalie-paris.list" class="brandLogos_link">
-    <img src="https://s4.thcdn.com/widgets/121-
-us/27/180x72-be-logo-caudalie-040341-101945-033527.png" alt="Caudalíe" class="brandLogos_image">
-  </a>
-
-  <a href="/brands/dermalogica.list" class="brandLogos_link">
-    <img src="https://s4.thcdn.com/widgets/121-
-us/19/Dermalogica_logo-042219.jpg" alt="Dermalogica" class="brandLogos_image">
-  </a>
-</div>
 
 <h2 style="    display: block;
 
@@ -74,6 +45,7 @@ us/19/Dermalogica_logo-042219.jpg" alt="Dermalogica" class="brandLogos_image">
                    text-transform: uppercase;
 
                    flex-basis: 100%;
+                   padding-top: 20px;
                    padding-right: 12px;
                    padding-left: 12px;
                    margin-top: 0;
@@ -129,14 +101,14 @@ us/19/Dermalogica_logo-042219.jpg" alt="Dermalogica" class="brandLogos_image">
 Hot commodities:</div>
     <!-- {if $hot_goods} -->
         <!-- {if $cat_rec_sign neq 1} -->
-    <div style="width:1200px;height:700px">
+    <div style="width:1200px;height:900px">
 
 
         <!-- {/if} -->
           <!--{foreach from=$hot_goods item=goods}-->
-        <div style="width:580px;display:inline;float:left;margin-left:9px;margin-right:9px;margin-top:20px;border:1px solid #ececec" >
-            <div style=" width:580px;height:384px;">
-                <img style=" width:580px;height:384px;" src="{$goods.thumb}" alt="{$goods.name|escape:html}">
+        <div style="width:380px;display:inline;float:left;margin-left:9px;margin-right:9px;margin-top:20px;border:1px solid #ececec" >
+            <div style=" width:380px;height:380px;">
+                <img style=" width:380px;height:380px;" src="{$goods.thumb}" alt="{$goods.name|escape:html}">
              </div>
             <div style="height:270px;box-sizing: border-box;display: block; -webkit-flex-basis: 100%;
                              -ms-flex-preferred-size: 100%;
@@ -152,15 +124,7 @@ Hot commodities:</div>
                                    margin: 12px;
                                        text-align: center;"
                                   >{$goods.short_name|escape:html}</h2>
-                                  <p style=" font-family: Muli,Helvetica,Arial,sans-serif;
-                                                font-size: 16px;
-                                                line-height: 20px;
-                                                color: #2c2d2d;
-                                                font-weight: 300;
-                                                max-width: 460px;
-                                                display: block;
-                                                margin: 12px auto;
-                                                text-align: center;">Discover the Water Drench collection from Peter Thomas Roth and infuse your skin with a surge of moisture!</p>
+
                     <a href="{$goods.url}" style="font-family: Muli,Helvetica,Arial,sans-serif;
                                       font-size: 14px;
                                       color: #2c2d2d;
@@ -178,10 +142,10 @@ Hot commodities:</div>
                                       -webkit-box-sizing: border-box;
                                       box-sizing: border-box;
                                       display: block;
-                                      margin-top: 40px;
-                                      margin-left: 150px;
+                                      margin-top: 20px;
+                                      margin-left: 50px;
 
-                                      margin-right: 150px;">SHOP NOW</a>
+                                      margin-right: 50px;">SHOP NOW</a>
             </div>
         </div>
         <!--{/foreach}-->

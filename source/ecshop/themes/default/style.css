@@ -254,7 +254,7 @@ position:absolute; top:0px; right:0px;}
      模块
 ==================== */
    /*购物车*/
-#ECS_CARTINFO{ float:right; height:40px; line-height: 40px; width:105px; display:inline-block; background: url(images/cart.png) no-repeat 5px center ;}
+#ECS_CARTINFO{ float:right; height:40px; line-height: 40px; width:135px; display:inline-block; background: url(images/cart.png) no-repeat 5px center ;}
 #ECS_CARTINFO a{ display:block; width:135px; line-height:40px; text-indent:30px; color:#385d66}
 #ECS_CARTINFO a b{ color:#198500; padding-left:0px; padding-right:2px;}
 
@@ -1930,7 +1930,6 @@ a, abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, c
     border: 0;
     text-indent: -99999px;
     background-color: transparent;
-    background-image: url(//s3.thcdn.com/www/skincarerx/c-images/skincarerx-global-sprite-c6c2b16ae6.png);
 }
 .footerPaymentIcons {
     width: auto;
