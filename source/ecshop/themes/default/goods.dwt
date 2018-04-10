@@ -257,7 +257,7 @@ text-transform: uppercase;"> {$goods.goods_style_name} </div>
                     center;font-size:16px;
                     text-decoration:none;
                     font-weight: 300;">Add to Bag</a>
-                </span>
+                </div>
               </dd>
             </li>
             <!-- {if $goods.is_shipping} 为免运费商品则显示-->
