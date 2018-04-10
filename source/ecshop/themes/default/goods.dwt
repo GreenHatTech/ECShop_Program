@@ -80,6 +80,11 @@ h2.good_desc{
   padding-bottom: 5px;
   border-bottom: 1px solid #e6e6e6;
 }
+#goodsInfo .textInfo p {
+    font-size: 16px;
+    font-weight: 300;
+    padding:0;
+}
 </style>
 {* 包含脚本文件 *}
 {insert_scripts files='common.js'}
@@ -166,95 +171,24 @@ text-transform: uppercase;"> {$goods.goods_style_name} </div>
             </li>
             <!-- {/if} -->
             
-            <li class="clearfix" style="margin-left:15px">
-              <dd>
-                <!-- {if $cfg.show_goodssn} 显示商品货号-->
-                <div style="margin-bottom:2px;
-                  font-size: 16px;
-                  text-align: left;
-                  font-weight: 300;">{$lang.goods_sn}<font >{$goods.goods_sn}</font></div>
-                <!-- {/if} -->
-              </dd>
-              <dd class="ddR">
-                <!-- {if $goods.goods_number neq "" and $cfg.show_goodsnumber} 商品库存-->
-                <!-- {if $goods.goods_number eq 0} -->
-                <div style="margin-bottom:2px;
-                  font-size: 16px;
-                  text-align: left;
-                  font-weight: 300;">{$lang.goods_number}<font color='red'>{$goods.stock_up}</font></div>
-                <!-- {else} -->
-                <div style="margin-bottom:2px;
-                  font-size: 16px;
-                  text-align: left;
-                  font-weight: 300;">{$lang.goods_number}{$goods.goods_number} {$goods.measure_unit}</div>
-                <!-- {/if} -->
-                <!-- {/if} -->
-              </dd>
-            </li>
-            <li class="clearfix" style="margin-left:15px">
-              <dd>
-                <!-- {if $goods.goods_brand neq "" and $cfg.show_brand} 显示商品品牌-->
-                <div style="margin-bottom:2px;
-                  font-size: 16px;
-                  text-align: left;
-                  font-weight: 300;">{$lang.goods_brand}<a href="{$goods.goods_brand_url}" >{$goods.goods_brand}</a></div>
-                <!--{/if}-->
-              </dd>
-              <dd class="ddR">
-                <!-- {if $cfg.show_goodsweight} 商品重量-->
-                <div style="margin-bottom:2px;
-                  font-size: 16px;
-                  text-align: left;
-                  font-weight: 300;">{$lang.goods_weight}{$goods.goods_weight}</div>
-                <!-- {/if} -->
-              </dd>
-            </li>
-            <li class="clearfix" style="margin-left:15px">
-              <dd>
-                <!-- {if $cfg.show_addtime} 上架时间-->
-                <div style="margin-bottom:2px;
-                  font-size: 16px;
-                  text-align: left;
-                  font-weight: 300;">{$lang.add_time}{$goods.add_time}</div>
-                <!-- {/if} -->
-              </dd>
-              <dd class="ddR">
-                <!--点击数-->
-                <div style="margin-bottom:2px;
-                  font-size: 16px;
-                  text-align: left;
-                  font-weight: 300;">{$lang.goods_click_count}:{$goods.click_count}</div>
-                <dd class="ddR">
-                 <!--累计销量-->
-                <div style="margin-bottom:2px;
-                  font-size: 16px;
-                  text-align: left;
-                  font-weight: 300;">{$lang.cum_sales}{$goods.cum_sales}</div>
-                 </dd>
-            </li>
-            <li class="clearfix" style="margin-left:15px">
-              <dd>
-                <!-- {if $cfg.show_marketprice} 市场价格-->
-                <div style="margin-bottom:2px;
-                  font-size: 16px;
-                  text-align: left;
-                  font-weight: 300;">{$lang.market_price}<font class="market">{$goods.market_price}</font><div> </dd>
-              <!-- {/if} -->
+            <li class="clearfix" style="margin-left:15px;margin-top:25px">
               <!--本店售价-->
               <dd>
-                <div style="margin-bottom:2px;
-                  font-size: 16px;
+                <div id="ECS_SHOPPRICE" style="margin-bottom:2px;
+                  font-size: 20px;
                   text-align: left;
-                  font-weight: 300;">{$lang.shop_price}<font class="shop" id="ECS_SHOPPRICE">{$goods.shop_price_formated}</font><div>
-              <!-- {foreach from=$rank_prices item=rank_price key=key} 会员等级对应的价格-->
+                  font-weight: 300;">{$goods.shop_price_formated}<div>
               <dd>
-              <div style="margin-bottom:2px;
-                  font-size: 16px;
-                  text-align: left;
-                  font-weight: 300;">{$rank_price.rank_name}:<font class="shop" id="ECS_RANKPRICE_{$key}">{$rank_price.price}</font> <div>
-              </dd>
-              <!--{/foreach}-->
             </li>
+            
+            <blockquote style="
+            margin-left:15px;
+            margin-top:5px;
+            padding-bottom:10px;
+            line-height: 20px;
+            color: #2c2d2d;
+            font-weight:300;
+            margin-bottom: 10px;">{$goods.goods_desc}</blockquote>
             
             <!--{if $volume_price_list } -->
             <li class="padd"> 
@@ -292,45 +226,38 @@ text-transform: uppercase;"> {$goods.goods_style_name} </div>
             </li>
             <!--{/if}-->
             
-            <li class="clearfix" style="margin-top:15px;margin-left:15px;margin-bottom:5px">
-              <dd> <strong>{$lang.amount}：</strong>
-              <font id="ECS_GOODS_AMOUNT" class="shop" style="font-size: 24px;
-                    font-weight: 400;"></font> </dd>
-              <dd class="ddR">
-                <!-- {if $goods.give_integral > 0} 购买此商品赠送积分-->
-                <strong>{$lang.goods_give_integral}</strong><font class="f4">{$goods.give_integral} {$points_name}</font>
-                <!-- {/if} -->
-              </dd>
-            </li>
-            
             <!-- {if $goods.bonus_money} 红包-->
             <li class="padd loop" style="margin-bottom:5px; border-bottom:1px dashed #ccc;"> <strong>{$lang.goods_bonus}</strong><font class="shop">{$goods.bonus_money}</font><br />
             </li>
             <!-- {/if} -->
             
-            <li class="clearfix" style="margin-top:5px">
+            <li class="clearfix" style="margin-top:25px">
               <dd style="height:auto;margin-left:15px;"> 
-                <strong style="font-weight: 300;">{$lang.number}：</strong>
-                <input name="number" type="text" id="number" value="1" size="4" onblur="changePrice()" style="
+                <strong style="font-weight: 300;font-size:16px">{$lang.number}</strong>
+                <input name="number" type="text" id="number" value="1" size="4" style="
                   font-size: 16px;
                   text-align: center;
                   font-weight: 300;
                   border: 1px solid #e6e6e6;
-                  height:25px;"/>
-              </dd>
-              <dd class="ddR" style="
+                  height:40px;"/>
+                  <div class="span_add_to_bag" style="
+                  margin-left:15px;
                   width:auto;
-                  margin-left:-10px;
-                  font-size: 16px;
-                  font-weight: 300;">
-                <!-- {if $cfg.use_integral} 购买此商品可使用积分-->
-                <div style="
-                  width:auto;
-                  font-size: 16px;
-                  font-weight: 300;">
-                {$lang.goods_integral}<font style="padding-left:5px">{$goods.integral} {$points_name}</font>
-                </div>
-                <!-- {/if} -->
+                  height:auto;
+                  text-transform: uppercase;
+                  background:none;
+                  background-color: #ff8787;
+                  border: 1px solid #ff8787;
+                  padding: 9px;
+                  text-align: center;
+                  margin-bottom: 0;
+                  float:right">
+                  <a href="javascript:addToCart({$goods.goods_id})" style="
+                    color: #fff;text-align: 
+                    center;font-size:16px;
+                    text-decoration:none;
+                    font-weight: 300;">Add to Bag</a>
+                </span>
               </dd>
             </li>
             <!-- {if $goods.is_shipping} 为免运费商品则显示-->
@@ -372,36 +299,6 @@ text-transform: uppercase;"> {$goods.goods_style_name} </div>
             <!-- {/foreach} -->
             <!-- {* 结束循环可选属性 *} -->
             
-            <li class="padd">
-              <table border="0" cellspacing="0" cellpadding="0">
-                <tr>
-                  <td>
-                    <span class="span_add_to_bag" style="
-                      margin-left:15px;
-                      width:auto;
-                      height:auto;
-                      text-transform: uppercase;
-                      background:none;
-                      background-color: #ff8787;
-                      border: 1px solid #ff8787;
-                      padding: 9px;
-                          padding-right: 9px;
-                      display: block;
-                      text-align: center;">
-                    <a href="javascript:addToCart({$goods.goods_id})" style="
-                      color: #fff;text-align: 
-                      center;font-size:14px;
-                      text-decoration:none;
-                      font-weight: 300;">Add to Bag</a></span>
-                  </td>
-                  <td class="td2"><a href="javascript:collect({$goods.goods_id})"><img src="images/bnt_colles.gif" /></a></td>
-                  <!-- {if $affiliate.on} -->
-                  <td class="td3"><a href="user.php?act=affiliate&goodsid={$goods.goods_id}"><img src='images/bnt_recommend.gif'></a> </td>
-                  <!-- {/if} -->
-                </tr>
-              </table>
-            </li>
-            
           </ul>
         </form>
       </div>
@@ -414,16 +311,6 @@ text-transform: uppercase;"> {$goods.goods_style_name} </div>
             margin-bottom: 10px;vertical-align: baseline;
             padding-bottom:15px;padding-top:15px;
             background: transparent;">
-        <h2 class="good_desc">{$lang.goods_brief}</h3>
-        <blockquote style="font-size: 16px;
-            margin-left:15px;
-            margin-top:20px;
-            padding-bottom:10px;
-            line-height: 20px;
-            color: #2c2d2d;
-            font-weight: 300;
-            margin-bottom: 10px;"> {$goods.goods_desc}</blockquote>
-        
         <h2 class="good_desc">{$lang.goods_attr}</h2>
         <table cellspacing="0" class="table_goods" style="margin-top:30px">
           <!-- {foreach from=$properties item=property_group key=key} -->

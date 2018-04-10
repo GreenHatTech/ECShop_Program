@@ -23,7 +23,7 @@
           color: rgb(238, 238, 238);
           text-align: center;
           border: 1px solid #ff8787;
-          background: #ff8787;">添   加</button>
+          background: #ff8787;">ADD</button>
           <input type="hidden" name="goods_id" value="{$goods.goods_id}"  />
         </p>
                 <script type="text/javascript">

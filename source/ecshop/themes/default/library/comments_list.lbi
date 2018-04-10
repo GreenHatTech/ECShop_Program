@@ -138,7 +138,8 @@
           text-align: center;
           border: 1px solid #ff8787;
           text-transform: uppercase;
-          background: #ff8787;"/>
+          background: #ff8787;"
+          value="SUBMIT"/>
           </td>
         </tr>
       </table>
