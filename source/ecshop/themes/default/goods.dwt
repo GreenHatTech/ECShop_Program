@@ -171,19 +171,9 @@ text-transform: uppercase;"> {$goods.goods_style_name} </div>
             </li>
             <!-- {/if} -->
             
-            <li class="clearfix" style="margin-left:15px;margin-top:25px">
-              <!--本店售价-->
-              <dd>
-                <div id="ECS_SHOPPRICE" style="margin-bottom:2px;
-                  font-size: 20px;
-                  text-align: left;
-                  font-weight: 300;">{$goods.shop_price_formated}<div>
-              <dd>
-            </li>
-            
             <blockquote style="
             margin-left:15px;
-            margin-top:5px;
+            margin-top:25px;
             padding-bottom:10px;
             line-height: 20px;
             color: #2c2d2d;
@@ -231,7 +221,17 @@ text-transform: uppercase;"> {$goods.goods_style_name} </div>
             </li>
             <!-- {/if} -->
             
-            <li class="clearfix" style="margin-top:25px">
+            <li class="clearfix" style="margin-left:15px;margin-top:15px">
+              <!--本店售价-->
+              <dd>
+                <div id="ECS_SHOPPRICE" style="margin-bottom:2px;
+                  font-size: 20px;
+                  text-align: left;
+                  font-weight: 300;">{$goods.shop_price_formated}<div>
+              <dd>
+            </li>
+            
+            <li class="clearfix" style="margin-top:15px">
               <dd style="height:auto;margin-left:15px;"> 
                 <strong style="font-weight: 300;font-size:16px">{$lang.number}</strong>
                 <input name="number" type="text" id="number" value="1" size="4" style="
@@ -253,13 +253,26 @@ text-transform: uppercase;"> {$goods.goods_style_name} </div>
                   margin-bottom: 0;
                   float:right">
                   <a href="javascript:addToCart({$goods.goods_id})" style="
-                    color: #fff;text-align: 
-                    center;font-size:16px;
+                    color: #fff;
+                    text-align: center;
+                    font-size:16px;
                     text-decoration:none;
                     font-weight: 300;">Add to Bag</a>
                 </div>
               </dd>
             </li>
+            
+            <li class="clearfix" style="margin-left:15px;margin-top:5px">
+              <!--库存-->
+              <dd class="ddR">
+                <!-- {if $goods.goods_number eq 0} -->
+                <div style="font-size:14px;">Out of Stock</div>
+                <!-- {else} -->
+                <div style="font-size:14px;">In Stock</div>
+                <!-- {/if} -->
+              </dd>
+            </li>
+            
             <!-- {if $goods.is_shipping} 为免运费商品则显示-->
             <li style="height:30px;padding-top:4px;"> {$lang.goods_free_shipping}<br />
             </li>
