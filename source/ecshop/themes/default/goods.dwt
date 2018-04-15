@@ -232,7 +232,7 @@ text-transform: uppercase;"> {$goods.goods_style_name} </div>
             </li>
             
             <li class="clearfix" style="margin-top:15px">
-              <dd style="height:auto;margin-left:15px;"> 
+              <div style="height:auto;margin-left:15px;"> 
                 <strong style="font-weight: 300;font-size:16px">{$lang.number}</strong>
                 <input name="number" type="text" id="number" value="1" size="4" style="
                   font-size: 16px;
@@ -240,7 +240,7 @@ text-transform: uppercase;"> {$goods.goods_style_name} </div>
                   font-weight: 300;
                   border: 1px solid #e6e6e6;
                   height:40px;"/>
-                  <div class="span_add_to_bag" style="
+                <a href="javascript:addToCart({$goods.goods_id})" style="
                   margin-left:15px;
                   width:auto;
                   height:auto;
@@ -251,15 +251,12 @@ text-transform: uppercase;"> {$goods.goods_style_name} </div>
                   padding: 9px;
                   text-align: center;
                   margin-bottom: 0;
-                  float:right">
-                  <a href="javascript:addToCart({$goods.goods_id})" style="
-                    color: #fff;
-                    text-align: center;
-                    font-size:16px;
-                    text-decoration:none;
-                    font-weight: 300;">Add to Bag</a>
-                </div>
-              </dd>
+                  color: #fff;
+                  text-align: center;
+                  font-size:16px;
+                  text-decoration:none;
+                  font-weight: 300;">Add to Bag</a>
+              </div>
             </li>
             
             <li class="clearfix" style="margin-left:15px;margin-top:5px">
